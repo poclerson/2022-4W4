@@ -1,0 +1,60 @@
+.site__main {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: $color__background-main;
+    justify-content: space-evenly;
+    row-gap: 20px;
+}
+
+.main__titre {
+    font-size: 2rem;
+    width: 100%;
+    display: block;
+
+}
+
+.carte {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid 1px;
+
+    /* Largeur adaptative */
+    /* Mobile */
+    width: 100%;
+
+    /* Tablettes */
+    @media screen and (min-width: $largeur__media-tablette) {
+        width: 45%;
+    }
+
+    /* Desktop */
+    @media screen and (min-width: $largeur__media-desktop) {
+        width: 30%;
+    }
+
+    padding: 10px;
+    border-radius: 25px;
+
+    &:nth-child(even) {
+        background-color: $color__background-carte--pair;
+        color: $color__text-carte--pair;
+    }
+
+    &:nth-child(odd) {
+        background-color: $color__background-carte--impair;
+        color: $color__text-carte--impair;
+    }
+
+    .carte__sigle {
+        font-weight: bold;
+        text-decoration: underline;
+    }
+
+    .carte__titre {
+        font-size: 1.5rem;
+    }
+    
+    .carte__contenu {
+        font-size: .8rem;
+    }
+}

@@ -1,0 +1,13 @@
+.site__footer {
+    padding: 20px;
+
+    display: flex;
+
+    background-color: $color__background-footer;
+    color: $color__text-footer;
+
+    & > * {
+        margin: 0 20px;
+        flex: 1;
+    }
+}

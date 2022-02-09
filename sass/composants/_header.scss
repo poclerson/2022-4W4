@@ -1,0 +1,62 @@
+.site__header {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    @media screen and (min-width: $largeur__media-tablette) {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__titre {
+        display: flex;
+        align-items: center;
+
+        h1 {
+            font-family: $font__header-h1;
+            font-size: clamp(.8rem, 8vw, 10rem);
+        }
+
+        h2 {
+            font-family: $font__header-h2;
+            font-size: clamp(.6rem, 3.5vw , 5rem);
+        }
+    } 
+
+    &__util {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+.icone {
+    display: flex;
+
+    &__lien {
+
+    }
+    
+}
+
+/* ===== RECHERCHE ===== */
+form.recherche {
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    &__input {
+        outline: none;
+    }
+
+    &__bouton {
+        position: absolute;
+        width: 1em;
+        outline: none;
+        border: none;
+        padding: 0;
+        margin: 0;
+    }
+}
