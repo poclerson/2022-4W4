@@ -1,26 +1,24 @@
 /* ===== ÉLÉMENTS PRINCIPAUX ===== */
-$color__background-body:  rgb(244, 152, 71);
-$color__background-main: rgb(50, 135, 126);
-$color__background-header: rgb(123, 84, 143);
-$color__background-barre: rgb(50, 135, 126);
+$color__background-body:  black;
+$color__background-main: white;
+$color__background-barre: white;
+
+/* --- Header --- */
+$color__background-header: black;
+$color__text-header__principal: rgb(255, 111, 0);
+$color__text-header__secondaire: white;
 
 /* --- Footer --- */
-$color__background-footer: rgb(50, 135, 126);
-$color__text-footer: white;
+$color__background-footer: gray;
+$color__text-footer: black;
 
 /* ===== ÉLÉMENTS SECONDAIRES ===== */
 /* --- Carte --- */
-/* Pair */
-$color__background-carte--pair:  rgb(244, 152, 71);
-$color__text-carte--pair: black;
-
-/* Impair */
-$color__background-carte--impair: rgb(123, 84, 143);
-$color__text-carte--impair: white;
-
+$color__background-carte:  lightgray;
+$color__text-carte: black;
 
 /* ===== LIENS ===== */
-$color__link: white; 
-$color__link-visited: lightgray; 
+$color__link: black; 
+$color__link-visited: gray; 
 $color__link-hover: white;
-$color__background-link-hover: rgb(50, 135, 126);
+$color__background-link-hover: rgb(255, 111, 0);

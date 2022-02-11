@@ -9,8 +9,9 @@ Text Domain: cidw-4w4
 */
 
 /* ===== INITIALISATION ===== */
-@import "initialisation/_normalize";
-@import "initialisation/_boxsize";
+@import "initialisation/normalize";
+@import "initialisation/boxsize";
+@import "initialisation/global";
 
 /* ===== VARIABLES ===== */
 @import "variables/couleurs";

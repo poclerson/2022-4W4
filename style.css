@@ -330,19 +330,22 @@ html {
   box-sizing: border-box;
 }
 
+body {
+  font-family: 'Josefin Sans', sans-serif;
+}
+
 /* ===== VARIABLES ===== */
 /* ===== ÉLÉMENTS PRINCIPAUX ===== */
+/* --- Header --- */
 /* --- Footer --- */
 /* ===== ÉLÉMENTS SECONDAIRES ===== */
 /* --- Carte --- */
-/* Pair */
-/* Impair */
 /* ===== LIENS ===== */
 /* ===== LAYOUT ===== */
 .site {
   font-size: 12px;
-  background-color: #f49847;
-  gap: 10px;
+  background-color: black;
+  gap: 2px;
   display: grid;
   grid-template-columns: auto;
   grid-template-areas: "sidebar" "header" "main" "footer";
@@ -357,32 +360,32 @@ html {
 
 .site__header {
   grid-area: header;
-  background-color: #7b548f;
+  background-color: black;
 }
 
 .site__barre {
   grid-area: sidebar;
-  background-color: #32877e;
+  background-color: white;
 }
 
 .site__main {
   grid-area: main;
-  background-color: #32877e;
+  background-color: white;
 }
 
 .site__footer {
   grid-area: footer;
-  background-color: #32877e;
+  background-color: gray;
 }
 
 /* ===== ELEMENTS ===== */
 a {
   display: block;
-  color: white;
+  color: black;
 }
 
 a:visited {
-  color: lightgray;
+  color: gray;
 }
 
 a:hover, a:focus, a:active {
@@ -401,9 +404,10 @@ a:hover, a:active {
 .site__main {
   display: flex;
   flex-wrap: wrap;
-  background-color: #32877e;
+  background-color: white;
   justify-content: space-evenly;
-  row-gap: 20px;
+  row-gap: 1rem;
+  padding: 1rem;
 }
 
 .main__titre {
@@ -415,14 +419,14 @@ a:hover, a:active {
 .carte {
   display: flex;
   flex-direction: column;
-  border: 1px solid 1px;
   /* Largeur adaptative */
   /* Mobile */
   width: 100%;
   /* Tablettes */
   /* Desktop */
   padding: 10px;
-  border-radius: 25px;
+  background-color: lightgray;
+  color: black;
 }
 
 @media screen and (min-width: 600px) {
@@ -435,16 +439,6 @@ a:hover, a:active {
   .carte {
     width: 30%;
   }
-}
-
-.carte:nth-child(even) {
-  background-color: #f49847;
-  color: black;
-}
-
-.carte:nth-child(odd) {
-  background-color: #7b548f;
-  color: white;
 }
 
 .carte .carte__sigle {
@@ -465,6 +459,7 @@ a:hover, a:active {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  padding: 2rem;
 }
 
 @media screen and (min-width: 600px) {
@@ -477,17 +472,24 @@ a:hover, a:active {
 
 .site__header__titre {
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  margin: 2rem 0;
 }
 
 .site__header__titre h1 {
   font-family: "Josefin Sans", sans-serif;
   font-size: clamp(0.8rem, 8vw, 10rem);
+  color: #ff6f00;
+  margin-block-start: 0;
+  margin-block-end: 0;
 }
 
 .site__header__titre h2 {
   font-family: "Josefin Sans", sans-serif;
   font-size: clamp(0.6rem, 3.5vw, 5rem);
+  color: white;
+  margin-block-start: 0;
+  margin-block-end: 0;
 }
 
 .site__header__util {
@@ -523,8 +525,8 @@ form.recherche__bouton {
 .site__footer {
   padding: 20px;
   display: flex;
-  background-color: #32877e;
-  color: white;
+  background-color: gray;
+  color: black;
 }
 
 .site__footer > * {
@@ -558,7 +560,7 @@ nav.menu-principal-container ul.menu li.menu-item a {
 }
 
 nav.menu-principal-container ul.menu li.menu-item a:hover {
-  background-color: #32877e;
+  background-color: #ff6f00;
 }
 
 /* Bouton burger */

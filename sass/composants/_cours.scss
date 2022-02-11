@@ -3,7 +3,8 @@
     flex-wrap: wrap;
     background-color: $color__background-main;
     justify-content: space-evenly;
-    row-gap: 20px;
+    row-gap: 1rem;
+    padding: 1rem;
 }
 
 .main__titre {
@@ -16,7 +17,6 @@
 .carte {
     display: flex;
     flex-direction: column;
-    border: 1px solid 1px;
 
     /* Largeur adaptative */
     /* Mobile */
@@ -33,17 +33,9 @@
     }
 
     padding: 10px;
-    border-radius: 25px;
 
-    &:nth-child(even) {
-        background-color: $color__background-carte--pair;
-        color: $color__text-carte--pair;
-    }
-
-    &:nth-child(odd) {
-        background-color: $color__background-carte--impair;
-        color: $color__text-carte--impair;
-    }
+    background-color: $color__background-carte;
+    color: $color__text-carte;
 
     .carte__sigle {
         font-weight: bold;

@@ -12,6 +12,8 @@
     </div>
     <div class="footer__adresse">
         3800 Sherbrooke Est, Montréal
+        <?php wp_nav_menu(array("menu" => "simple",
+                                "container" => "nav")); ?>
     </div>
 <?php wp_footer(); ?>
 </body>
