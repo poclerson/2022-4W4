@@ -334,13 +334,12 @@ body {
   font-family: 'Josefin Sans', sans-serif;
 }
 
-::selection {
-  background-color: red;
-}
-
 /* ===== VARIABLES ===== */
 /* ===== GLOBAL ===== */
 /* ===== ÉLÉMENTS PRINCIPAUX ===== */
+/* --- Main --- */
+/* --- Sidebar --- */
+/* Navigation */
 /* --- Header --- */
 /* --- Footer --- */
 /* ===== ÉLÉMENTS SECONDAIRES ===== */
@@ -554,13 +553,17 @@ form.recherche__bouton {
 }
 
 nav.menu-principal-container {
-  display: none;
-  padding: 30px 0 0 0;
+  padding: 15px;
+  background-color: white;
+  width: 100vw;
+  transform: translateY(-100vh);
+  transition: transform .5s ease-in-out;
 }
 
 @media screen and (min-width: 600px) {
   nav.menu-principal-container {
     display: block;
+    padding: 30px 0 0 0;
   }
 }
 
@@ -590,8 +593,8 @@ input.input-burger {
 label.bouton-burger {
   display: block;
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 15px;
+  left: 15px;
   transform: rotate(0deg);
   transition: transform .5s;
 }
@@ -607,13 +610,21 @@ label.bouton-burger {
 }
 
 #input-burger__menu-principal:checked ~ nav.menu-principal-container {
-  display: block;
+  transform: translateY(0);
+  transition: transform .5s ease-in-out;
 }
 
 .site__barre {
+  height: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+@media screen and (min-width: 600px) {
+  .site__barre {
+    height: unset;
+  }
 }
 
 .site__barre nav {
