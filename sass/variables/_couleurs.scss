@@ -1,3 +1,6 @@
+/* ===== GLOBAL ===== */
+$color__background-selection: rgb(255, 111, 0); 
+
 /* ===== ÉLÉMENTS PRINCIPAUX ===== */
 $color__background-body:  black;
 $color__background-main: white;
@@ -16,6 +19,8 @@ $color__text-footer: black;
 /* --- Carte --- */
 $color__background-carte:  lightgray;
 $color__text-carte: black;
+$color__text-carte__titre: rgb(255, 111, 0);
+$color__background-carte__titre: black;
 
 /* ===== LIENS ===== */
 $color__link: black; 

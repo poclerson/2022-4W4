@@ -334,7 +334,12 @@ body {
   font-family: 'Josefin Sans', sans-serif;
 }
 
+::selection {
+  background-color: red;
+}
+
 /* ===== VARIABLES ===== */
+/* ===== GLOBAL ===== */
 /* ===== ÉLÉMENTS PRINCIPAUX ===== */
 /* --- Header --- */
 /* --- Footer --- */
@@ -419,14 +424,16 @@ a:hover, a:active {
 .carte {
   display: flex;
   flex-direction: column;
+  padding: 10px;
+  background-color: lightgray;
+  color: black;
+  transform: scale(1);
+  transition: transform .25s ease-in-out;
   /* Largeur adaptative */
   /* Mobile */
   width: 100%;
   /* Tablettes */
   /* Desktop */
-  padding: 10px;
-  background-color: lightgray;
-  color: black;
 }
 
 @media screen and (min-width: 600px) {
@@ -439,6 +446,18 @@ a:hover, a:active {
   .carte {
     width: 30%;
   }
+}
+
+.carte:hover {
+  transform: scale(1.05);
+  transition: transform .1s ease-in-out;
+}
+
+.carte__titre {
+  background-color: black;
+  color: #ff6f00;
+  padding: .5rem;
+  width: 100%;
 }
 
 .carte .carte__sigle {
