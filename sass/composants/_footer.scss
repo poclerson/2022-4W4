@@ -17,9 +17,20 @@
             list-style: none;
             padding-inline-start: 0;
 
-            li.page-item {
+            li.page_item {
                 font-size: 1.5rem;
             }
+        }
+    }
+}
+
+.footer__menu__ul {
+    
+    li.menu-item {
+
+        a {
+            text-decoration: none;
+            padding: 5px;
         }
     }
 }

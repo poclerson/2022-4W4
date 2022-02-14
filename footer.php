@@ -11,8 +11,10 @@
         </ul>
     </div>
     <div class="footer__nav">
-        <?php wp_nav_menu(array("menu" => "simple",
-                                "container" => "nav")); ?>
+        <?php wp_nav_menu(array("menu" => "Footer",
+                                "container" => "nav",
+                                "container_class" => "site__footer__nav",
+                                "menu_class" => "footer__menu__ul")); ?>
     </div>
 <?php wp_footer(); ?>
 </body>

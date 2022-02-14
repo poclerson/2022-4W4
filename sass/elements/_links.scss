@@ -1,15 +1,19 @@
-a {
-    display:block;
-	color: $color__link;
+/* 
+	Les mixins permettent de faire des templates de CSS et de les populer avec des variables 
+	C'est l'équivalent des fonctions dans n'importe quel language de programmation
+*/
+@mixin links($color, $color-visited, $color-hover, $color__background-hover) {
+    display: block;
+	color: $color;
 
 	&:visited {
-		color: $color__link-visited;
+		color: $color-visited;
 	}
 
 	&:hover,
 	&:focus,
 	&:active {
-		color: $color__link-hover;
+		color: $color-hover;
 	}
 
 	&:focus {
@@ -20,4 +24,42 @@ a {
 	&:active {
 		outline: 0;
 	}
+}
+
+.site__footer a {
+    display: block;
+	color: $color-footer;
+
+	&:visited {
+		color: $color-footer-visited;
+	}
+
+	&:hover,
+	&:focus,
+	&:active {
+		color: $color-footer-hover;
+	}
+
+	&:focus {
+		outline: thin dotted;
+	}
+
+	&:hover,
+	&:active {
+		outline: 0;
+	}
+}
+
+a {
+	@include links(	$color__link, 
+					$color__link-visited, 
+					$color__link-hover, 
+					$color__background-link-hover);
+}
+
+.site__footer a {
+	@include links(	$color__link-footer, 
+					$color__link-footer-visited, 
+					$color__link-footer-hover, 
+					$color__background-link-footer-hover);
 }

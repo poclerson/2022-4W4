@@ -13,7 +13,7 @@ $color__background-barre: white;
 $color__background-nav: white;
 
 /* --- Header --- */
-$color__background-header: black;
+$color__background-header: blue;
 $color__text-header__principal: rgb(255, 111, 0);
 $color__text-header__secondaire: white;
 
@@ -29,7 +29,14 @@ $color__text-carte__titre: rgb(255, 111, 0);
 $color__background-carte__titre: black;
 
 /* ===== LIENS ===== */
+/* --- Principaux --- */
 $color__link: black; 
 $color__link-visited: gray; 
 $color__link-hover: white;
 $color__background-link-hover: rgb(255, 111, 0);
+
+/* --- Footer --- */
+$color__link-footer: rgb(255, 111, 0);
+$color__link-footer-visited: rgb(255, 171, 107);
+$color__link-footer-hover: white;
+$color__background-link-footer-hover: rgb(255, 111, 0);
