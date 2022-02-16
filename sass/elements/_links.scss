@@ -14,30 +14,7 @@
 	&:focus,
 	&:active {
 		color: $color-hover;
-	}
-
-	&:focus {
-		outline: thin dotted;
-	}
-
-	&:hover,
-	&:active {
-		outline: 0;
-	}
-}
-
-.site__footer a {
-    display: block;
-	color: $color-footer;
-
-	&:visited {
-		color: $color-footer-visited;
-	}
-
-	&:hover,
-	&:focus,
-	&:active {
-		color: $color-footer-hover;
+		background-color: $color__background-hover;
 	}
 
 	&:focus {

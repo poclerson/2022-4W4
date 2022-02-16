@@ -22,8 +22,8 @@
     /* Enregistrer les menus */
     function cidw_4w4_enregistrer_menu() {
         register_nav_menus(array(
-                                'principal' => esc_html__('Principal', 'cidw_4w4'),
-                                'footer' => esc_html__('Footer', 'cidw_4w4')));
+                                'principal' => __('Principal', 'cidw_4w4'),
+                                'footer' => __('Footer', 'cidw_4w4')));
     }
 
     add_action('after_setup_theme', 'cidw_4w4_enregistrer_menu');

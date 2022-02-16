@@ -2,6 +2,7 @@
 /**
 Theme name: Exercice 1 Pierre-Olivier Clerson
 Author: Pierre-Olivier Clerson
+Author URI: https://github.com/poclerson/4w4-ex1
 Description: Exercice dans le cadre du cours 4W4
 Version: 1.0
 Requires PHP: 7.0
@@ -345,6 +346,8 @@ body {
 /* ===== ÉLÉMENTS SECONDAIRES ===== */
 /* --- Carte --- */
 /* ===== LIENS ===== */
+/* --- Principaux --- */
+/* --- Footer --- */
 /* ===== LAYOUT ===== */
 .site {
   font-size: 12px;
@@ -383,6 +386,10 @@ body {
 }
 
 /* ===== ELEMENTS ===== */
+/* 
+	Les mixins permettent de faire des templates de CSS et de les populer avec des variables 
+	C'est l'équivalent des fonctions dans n'importe quel language de programmation
+*/
 a {
   display: block;
   color: black;
@@ -394,6 +401,7 @@ a:visited {
 
 a:hover, a:focus, a:active {
   color: white;
+  background-color: #ff6f00;
 }
 
 a:focus {
@@ -401,6 +409,28 @@ a:focus {
 }
 
 a:hover, a:active {
+  outline: 0;
+}
+
+.site__footer a {
+  display: block;
+  color: #ff6f00;
+}
+
+.site__footer a:visited {
+  color: #ffab6b;
+}
+
+.site__footer a:hover, .site__footer a:focus, .site__footer a:active {
+  color: white;
+  background-color: #ff6f00;
+}
+
+.site__footer a:focus {
+  outline: thin dotted;
+}
+
+.site__footer a:hover, .site__footer a:active {
   outline: 0;
 }
 
@@ -541,14 +571,43 @@ form.recherche__bouton {
 }
 
 .site__footer {
-  padding: 20px;
   display: flex;
   background-color: gray;
   color: black;
 }
 
+.site__footer .footer__desc {
+  flex: 3;
+  background-color: #ff6f00;
+  padding: 20px;
+}
+
+.site__footer .footer__desc__titre {
+  color: red;
+}
+
+.site__footer__menu {
+  flex: 1;
+}
+
+.site__footer__menu__ul {
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+}
+
+.site__footer__menu__ul li.menu-item a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  padding: 5px;
+}
+
+.site__footer__menu__ul li.menu-item a svg {
+  color: red;
+}
+
 .site__footer > * {
-  margin: 0 20px;
   flex: 1;
 }
 
