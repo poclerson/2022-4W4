@@ -11,7 +11,8 @@
         padding: 20px;
 
         &__titre {
-            color: red;
+            color: white;
+            font-size: clamp(2em, 5vw, 4em);
         }
 
         &__info {
@@ -21,28 +22,44 @@
 
     &__menu {
         flex: 1;
+
         &__ul {
             display: flex;
+            flex-direction: column;
             justify-content: center;
             list-style-type: none;
 
             li.menu-item {
-
+                display: inline-block;
+                
                 a {
-                    display: flex;
+                    display: inline-flex;
                     align-items: center;
                     text-decoration: none;
-                    padding: 5px;
+                    padding: 10px;
+                    border-radius: 5px;
         
                     svg {
-                        color: red;
+                        color: white;
+                        margin-right: 5px;
+                    }
+                }
+
+                // li.menu-item
+                &:hover {
+                    a {
+                        color: black;
+
+                        svg {
+                            color: black;
+                        }
                     }
                 }
             }
         }
     }
 
-    & > * {
+    > * {
         flex: 1;
     }
 }

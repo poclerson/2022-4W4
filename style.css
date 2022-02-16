@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /**
-Theme name: Exercice 1 Pierre-Olivier Clerson
+Theme name: Lab 4 Pierre-Olivier Clerson
 Author: Pierre-Olivier Clerson
 Author URI: https://github.com/poclerson/4w4-ex1
 Description: Exercice dans le cadre du cours 4W4
@@ -583,7 +583,8 @@ form.recherche__bouton {
 }
 
 .site__footer .footer__desc__titre {
-  color: red;
+  color: white;
+  font-size: clamp(2em, 5vw, 4em);
 }
 
 .site__footer__menu {
@@ -592,19 +593,34 @@ form.recherche__bouton {
 
 .site__footer__menu__ul {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   list-style-type: none;
 }
 
+.site__footer__menu__ul li.menu-item {
+  display: inline-block;
+}
+
 .site__footer__menu__ul li.menu-item a {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   text-decoration: none;
-  padding: 5px;
+  padding: 10px;
+  border-radius: 5px;
 }
 
 .site__footer__menu__ul li.menu-item a svg {
-  color: red;
+  color: white;
+  margin-right: 5px;
+}
+
+.site__footer__menu__ul li.menu-item:hover a {
+  color: black;
+}
+
+.site__footer__menu__ul li.menu-item:hover a svg {
+  color: black;
 }
 
 .site__footer > * {
