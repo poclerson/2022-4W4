@@ -9,7 +9,12 @@
             $mon_titre_filtre = substr($mon_titre_filtre, 0, strrpos($mon_titre_filtre, '('));
             ?>
             <section class="carte">
-                <h3 class="carte__titre"><?= $mon_titre_filtre ?></h3>
+                <?php the_post_thumbnail(); ?>
+                <h3 class="carte__titre">
+                    <a href="<?= get_permalink(); ?>">
+                        <?= $mon_titre_filtre ?>
+                    </a>
+                </h3>
                 <p class="carte__sigle"><?= $mon_sigle ?></p>
                 <p class="carte__desc"><?= get_the_excerpt(); ?></p>
             </section>     

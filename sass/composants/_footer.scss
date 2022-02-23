@@ -1,5 +1,6 @@
 .site__footer {
     display: flex;
+    flex-direction: column;
 
     background-color: $color__background-footer;
     color: $color__text-footer;

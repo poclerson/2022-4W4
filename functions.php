@@ -41,5 +41,8 @@
         return $objet;
     }
 
-    add_filter("wp_nav_menu_objects", "cidw_4w4_filtrer_menu")
+    add_filter("wp_nav_menu_objects", "cidw_4w4_filtrer_menu");
+
+    /* Ajouter le support du thème */
+    add_theme_support('post-thumbnails');
 ?>
