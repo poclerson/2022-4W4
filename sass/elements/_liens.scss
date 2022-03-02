@@ -1,0 +1,126 @@
+@mixin links($color, $color-visited, $color-hover, $color__background-hover) {
+	display: inline-block;
+	text-decoration: none;
+	padding: 10px;
+	color: $color;
+	box-sizing: border-box;
+	border: 2px solid transparent;
+
+	&:visited {
+		color: $color-visited;
+		opacity: .8;
+
+		svg {
+			color: $color-visited;
+		}
+	}
+
+	&:hover,
+	&:focus,
+	&:active {
+		color: $color-hover;
+		background-color: $color__background-hover;
+		border-radius: 5px;
+		border: 2px solid $color-hover;
+
+		svg {
+			color: $color-hover;
+			background-color: $color__background-hover;
+		}
+	}
+
+	svg {
+		color: $color;
+	}
+}
+
+a {
+	@include links(	
+		$sombre, 
+		$sombre, 
+		$clair, 
+		$accents);
+}
+
+.site__header a {
+	@include links(
+		$accents,
+		$accents,
+		$clair,
+		$sombre
+	)
+}
+
+.site__footer a {
+	@include links(	
+		$clair, 
+		$sombre, 
+		$clair, 
+		$accents);
+}
+
+.carte a {
+	@include links(
+		$sombre,
+		$alternative,
+		$accents,
+		$clair
+	)
+}
+
+@mixin burger (
+	$position-haut,
+	$position-gauche,
+	$position-bas,
+	$position-droite,
+
+	$couleur-fond,
+	$couleur-icone
+) {
+	cursor: pointer;
+	position: fixed;
+	z-index: 100;
+	top: $position-haut;
+	left: $position-gauche;
+	bottom: $position-bas;
+	right: $position-droite;
+
+	background-color: $couleur-fond;
+	padding: 10px;
+	border-radius: 5px;
+	box-shadow: $ombre-petite;
+
+	svg {
+		color: $couleur-icone;
+	}
+
+	& ~ .burger__checkbox {
+		display: none;
+	}
+}
+
+.burger__etiquette[for="site__header__util-checkbox"] {
+	@include burger(
+		15px,
+		unset,
+		unset,
+		15px,
+
+		$clair,
+		$accents
+	)
+}
+
+.burger__etiquette[for="site__barre__menu-principal-container-checkbox"] {
+	@include burger(
+		15px,
+		15px,
+		unset,
+		unset,
+
+		$accents,
+		$clair
+	)
+}
+
+

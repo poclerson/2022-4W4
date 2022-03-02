@@ -2,17 +2,17 @@
     display: flex;
     flex-direction: column;
 
-    background-color: $color__background-footer;
-    color: $color__text-footer;
+    background-color: $alternative;
+    color: $sombre;
 
     .footer__desc {
         flex: 3;
 
-        background-color: rgb(255, 111, 0);
+        background-color: $accents;
         padding: 20px;
 
         &__titre {
-            color: white;
+            color: $clair;
             font-size: clamp(2em, 5vw, 4em);
         }
 
@@ -22,6 +22,7 @@
     }
 
     &__menu {
+        font-size: 2em;
         flex: 1;
 
         &__ul {
@@ -31,7 +32,7 @@
             list-style-type: none;
 
             li.menu-item {
-                display: inline-block;
+                display: inline;
                 
                 a {
                     display: inline-flex;
@@ -41,19 +42,7 @@
                     border-radius: 5px;
         
                     svg {
-                        color: white;
                         margin-right: 5px;
-                    }
-                }
-
-                // li.menu-item
-                &:hover {
-                    a {
-                        color: black;
-
-                        svg {
-                            color: black;
-                        }
                     }
                 }
             }

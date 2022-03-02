@@ -17,55 +17,57 @@
         flex-direction: column;
         margin: 2rem 0;
 
+        h1, h2 {
+            margin-block-start: 0;
+            margin-block-end: 0;
+        }
+
         h1 {
             font-family: $font__header-h1;
             font-size: clamp(.8rem, 8vw, 10rem);
-            color: $color__text-header__principal;
-            margin-block-start: 0;
-            margin-block-end: 0;
         }
 
         h2 {
             font-family: $font__header-h2;
             font-size: clamp(.6rem, 3.5vw , 5rem);
-            color: $color__text-header__secondaire;
-            margin-block-start: 0;
-            margin-block-end: 0;
+            color: $clair;
         }
     } 
 
+    // Fonctionnement du menu burger grâce à la checkbox
+    #site__header__util-checkbox:checked ~ .site__header__util {
+        transform: translate(0);
+    }
+
     &__util {
+        transform: translateX(100%);
+        transition: transform .5s;
+
         display: flex;
         flex-direction: column;
         align-items: center;
+
+        position: fixed;
+        right: 0;
+        background-color: $clair;
+        border: 2px solid $sombre;
+        padding: 1em;
+        border-radius: 5px 0 0 5px;
     }
 }
 
 .icone {
     display: flex;
+    flex-direction: column;
+
+    @media screen and (min-width: $largeur__media-tablette) {
+        flex-direction: row;
+    }
+
+    margin: 20px 0;
 
     &__lien {
 
     }
     
-}
-
-/* ===== RECHERCHE ===== */
-form.recherche {
-    position: relative;
-    display: flex;
-    align-items: center;
-
-    &__input {
-        outline: none;
-    }
-
-    &__bouton {
-        position: absolute;
-        width: 1em;
-        outline: none;
-        border: none;
-        padding: 0;
-        margin: 0;
-    }
 }

@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 <main class="site__main">
-<h2 class="main__titre">Liste des cours</h2>
+<h1 class="site__main__titre">Liste des cours</h1>
     <?php if (have_posts()): ?>
         <?php while (have_posts()): the_post(); 
             $mon_titre_filtre = substr(get_the_title(), 8);

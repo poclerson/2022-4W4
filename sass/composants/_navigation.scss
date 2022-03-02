@@ -1,9 +1,10 @@
 nav.menu-principal-container {
     padding: 15px;
-    background-color: $color__background-nav;
+    background-color: $clair;
+    font-size: 1.5em;
     width: 100vw;
 
-    transform: translateY(-100vh);
+    transform: translateY(-120vh);
     transition: transform .5s ease-in-out;
 
     @media screen and (min-width: $largeur__media-tablette) {
@@ -27,39 +28,9 @@ nav.menu-principal-container {
                 font-family: $font__nav-a;
 
                 &:hover {
-                    background-color: $color__background-link-hover;
+                    background-color: $accents;
                 }
             }
         }
     }
-}
-
-/* Bouton burger */
-input.input-burger {
-    display: none;
-}
-
-label.bouton-burger {
-    display: block;
-
-    position: absolute;
-    top: 50px;
-    left: 15px;
-    z-index: 2;
-
-    transform: rotate(0deg);
-    transition: transform .5s;
-
-    @media screen and (min-width: $largeur__media-tablette) {
-        display: none;
-    }
-}
-
-#input-burger__menu-principal:checked ~ label.bouton-burger {
-    transform: rotate(360deg);
-}
-
-#input-burger__menu-principal:checked ~ nav.menu-principal-container {
-    transform: translateY(0);
-    transition: transform .5s ease-in-out;
 }

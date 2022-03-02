@@ -1,42 +1,9 @@
-/* ===== GLOBAL ===== */
-$color__background-selection: rgb(255, 111, 0); 
-$color__background-body:  black;
+$sombre: black;
+$clair: white;
+$texte-sombre: black;
+$texte-clair: white;
+$alternative: gray;
+$accents: rgb(255, 111, 0);
+$accents__estompe: rgb(255, 184, 129);
 
-/* ===== ÉLÉMENTS PRINCIPAUX ===== */
-/* --- Main --- */
-$color__background-main: white;
-
-/* --- Sidebar --- */
-$color__background-barre: white;
-
-/* Navigation */
-$color__background-nav: white;
-
-/* --- Header --- */
-$color__background-header: black;
-$color__text-header__principal: rgb(255, 111, 0);
-$color__text-header__secondaire: white;
-
-/* --- Footer --- */
-$color__background-footer: gray;
-$color__text-footer: black;
-
-/* ===== ÉLÉMENTS SECONDAIRES ===== */
-/* --- Carte --- */
-$color__background-carte:  lightgray;
-$color__text-carte: black;
-$color__text-carte__titre: rgb(255, 111, 0);
-$color__background-carte__titre: black;
-
-/* ===== LIENS ===== */
-/* --- Principaux --- */
-$color__link: black; 
-$color__link-visited: gray; 
-$color__link-hover: white;
-$color__background-link-hover: rgb(255, 111, 0);
-
-/* --- Footer --- */
-$color__link-footer: rgb(255, 111, 0);
-$color__link-footer-visited: rgb(255, 171, 107);
-$color__link-footer-hover: white;
-$color__background-link-footer-hover: rgb(255, 111, 0);
+$ombre-petite: 2.5px 2.5px 5px rgba(0, 0, 0, .5);

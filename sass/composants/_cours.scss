@@ -1,27 +1,13 @@
-.site__main {
-    display: flex;
-    flex-wrap: wrap;
-    background-color: $color__background-main;
-    justify-content: space-evenly;
-    row-gap: 1rem;
-    padding: 1rem;
-}
-
-.main__titre {
-    font-size: 2rem;
-    width: 100%;
-    display: block;
-
-}
-
 .carte {
     display: flex;
     flex-direction: column;
 
-    padding: 10px;
+    padding: 2em;
 
-    background-color: $color__background-carte;
-    color: $color__text-carte;
+    background-color: $clair;
+    color: $sombre;
+    border: 2px solid $sombre;
+    border-radius: 10px;
 
     transform: scale(1);
     transition: transform .25s ease-in-out;
@@ -46,22 +32,37 @@
     }
 
     &__titre {
-        background-color: $color__background-carte__titre;
-        color: $color__text-carte__titre;
         padding: .5rem;
         width: 100%;
-    }
-
-    .carte__sigle {
-        font-weight: bold;
-        text-decoration: underline;
-    }
-
-    .carte__titre {
         font-size: 1.5rem;
+        border-radius: 5px;
+        font-weight: bold;
+        text-decoration: none;
+
+        h3 {
+            margin-block-start: 0;
+            margin-block-end: 0;
+        }
+    }
+
+    &__sigle {
+        font-weight: bold;
+        text-decoration: none;
+        font-size: 2em;
+        margin: 1em 0;
+
+        &__contenu {
+            display: inline;
+            background-color: $sombre;
+            color: $clair;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: $ombre-petite;
+        }
     }
     
-    .carte__contenu {
+    &__desc {
         font-size: .8rem;
+        text-align: justify;
     }
 }

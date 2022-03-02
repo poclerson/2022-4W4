@@ -12,4 +12,20 @@
     & nav {
         padding: 20px;
     }
+
+    /**
+     * CONTINUER ICI
+     * Le setup pour afficher le bouton burger du menu principal marche pas encore
+     * Mais tout le reste oui
+     */
+    label.burger__etiquette[for="site__barre__menu-principal-container-checkbox"] {
+        @media screen and (min-width: $largeur__media-tablette) {
+            display: none;
+        }
+    }
+
+    #site__barre__menu-principal-container-checkbox:checked ~ nav.menu-principal-container {
+        transform: translateY(0);
+        transition: transform .5s ease-in-out;
+    }
 }

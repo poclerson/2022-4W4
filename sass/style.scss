@@ -12,7 +12,6 @@ Text Domain: cidw-4w4
 /* ===== INITIALISATION ===== */
 @import "initialisation/normalize";
 @import "initialisation/boxsize";
-@import "initialisation/global";
 
 /* ===== VARIABLES ===== */
 @import "variables/couleurs";
@@ -23,7 +22,7 @@ Text Domain: cidw-4w4
 @import "layout/_layout";
 
 /* ===== ELEMENTS ===== */
-@import "elements/links";
+@import "elements/liens";
 
 /* ===== COMPOSANTS ===== */
 @import "composants/cours";
@@ -35,3 +34,13 @@ Text Domain: cidw-4w4
 @import "composants/single-post";
 @import "composants/single-cours";
 @import "composants/recherche";
+@import "composants/search";
+
+body {
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+::selection {
+    color: $clair;
+    background-color: $accents;
+}
