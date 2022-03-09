@@ -1,10 +1,28 @@
 .cours {
-    &__titre {
-        font-size: 2em;
-    }
+    display: inline-flex;
+    flex-direction: column;
 
     &__image {
+        width: 100%;
+        
+        img {
+            width: 100%;
+            height: 25em;
+            object-fit: cover;
+        }
+    }
 
+    &__titre {
+        font-size: 4em;
+    }
+
+    &__duree {
+
+        @include etiquette(
+            2em,
+            $sombre,
+            $clair
+        )
     }
 
     &__contenu {

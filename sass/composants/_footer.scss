@@ -1,55 +1,78 @@
 .site__footer {
-    display: flex;
-    flex-direction: column;
+    background-color: $accents;
+    padding: 15px;
+    
+    ul {
+        list-style-type: none;
+    }
 
-    background-color: $alternative;
-    color: $sombre;
+    & > * {
+        display: flex;
 
-    .footer__desc {
-        flex: 3;
+        section {
+            display: flex;
+            flex: 1;
+        }
+    }
 
-        background-color: $accents;
-        padding: 20px;
+    &__colonne {
+        justify-content: space-between;
+        flex-direction: row;
 
-        &__titre {
-            color: $clair;
-            font-size: clamp(2em, 5vw, 4em);
+        & > * {
+            margin: 2em;
+            padding: 1em;
+            background-color: $clair;
+            color: $sombre;
+            border-radius: 5px;
         }
 
-        &__info {
+        &__adresse {
+
+        }
+
+        &__article {
+
+        }
+
+        &__lien {
+
+        }
+    }
+
+    &__ligne {
+        flex-direction: column;
+        align-items: center;
+
+        & > * {
+            padding: 15px;
+        }
+
+        &__desc {
+
+        }
+
+        &__droits {
+
+        }
+
+        &__auteur {
 
         }
     }
 
     &__menu {
-        font-size: 2em;
-        flex: 1;
-
         &__ul {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            list-style-type: none;
-
-            li.menu-item {
-                display: inline;
-                
+            .menu-item {
                 a {
-                    display: inline-flex;
+                    display: flex;
                     align-items: center;
-                    text-decoration: none;
-                    padding: 10px;
-                    border-radius: 5px;
-        
+
                     svg {
-                        margin-right: 5px;
+                        margin-right: .5em;
                     }
                 }
             }
         }
-    }
-
-    > * {
-        flex: 1;
     }
 }

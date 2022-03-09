@@ -46,19 +46,11 @@
     }
 
     &__sigle {
-        font-weight: bold;
-        text-decoration: none;
-        font-size: 2em;
-        margin: 1em 0;
-
-        &__contenu {
-            display: inline;
-            background-color: $sombre;
-            color: $clair;
-            padding: 10px;
-            border-radius: 5px;
-            box-shadow: $ombre-petite;
-        }
+        @include etiquette(
+            1.5em,
+            $sombre,
+            $clair
+        )
     }
     
     &__desc {

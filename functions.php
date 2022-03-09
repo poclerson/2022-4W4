@@ -22,8 +22,9 @@
     /* Enregistrer les menus */
     function cidw_4w4_enregistrer_menu() {
         register_nav_menus(array(
-                                'principal' => __('Principal', 'cidw_4w4'),
-                                'footer' => __('Footer', 'cidw_4w4')));
+            'principal' => __('Principal', 'cidw_4w4'),
+            'footer' => __('Footer', 'cidw_4w4'),
+            'footer-liens' => __('Footer liens externes', 'cidw-4w4')));
     }
 
     add_action('after_setup_theme', 'cidw_4w4_enregistrer_menu');

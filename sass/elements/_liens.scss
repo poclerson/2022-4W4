@@ -1,36 +1,36 @@
-@mixin links($color, $color-visited, $color-hover, $color__background-hover) {
+@mixin links($couleur, $couleur__visite, $couleur__hover, $couleur-fond__hover) {
 	display: inline-block;
 	text-decoration: none;
 	padding: 10px;
-	color: $color;
+	color: $couleur;
 	box-sizing: border-box;
 	border: 2px solid transparent;
 
 	&:visited {
-		color: $color-visited;
+		color: $couleur__visite;
 		opacity: .8;
 
 		svg {
-			color: $color-visited;
+			color: $couleur__visite;
 		}
 	}
 
 	&:hover,
 	&:focus,
 	&:active {
-		color: $color-hover;
-		background-color: $color__background-hover;
+		color: $couleur__hover;
+		background-color: $couleur-fond__hover;
 		border-radius: 5px;
-		border: 2px solid $color-hover;
+		border: 2px solid $couleur__hover;
 
 		svg {
-			color: $color-hover;
-			background-color: $color__background-hover;
+			color: $couleur__hover;
+			background-color: $couleur-fond__hover;
 		}
 	}
 
 	svg {
-		color: $color;
+		color: $couleur;
 	}
 }
 
@@ -51,10 +51,18 @@ a {
 	)
 }
 
-.site__footer a {
+.site__footer .site__footer__menu a {
 	@include links(	
 		$clair, 
 		$sombre, 
+		$clair, 
+		$accents);
+}
+
+.site__footer .site__footer__colonne a {
+	@include links(	
+		$sombre, 
+		$clair, 
 		$clair, 
 		$accents);
 }
