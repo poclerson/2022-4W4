@@ -37,18 +37,14 @@
 }
 
 .site__header{
-    grid-area:header;
-    background-color: $sombre;
+    grid-area: header;
 }
 .site__barre{
     grid-area: sidebar;
-    background-color:  $clair;
 }
 .site__main{
-    grid-area:main;
-    background-color:  $clair;
+    grid-area: main;
 }
 .site__footer{
-    grid-area:footer;
-    background-color:  $accents;
+    grid-area: footer;
 }

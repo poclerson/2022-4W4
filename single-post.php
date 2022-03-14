@@ -14,14 +14,22 @@
                 </a>
             </h2>
 
-            <div class="cours__duree">
-                <h4 class="cours__duree__contenu">
-                    <?= la_duree(get_the_title()); ?>
-                </h4>
-            </div>
+            <section class="cours__etiquettes">
+                <div class="cours__etiquettes__duree">
+                    <h4 class="cours__etiquettes__duree__contenu">
+                        <?= la_duree(get_the_title()); ?>
+                    </h4>
+                </div>
+
+                <div class="cours__etiquettes__sigle">
+                    <h4 class="cours__etiquettes__sigle__contenu">
+                        <?= le_sigle(get_the_title()); ?>
+                    </h4>
+                </div>
+            </section>
             
             <p class="cours__contenu">
-                <?php the_content(); ?>
+                <?= get_the_content(); ?>
             </p>
         </article>
     <?php 

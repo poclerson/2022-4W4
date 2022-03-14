@@ -16,16 +16,22 @@
         font-size: 4em;
     }
 
-    &__duree {
+    &__etiquettes {
+        display: flex;
+        gap: 20px;
 
-        @include etiquette(
-            2em,
-            $sombre,
-            $clair
-        )
+        &__sigle,
+        &__duree {
+            @include etiquette(
+                2em,
+                $sombre,
+                $clair
+            )
+        } 
     }
 
     &__contenu {
-        font-size: 1.15em;
+        font-size: 1.5em;
+        text-align: justify;
     }
 }

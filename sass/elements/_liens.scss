@@ -1,4 +1,4 @@
-@mixin links($couleur, $couleur__visite, $couleur__hover, $couleur-fond__hover) {
+@mixin lien($couleur, $couleur__visite, $couleur__hover) {
 	display: inline-block;
 	text-decoration: none;
 	padding: 10px;
@@ -19,60 +19,16 @@
 	&:focus,
 	&:active {
 		color: $couleur__hover;
-		background-color: $couleur-fond__hover;
-		border-radius: 5px;
+		border-radius: 10px;
 		border: 2px solid $couleur__hover;
 
 		svg {
 			color: $couleur__hover;
-			background-color: $couleur-fond__hover;
 		}
 	}
 
 	svg {
 		color: $couleur;
 	}
-}
-
-a {
-	@include links(	
-		$sombre, 
-		$sombre, 
-		$clair, 
-		$accents);
-}
-
-.site__header a {
-	@include links(
-		$accents,
-		$accents,
-		$clair,
-		$sombre
-	)
-}
-
-.site__footer .site__footer__menu a {
-	@include links(	
-		$clair, 
-		$sombre, 
-		$clair, 
-		$accents);
-}
-
-.site__footer .site__footer__colonne a {
-	@include links(	
-		$sombre, 
-		$clair, 
-		$clair, 
-		$accents);
-}
-
-.carte a {
-	@include links(
-		$sombre,
-		$alternative,
-		$accents,
-		$clair
-	)
 }
 

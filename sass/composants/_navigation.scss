@@ -1,6 +1,6 @@
 nav.menu-principal-container {
     padding: 15px;
-    background-color: $clair;
+    background-color: $clr-fond__nav;
     font-size: 1.5em;
     width: 100vw;
 
@@ -25,11 +25,12 @@ nav.menu-principal-container {
             a {
                 padding: 5px;
                 text-decoration: none;
-                font-family: $font__nav-a;
 
-                &:hover {
-                    background-color: $accents;
-                }
+                @include lien (
+                    $clr-lien__nav,
+                    $clr-lien-visite__nav,
+                    $clr-lien-hover__nav
+                )
             }
         }
     }

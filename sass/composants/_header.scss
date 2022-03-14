@@ -1,4 +1,13 @@
 .site__header {
+    @include theme(
+        $clr-fond__hdr,
+        $clr-texte__hdr,
+        $clr-titre__hdr,
+        $clr-lien__hdr,
+        $clr-lien-visite__hdr,
+        $clr-lien-hover__hdr
+    );
+
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -30,16 +39,18 @@
         h2 {
             font-family: $font__header-h2;
             font-size: clamp(.6rem, 3.5vw , 5rem);
-            color: $clair;
         }
     } 
 
     // Fonctionnement du menu burger grâce à la checkbox
-    #site__header__util-checkbox:checked ~ .site__header__util {
+    #site__header__util-checkbox:checked ~ &__util {
         transform: translate(0);
     }
 
     &__util {
+
+        @include theme_clair();
+        
         transform: translateX(100%);
         transition: transform .5s;
 
@@ -49,10 +60,8 @@
 
         position: fixed;
         right: 0;
-        background-color: $clair;
-        border: 2px solid $sombre;
         padding: 1em;
-        border-radius: 5px 0 0 5px;
+        border-radius: 10px 0 0 10px;
     }
 }
 
@@ -65,9 +74,5 @@
     }
 
     margin: 20px 0;
-
-    &__lien {
-
-    }
     
 }

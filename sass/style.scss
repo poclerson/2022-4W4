@@ -29,20 +29,16 @@ Text Domain: cidw-4w4
 /* ===== COMPOSANTS ===== */
 @import "composants/cours";
 @import "composants/header";
-@import "composants/footer";
+@import "composants/footer"; 
 @import "composants/navigation";
 @import "composants/barre";
 @import "composants/404";
 @import "composants/single-post";
-@import "composants/single-cours";
 @import "composants/recherche";
 @import "composants/search";
+@import "composants/main";
 
+/* ===== GLOBAL ===== */ 
 body {
-    font-family: 'Josefin Sans', sans-serif;
-}
-
-::selection {
-    color: $clair;
-    background-color: $accents;
+    font-family: Helvetica, sans-serif;;
 }

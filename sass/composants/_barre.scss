@@ -1,4 +1,13 @@
 .site__barre {
+    @include theme(
+        $clr-fond__nav,
+        unset,
+        unset,
+        $clr-lien__nav,
+        $clr-lien-visite__nav,
+        $clr-lien-hover__nav
+    );
+    
     height: 0;
 
     @media screen and (min-width: $largeur__media-tablette) {
