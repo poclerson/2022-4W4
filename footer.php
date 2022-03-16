@@ -7,9 +7,7 @@
 
 <div class="site__footer__rangee">
     <section class="site__footer__rangee__desc">
-        <h1 class="site__footer__rangee__desc__titre">
-            4w4 Conception d'interface et développement web
-        </h1>
+        <h1 class="site__footer__rangee__desc__titre">4w4 Conception d'interface et développement web</h1>
     </section>
     <section class="site__footer__rangee__recherche"><?php get_search_form(); ?></section>
     <?php
