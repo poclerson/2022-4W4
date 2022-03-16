@@ -882,6 +882,11 @@ html {
   color: #181818;
 }
 
+.site__footer__colonne__adresse img {
+  animation: rgb 1s infinite;
+  filter: hue-rotate(200);
+}
+
 .site__footer__rangee {
   flex-direction: column;
   align-items: center;
@@ -935,6 +940,15 @@ html {
 
 .site__footer__rangee__sociaux .sidebar .widget ul li a svg {
   color: unset;
+}
+
+@keyframes rgb {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  100% {
+    filter: hue-rotate(360deg);
+  }
 }
 
 nav.menu-principal-container {

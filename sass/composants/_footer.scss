@@ -47,6 +47,13 @@
                 $clr-lien-hover__ftr-cln
             );
         }
+
+        &__adresse {
+            img {
+                animation: rgb 1s infinite;
+                filter: hue-rotate(200);
+            }
+        }
     }
 
     &__rangee {
@@ -93,4 +100,9 @@
             }
         }
     }
+}
+
+@keyframes rgb {
+    0% {filter: hue-rotate(0deg);}
+    100% {filter: hue-rotate(360deg);}
 }
