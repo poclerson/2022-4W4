@@ -1229,6 +1229,29 @@ form.recherche__bouton {
   margin-block-end: 0;
 }
 
+.home__titre {
+  animation: titre 5s infinite linear;
+  display: inline;
+}
+
+@keyframes titre {
+  0% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(30%, 0);
+  }
+  50% {
+    transform: translate(30%, 100%);
+  }
+  75% {
+    transform: translate(0%, 100%);
+  }
+  100% {
+    transform: translate(0%, 0%);
+  }
+}
+
 /* ===== GLOBAL ===== */
 body {
   font-family: Helvetica, sans-serif;
