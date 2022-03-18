@@ -3,7 +3,7 @@
     flex-direction: row;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 2rem;
 
     .carte {
         @include theme_clair;
@@ -11,6 +11,7 @@
     
         display: flex;
         flex-direction: column;
+        justify-content: space-between;
     
         padding: 2em;
     
@@ -67,9 +68,19 @@
             );
         }
         
-        &__desc {
-            font-size: .8rem;
-            text-align: justify;
+        &__miniature {
+            height: 10rem;
+            background: $clr-lien-hover__crt;
+            border-radius: 5px;
+            border: 2px solid $clr-texte__crt;
+
+            img {
+                width: 100%;
+                height: 100%;
+                filter: grayscale(100%);
+                opacity: .5;
+                object-fit: cover;
+            }
         }
     }
 }

@@ -394,6 +394,15 @@ html {
   }
 }
 
+@keyframes rgb {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}
+
 @keyframes changer-couleur__clair {
   from {
     color: #e4e4e4;
@@ -444,13 +453,14 @@ html {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
-  row-gap: 1rem;
-  padding: 1rem;
+  padding: 2rem;
 }
 
 .site__main__titre {
   font-size: 5rem;
   width: 100%;
+  margin-block-start: 0;
+  margin-block-end: 0;
 }
 
 @media screen and (min-width: 600px) {
@@ -535,7 +545,7 @@ html {
   flex-direction: row;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 2rem;
 }
 
 .categorie .carte {
@@ -543,6 +553,7 @@ html {
   color: #181818;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   padding: 2em;
   border: 2px solid #181818;
   border-radius: 10px;
@@ -693,9 +704,19 @@ html {
   box-shadow: 2.5px 2.5px 5px rgba(0, 0, 0, 0.5);
 }
 
-.categorie .carte__desc {
-  font-size: .8rem;
-  text-align: justify;
+.categorie .carte__miniature {
+  height: 10rem;
+  background: #ffa200;
+  border-radius: 5px;
+  border: 2px solid #181818;
+}
+
+.categorie .carte__miniature img {
+  width: 100%;
+  height: 100%;
+  filter: grayscale(100%);
+  opacity: .5;
+  object-fit: cover;
 }
 
 .site__header {
@@ -942,7 +963,7 @@ html {
 }
 
 .site__footer__colonne > * h1 {
-  color: #ffa200;
+  color: #181818;
 }
 
 .site__footer__colonne > * a {
@@ -1035,15 +1056,6 @@ html {
 
 .site__footer__rangee__sociaux .sidebar .widget ul li a svg {
   color: unset;
-}
-
-@keyframes rgb {
-  0% {
-    filter: hue-rotate(0deg);
-  }
-  100% {
-    filter: hue-rotate(360deg);
-  }
 }
 
 nav.menu-principal-container {

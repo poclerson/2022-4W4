@@ -11,15 +11,18 @@
         "footer";
 
     &__main {
+        @include theme_clair;
+        
         display: flex;
         flex-wrap: wrap;
         justify-content: space-evenly;
-        row-gap: 1rem;
-        padding: 1rem;
+        padding: 2rem;
 
         &__titre {
             font-size: 5rem;
             width: 100%;
+            margin-block-start: 0;
+            margin-block-end: 0;
         }
     }
 

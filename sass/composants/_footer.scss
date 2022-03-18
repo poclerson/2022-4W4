@@ -1,5 +1,5 @@
 .site__footer {
-    @include theme_sombre();
+    @include theme_sombre;
     
     ul {
         list-style-type: none;
@@ -31,14 +31,7 @@
             padding: 1em;
             border-radius: 10px;
 
-            @include theme (
-                $clr-fond__ftr-cln, 
-                $clr-texte__ftr-cln, 
-                $clr-titre__ftr-cln, 
-                $clr-lien__ftr-cln, 
-                $clr-lien-visite__ftr-cln, 
-                $clr-lien-hover__ftr-cln
-            );
+            @include theme_clair;
         }
 
         &__adresse {
@@ -93,9 +86,4 @@
             }
         }
     }
-}
-
-@keyframes rgb {
-    0% {filter: hue-rotate(0deg);}
-    100% {filter: hue-rotate(360deg);}
 }
