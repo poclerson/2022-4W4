@@ -6,8 +6,8 @@
     gap: 20px;
 
     .carte {
-
-        @include theme_clair();
+        @include theme_clair;
+        @include hover-ombre__rapide;
     
         display: flex;
         flex-direction: column;
@@ -34,7 +34,7 @@
         }
     
         &:hover {
-            @include theme_sombre();
+            @include theme_sombre;
 
             .carte__sigle {
                 @include etiquette(

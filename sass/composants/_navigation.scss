@@ -1,4 +1,5 @@
 nav.menu-principal-container {
+    @include theme_clair();
     padding: 15px;
     background-color: $clr-fond__nav;
     font-size: 1.5em;
@@ -25,12 +26,7 @@ nav.menu-principal-container {
             a {
                 padding: 5px;
                 text-decoration: none;
-
-                @include lien (
-                    $clr-lien__nav,
-                    $clr-lien-visite__nav,
-                    $clr-lien-hover__nav
-                )
+                @include hover-ombre__rapide;
             }
         }
     }

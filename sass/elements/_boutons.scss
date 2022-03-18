@@ -26,7 +26,13 @@
 
 	& ~ .burger__checkbox {
 		display: none;
-	}
+    }
+    
+    &:focus,
+    &:active,
+    &:hover {
+        animation: brasser 1s infinite;
+    }
 }
 
 .burger__etiquette[for="site__header__util-checkbox"] {

@@ -1,12 +1,5 @@
 .site__footer {
-    @include theme(
-        $clr-fond__ftr, 
-        $clr-texte__ftr, 
-        $clr-titre__ftr, 
-        $clr-lien__ftr, 
-        $clr-lien-visite__ftr, 
-        $clr-lien-hover__ftr
-    );
+    @include theme_sombre();
     
     ul {
         list-style-type: none;

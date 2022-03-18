@@ -1,12 +1,5 @@
 .site__header {
-    @include theme(
-        $clr-fond__hdr,
-        $clr-texte__hdr,
-        $clr-titre__hdr,
-        $clr-lien__hdr,
-        $clr-lien-visite__hdr,
-        $clr-lien-hover__hdr
-    );
+    @include theme_sombre();
 
     display: flex;
     flex-direction: column;
@@ -25,8 +18,6 @@
         display: flex;
         flex-direction: column;
         margin: 2rem 0;
-        animation: changer-couleur 1s infinite;
-        
 
         h1, h2 {
             margin-block-start: 0;
@@ -36,11 +27,13 @@
         h1 {
             font-family: $font__header-h1;
             font-size: clamp(.8rem, 8vw, 10rem);
+            animation: glisser-arrivee__hdr 3s forwards ease-in;
         }
 
         h2 {
             font-family: $font__header-h2;
             font-size: clamp(.6rem, 3.5vw , 5rem);
+            animation: changer-couleur__clair 1s infinite;
         }
     } 
 
@@ -50,8 +43,8 @@
     }
 
     &__util {
-
         @include theme_clair();
+        box-shadow: $ombre-petite;
         
         transform: translateX(100%);
         transition: transform .5s;
@@ -76,9 +69,4 @@
     }
 
     margin: 20px 0;  
-}
-
-@keyframes changer-couleur {
-    from {color: $clr-titre__hdr}
-    to {color: $clr-texte__hdr}
 }

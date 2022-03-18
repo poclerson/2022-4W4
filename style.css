@@ -1,9 +1,9 @@
 @charset "UTF-8";
 /**
-Theme name: Ex 2 Pierre-Olivier Clerson
+Theme name: TP1 Pierre-Olivier Clerson
 Author: Pierre-Olivier Clerson
 Author URI: https://github.com/poclerson/4w4/tree/ex2
-Description: Exercice dans le cadre du cours 4W4
+Description: Travail pratique dans le cadre du cours 4W4
 Version: 1.0
 Requires PHP: 7.0
 License: GNU General Public License v2 or later
@@ -340,6 +340,96 @@ html {
 /* Main */
 /* --- Éléments de contenu --- */
 /* Carte */
+/**
+ * Animations globales
+ */
+@keyframes brasser {
+  0% {
+    transform: translate(0.5px, 0.5px) rotate(0deg);
+  }
+  10% {
+    transform: translate(-0.5px, -1px) rotate(-0.5deg);
+  }
+  20% {
+    transform: translate(-1.5px, 0px) rotate(0.5deg);
+  }
+  30% {
+    transform: translate(1.5px, 1px) rotate(0deg);
+  }
+  40% {
+    transform: translate(0.5px, -0.5px) rotate(0.5deg);
+  }
+  50% {
+    transform: translate(-0.5px, 1px) rotate(-0.5deg);
+  }
+  60% {
+    transform: translate(-1.5px, 0.5px) rotate(0deg);
+  }
+  70% {
+    transform: translate(1.5px, 0.5px) rotate(-0.5deg);
+  }
+  80% {
+    transform: translate(-0.5px, -0.5px) rotate(0.5deg);
+  }
+  90% {
+    transform: translate(0.5px, 1px) rotate(0deg);
+  }
+  100% {
+    transform: translate(0.5px, -1px) rotate(-0.5deg);
+  }
+}
+
+@keyframes hover-ombre {
+  0% {
+    transform: scale(1);
+    box-shadow: none;
+  }
+  50% {
+    transform: scale(1.08);
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+  }
+  100% {
+    transform: scale(1.1);
+    box-shadow: 2.5px 2.5px 5px rgba(0, 0, 0, 0.5);
+  }
+}
+
+@keyframes changer-couleur__clair {
+  from {
+    color: #e4e4e4;
+  }
+  to {
+    color: #ffa200;
+  }
+}
+
+@keyframes changer-couleur__sombre {
+  from {
+    color: #181818;
+  }
+  to {
+    color: #ffa200;
+  }
+}
+
+/**
+ * Animations spécifiques
+ */
+@keyframes glisser-arrivee__hdr {
+  0% {
+    transform: translateX(-125%);
+  }
+  50% {
+    transform: translateX(10%);
+  }
+  75% {
+    transform: translateX(10%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
 /* ===== LAYOUT ===== */
 .site {
   font-size: 12px;
@@ -409,6 +499,10 @@ html {
   display: none;
 }
 
+.burger__etiquette[for="site__header__util-checkbox"]:focus, .burger__etiquette[for="site__header__util-checkbox"]:active, .burger__etiquette[for="site__header__util-checkbox"]:hover {
+  animation: brasser 1s infinite;
+}
+
 .burger__etiquette[for="site__barre__menu-principal-container-checkbox"] {
   cursor: pointer;
   position: fixed;
@@ -429,6 +523,10 @@ html {
 
 .burger__etiquette[for="site__barre__menu-principal-container-checkbox"] ~ .burger__checkbox {
   display: none;
+}
+
+.burger__etiquette[for="site__barre__menu-principal-container-checkbox"]:focus, .burger__etiquette[for="site__barre__menu-principal-container-checkbox"]:active, .burger__etiquette[for="site__barre__menu-principal-container-checkbox"]:hover {
+  animation: brasser 1s infinite;
 }
 
 /* ===== COMPOSANTS ===== */
@@ -490,6 +588,10 @@ html {
 
 .categorie .carte a svg {
   color: #181818;
+}
+
+.categorie .carte:hover {
+  animation: hover-ombre .5s forwards;
 }
 
 @media screen and (min-width: 600px) {
@@ -614,32 +716,32 @@ html {
   display: inline-block;
   text-decoration: none;
   padding: 10px;
-  color: #ffa200;
+  color: #e4e4e4;
   box-sizing: border-box;
   border: 2px solid transparent;
 }
 
 .site__header a:visited {
-  color: #ffa200;
+  color: gray;
   opacity: .8;
 }
 
 .site__header a:visited svg {
-  color: #ffa200;
+  color: gray;
 }
 
 .site__header a:hover, .site__header a:focus, .site__header a:active {
-  color: #e4e4e4;
+  color: #ffa200;
   border-radius: 10px;
-  border: 2px solid #e4e4e4;
+  border: 2px solid #ffa200;
 }
 
 .site__header a:hover svg, .site__header a:focus svg, .site__header a:active svg {
-  color: #e4e4e4;
+  color: #ffa200;
 }
 
 .site__header a svg {
-  color: #ffa200;
+  color: #e4e4e4;
 }
 
 @media screen and (min-width: 600px) {
@@ -654,7 +756,6 @@ html {
   display: flex;
   flex-direction: column;
   margin: 2rem 0;
-  animation: changer-couleur 1s infinite;
 }
 
 .site__header__titre h1, .site__header__titre h2 {
@@ -665,11 +766,13 @@ html {
 .site__header__titre h1 {
   font-family: "Josefin Sans", sans-serif;
   font-size: clamp(0.8rem, 8vw, 10rem);
+  animation: glisser-arrivee__hdr 3s forwards ease-in;
 }
 
 .site__header__titre h2 {
   font-family: "Josefin Sans", sans-serif;
   font-size: clamp(0.6rem, 3.5vw, 5rem);
+  animation: changer-couleur__clair 1s infinite;
 }
 
 #site__header__util-checkbox:checked ~ .site__header__util {
@@ -679,6 +782,7 @@ html {
 .site__header__util {
   background-color: #e4e4e4;
   color: #181818;
+  box-shadow: 2.5px 2.5px 5px rgba(0, 0, 0, 0.5);
   transform: translateX(100%);
   transition: transform .5s;
   display: flex;
@@ -735,15 +839,6 @@ html {
 @media screen and (min-width: 600px) {
   .icone {
     flex-direction: row;
-  }
-}
-
-@keyframes changer-couleur {
-  from {
-    color: #ffa200;
-  }
-  to {
-    color: #e4e4e4;
   }
 }
 
@@ -952,12 +1047,50 @@ html {
 }
 
 nav.menu-principal-container {
+  background-color: #e4e4e4;
+  color: #181818;
   padding: 15px;
   background-color: #e4e4e4;
   font-size: 1.5em;
   width: 100vw;
   transform: translateY(-120vh);
   transition: transform .5s ease-in-out;
+}
+
+nav.menu-principal-container h1 {
+  color: #181818;
+}
+
+nav.menu-principal-container a {
+  display: inline-block;
+  text-decoration: none;
+  padding: 10px;
+  color: #181818;
+  box-sizing: border-box;
+  border: 2px solid transparent;
+}
+
+nav.menu-principal-container a:visited {
+  color: gray;
+  opacity: .8;
+}
+
+nav.menu-principal-container a:visited svg {
+  color: gray;
+}
+
+nav.menu-principal-container a:hover, nav.menu-principal-container a:focus, nav.menu-principal-container a:active {
+  color: #ffa200;
+  border-radius: 10px;
+  border: 2px solid #ffa200;
+}
+
+nav.menu-principal-container a:hover svg, nav.menu-principal-container a:focus svg, nav.menu-principal-container a:active svg {
+  color: #ffa200;
+}
+
+nav.menu-principal-container a svg {
+  color: #181818;
 }
 
 @media screen and (min-width: 600px) {
@@ -980,35 +1113,10 @@ nav.menu-principal-container ul.menu li.menu-item {
 nav.menu-principal-container ul.menu li.menu-item a {
   padding: 5px;
   text-decoration: none;
-  display: inline-block;
-  text-decoration: none;
-  padding: 10px;
-  color: #181818;
-  box-sizing: border-box;
-  border: 2px solid transparent;
 }
 
-nav.menu-principal-container ul.menu li.menu-item a:visited {
-  color: gray;
-  opacity: .8;
-}
-
-nav.menu-principal-container ul.menu li.menu-item a:visited svg {
-  color: gray;
-}
-
-nav.menu-principal-container ul.menu li.menu-item a:hover, nav.menu-principal-container ul.menu li.menu-item a:focus, nav.menu-principal-container ul.menu li.menu-item a:active {
-  color: #ffa200;
-  border-radius: 10px;
-  border: 2px solid #ffa200;
-}
-
-nav.menu-principal-container ul.menu li.menu-item a:hover svg, nav.menu-principal-container ul.menu li.menu-item a:focus svg, nav.menu-principal-container ul.menu li.menu-item a:active svg {
-  color: #ffa200;
-}
-
-nav.menu-principal-container ul.menu li.menu-item a svg {
-  color: #181818;
+nav.menu-principal-container ul.menu li.menu-item a:hover {
+  animation: hover-ombre .5s forwards;
 }
 
 .site__barre {
@@ -1089,6 +1197,7 @@ nav.menu-principal-container ul.menu li.menu-item a svg {
 .cours {
   display: inline-flex;
   flex-direction: column;
+  padding: 2rem;
 }
 
 .cours__image {
@@ -1241,29 +1350,6 @@ form.recherche__bouton {
 .site__main__titre {
   margin-block-start: 0;
   margin-block-end: 0;
-}
-
-.home__titre {
-  animation: titre 5s infinite linear;
-  display: inline;
-}
-
-@keyframes titre {
-  0% {
-    transform: translate(0, 0);
-  }
-  25% {
-    transform: translate(30%, 0);
-  }
-  50% {
-    transform: translate(30%, 100%);
-  }
-  75% {
-    transform: translate(0%, 100%);
-  }
-  100% {
-    transform: translate(0%, 0%);
-  }
 }
 
 /* ===== GLOBAL ===== */

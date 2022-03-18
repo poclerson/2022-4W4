@@ -1,8 +1,8 @@
 /**
-Theme name: Ex 2 Pierre-Olivier Clerson
+Theme name: TP1 Pierre-Olivier Clerson
 Author: Pierre-Olivier Clerson
 Author URI: https://github.com/poclerson/4w4/tree/ex2
-Description: Exercice dans le cadre du cours 4W4
+Description: Travail pratique dans le cadre du cours 4W4
 Version: 1.0
 Requires PHP: 7.0
 License: GNU General Public License v2 or later
@@ -17,6 +17,7 @@ Text Domain: cidw-4w4
 @import "variables/couleurs";
 @import "variables/structure";
 @import "variables/fonts";
+@import "variables/animations";
 
 /* ===== LAYOUT ===== */
 @import "layout/_layout";
@@ -37,7 +38,6 @@ Text Domain: cidw-4w4
 @import "composants/recherche";
 @import "composants/search";
 @import "composants/main";
-@import "composants/front-page";
 
 /* ===== GLOBAL ===== */ 
 body {
