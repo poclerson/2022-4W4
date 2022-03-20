@@ -19,13 +19,16 @@ Text Domain: cidw-4w4
 @import "variables/fonts";
 @import "variables/animations";
 
-/* ===== LAYOUT ===== */
-@import "layout/_layout";
-
 /* ===== ELEMENTS ===== */
 @import "elements/liens";
 @import "elements/boutons";
 @import "elements/etiquettes";
+@import "elements/filtres";
+
+@import "elements/themes";
+
+/* ===== LAYOUT ===== */
+@import "layout/_layout";
 
 /* ===== COMPOSANTS ===== */
 @import "composants/cours";
@@ -37,7 +40,6 @@ Text Domain: cidw-4w4
 @import "composants/single-post";
 @import "composants/recherche";
 @import "composants/search";
-@import "composants/main";
 
 /* ===== GLOBAL ===== */ 
 body {

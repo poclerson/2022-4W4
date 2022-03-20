@@ -34,11 +34,6 @@
     &:hover {animation: hover-ombre .5s forwards;}
 }
 
-@keyframes rgb {
-    0% {filter: hue-rotate(0deg);}
-    100% {filter: hue-rotate(360deg);}
-}
-
 @keyframes changer-couleur__clair {
     from {color: $clair}
     to {color: $accents}

@@ -69,16 +69,14 @@
         }
         
         &__miniature {
+            @include filtre($clr-lien-hover__crt);
             height: 10rem;
-            background: $clr-lien-hover__crt;
             border-radius: 5px;
             border: 2px solid $clr-texte__crt;
 
             img {
                 width: 100%;
                 height: 100%;
-                filter: grayscale(100%);
-                opacity: .5;
                 object-fit: cover;
             }
         }
