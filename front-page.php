@@ -7,5 +7,13 @@
             the_content();
         ?>
     <?php endif ?>
+
+    <?php
+        wp_nav_menu(array(
+            "menu" => "menu_accueil",
+            "container" => "nav",
+            "container_class" => "home__menu"
+        ))
+    ?>
 </main>
 <?php get_footer(); ?>

@@ -483,6 +483,22 @@ html {
   animation: brasser 1s infinite;
 }
 
+h1 {
+  font-family: "League Spartan";
+  font-size: clamp(0.8rem, 8vw, 10rem);
+}
+
+h2,
+h3 {
+  font-family: "League Spartan";
+}
+
+h4,
+h5,
+h6 {
+  font-family: "Helvetica";
+}
+
 /* ===== LAYOUT ===== */
 .site {
   font-size: 12px;
@@ -569,7 +585,38 @@ html {
 }
 
 /* ===== COMPOSANTS ===== */
-.categorie {
+.cours {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cours__filtre {
+  display: flex;
+}
+
+.cours__filtre .menu-categorie-cours-container .menu {
+  display: flex;
+  list-style-type: none;
+}
+
+.cours__filtre .menu-categorie-cours-container .menu li a {
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 2em;
+  margin: 1em 0;
+}
+
+.cours__filtre .menu-categorie-cours-container .menu li a__contenu {
+  display: inline;
+  background-color: #ffa200;
+  color: #e4e4e4;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 2.5px 2.5px 5px rgba(0, 0, 0, 0.5);
+}
+
+.cours__conteneur {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -577,7 +624,7 @@ html {
   gap: 2rem;
 }
 
-.categorie .carte {
+.cours__conteneur .carte {
   background-color: #e4e4e4;
   color: #181818;
   display: flex;
@@ -594,11 +641,11 @@ html {
   /* Desktop */
 }
 
-.categorie .carte h1 {
+.cours__conteneur .carte h1 {
   color: #181818;
 }
 
-.categorie .carte a {
+.cours__conteneur .carte a {
   display: inline-block;
   text-decoration: none;
   padding: 10px;
@@ -607,55 +654,55 @@ html {
   border: 2px solid transparent;
 }
 
-.categorie .carte a:visited {
+.cours__conteneur .carte a:visited {
   color: gray;
   opacity: .8;
 }
 
-.categorie .carte a:visited svg {
+.cours__conteneur .carte a:visited svg {
   color: gray;
 }
 
-.categorie .carte a:hover, .categorie .carte a:focus, .categorie .carte a:active {
+.cours__conteneur .carte a:hover, .cours__conteneur .carte a:focus, .cours__conteneur .carte a:active {
   color: #ffa200;
   border-radius: 10px;
   border: 2px solid #ffa200;
 }
 
-.categorie .carte a:hover svg, .categorie .carte a:focus svg, .categorie .carte a:active svg {
+.cours__conteneur .carte a:hover svg, .cours__conteneur .carte a:focus svg, .cours__conteneur .carte a:active svg {
   color: #ffa200;
 }
 
-.categorie .carte a svg {
+.cours__conteneur .carte a svg {
   color: #181818;
 }
 
-.categorie .carte:hover {
+.cours__conteneur .carte:hover {
   animation: hover-ombre .5s forwards;
 }
 
 @media screen and (min-width: 600px) {
-  .categorie .carte {
+  .cours__conteneur .carte {
     width: 45%;
   }
 }
 
 @media screen and (min-width: 1000px) {
-  .categorie .carte {
+  .cours__conteneur .carte {
     width: 30%;
   }
 }
 
-.categorie .carte:hover {
+.cours__conteneur .carte:hover {
   background-color: #181818;
   color: #e4e4e4;
 }
 
-.categorie .carte:hover h1 {
+.cours__conteneur .carte:hover h1 {
   color: #ffa200;
 }
 
-.categorie .carte:hover a {
+.cours__conteneur .carte:hover a {
   display: inline-block;
   text-decoration: none;
   padding: 10px;
@@ -664,37 +711,37 @@ html {
   border: 2px solid transparent;
 }
 
-.categorie .carte:hover a:visited {
+.cours__conteneur .carte:hover a:visited {
   color: gray;
   opacity: .8;
 }
 
-.categorie .carte:hover a:visited svg {
+.cours__conteneur .carte:hover a:visited svg {
   color: gray;
 }
 
-.categorie .carte:hover a:hover, .categorie .carte:hover a:focus, .categorie .carte:hover a:active {
+.cours__conteneur .carte:hover a:hover, .cours__conteneur .carte:hover a:focus, .cours__conteneur .carte:hover a:active {
   color: #ffa200;
   border-radius: 10px;
   border: 2px solid #ffa200;
 }
 
-.categorie .carte:hover a:hover svg, .categorie .carte:hover a:focus svg, .categorie .carte:hover a:active svg {
+.cours__conteneur .carte:hover a:hover svg, .cours__conteneur .carte:hover a:focus svg, .cours__conteneur .carte:hover a:active svg {
   color: #ffa200;
 }
 
-.categorie .carte:hover a svg {
+.cours__conteneur .carte:hover a svg {
   color: #e4e4e4;
 }
 
-.categorie .carte:hover .carte__sigle {
+.cours__conteneur .carte:hover .carte__sigle {
   font-weight: bold;
   text-decoration: none;
   font-size: 1.5em;
   margin: 1em 0;
 }
 
-.categorie .carte:hover .carte__sigle__contenu {
+.cours__conteneur .carte:hover .carte__sigle__contenu {
   display: inline;
   background-color: #e4e4e4;
   color: #181818;
@@ -703,7 +750,7 @@ html {
   box-shadow: 2.5px 2.5px 5px rgba(0, 0, 0, 0.5);
 }
 
-.categorie .carte__titre {
+.cours__conteneur .carte__titre {
   padding: .5rem;
   width: 100%;
   font-size: 1.5rem;
@@ -712,19 +759,19 @@ html {
   text-decoration: none;
 }
 
-.categorie .carte__titre h3 {
+.cours__conteneur .carte__titre h3 {
   margin-block-start: 0;
   margin-block-end: 0;
 }
 
-.categorie .carte__sigle {
+.cours__conteneur .carte__sigle {
   font-weight: bold;
   text-decoration: none;
   font-size: 1.5em;
   margin: 1em 0;
 }
 
-.categorie .carte__sigle__contenu {
+.cours__conteneur .carte__sigle__contenu {
   display: inline;
   background-color: #181818;
   color: #e4e4e4;
@@ -733,19 +780,19 @@ html {
   box-shadow: 2.5px 2.5px 5px rgba(0, 0, 0, 0.5);
 }
 
-.categorie .carte__miniature {
+.cours__conteneur .carte__miniature {
   background-color: #ffa200;
   height: 10rem;
   border-radius: 5px;
   border: 2px solid #181818;
 }
 
-.categorie .carte__miniature img {
+.cours__conteneur .carte__miniature img {
   filter: grayscale(100%);
   opacity: .5;
 }
 
-.categorie .carte__miniature img {
+.cours__conteneur .carte__miniature img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -817,14 +864,10 @@ html {
 }
 
 .site__header__titre h1 {
-  font-family: "Josefin Sans", sans-serif;
-  font-size: clamp(0.8rem, 8vw, 10rem);
   animation: glisser-arrivee__hdr 3s forwards ease-in;
 }
 
 .site__header__titre h2 {
-  font-family: "Josefin Sans", sans-serif;
-  font-size: clamp(0.6rem, 3.5vw, 5rem);
   animation: changer-couleur__clair 1s infinite;
 }
 
@@ -1362,6 +1405,16 @@ form.recherche__bouton {
 .resultats-recherche .resultat-recherche__contenu {
   line-height: 1.5;
   margin-left: 10px;
+}
+
+.home__menu .menu {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.home__menu .menu .menu-item {
+  width: 100%;
 }
 
 /* ===== GLOBAL ===== */

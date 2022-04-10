@@ -7,27 +7,26 @@
             array(), filemtime(get_template_directory() . '/style.css'), 
             false);
 
-        # Nunito
-        wp_enqueue_style('  
-            style_css',
-            "https://fonts.googleapis.com/css2?family=Nunito:wght@100&display=swap",
-            false);
-
-        # Josefin Sans
-        wp_enqueue_style('  
-            style_css',
-            "https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@700&display=swap",
-            false);
+        wp_enqueue_style('cidw-4w4-police-google', "https://fonts.googleapis.com/css2?family=League+Spartan:wght@100;200;300;500;600;700;800;900&display=swap", false);
     } 
 
     add_action("wp_enqueue_scripts", "cidw_4w4_enqueue");
 
+    function trouver_la_categorie() {
+        
+    }
+
+    $url_categorie_slug = trouver_la_categorie(array('cours', 'web', 'jeu', 'design', 'utilitaire', 'creation-3d', 'video'));
+    $ma_categorie = get_category_by_slug($url_categorie_slug);
+    echo '<h3>' . $ma_categorie->description . '</h3>';
+
     /* Enregistrer les menus */
     function cidw_4w4_enregistrer_menu() {
         register_nav_menus(array(
-            'principal'     => __('Principal', 'cidw_4w4'),
-            'footer'        => __('Footer', 'cidw_4w4'),
-            'footer-liens'  => __('Footer liens externes', 'cidw-4w4')));
+            'principal'         => __('Principal', 'cidw_4w4'),
+            'footer'            => __('Footer', 'cidw_4w4'),
+            'footer-liens'      => __('Footer liens externes', 'cidw-4w4'),
+            'categorie-cours'   => __('Categorie cours', 'cidw-4w4')));
     }
 
     add_action('after_setup_theme', 'cidw_4w4_enregistrer_menu');
@@ -58,6 +57,13 @@
     }
 
     add_action('after_setup_theme', 'cidw_4w4_add_theme_support');
+
+    function prefix_nav_description( $item_output, $item,  $args ) {
+        if ( !empty( $item->description ) ) {
+            $item_output = str_replace( $args->link_after . '</a>',
+            $args->link_after .'<hr><span class="menu-item-description">' . $item->description . '</span>' .  '</a>',
+                  $item_output );
+    }
 
 
     /* Enregistrement des sidebars */
@@ -122,5 +128,18 @@
                 'after_title'   => '</h3>',
             )
         );
+
+        register_sidebar(
+            array(
+                'id'            => 'filtre',
+                'name'          => __('Filtre des catégories'),
+                'description'   => __('La première rangée du footer'),
+                'before_widget' => '<div id="%1$s" class="widget %2$s">',
+                'after_widget'  => '</div>',
+                'before_title'  => '<h3 class="widget-title">',
+                'after_title'   => '</h3>',
+            )
+        );
     }
+}
 ?>

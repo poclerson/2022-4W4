@@ -25,14 +25,10 @@
         }
 
         h1 {
-            font-family: $font__header-h1;
-            font-size: clamp(.8rem, 8vw, 10rem);
             animation: glisser-arrivee__hdr 3s forwards ease-in;
         }
 
         h2 {
-            font-family: $font__header-h2;
-            font-size: clamp(.6rem, 3.5vw , 5rem);
             animation: changer-couleur__clair 1s infinite;
         }
     } 
