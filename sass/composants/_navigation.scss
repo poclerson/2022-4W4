@@ -4,17 +4,16 @@ nav.menu-principal-container {
     background-color: $clr-fond__nav;
     font-size: 1.5em;
     width: 100vw;
+    height: 100vh;
 
-    transform: translateY(-120vh);
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    transform: translateX(-100vw);
     transition: transform .5s ease-in-out;
 
     @media screen and (min-width: $largeur__media-tablette) {
-        padding: 30px 0 0 0;
-
-        // Annulation des styles mobiles
-        transform: translateY(0);
-        background-color: unset;
-        width: unset;
+        width: 30vw;
     }
 
     ul.menu {

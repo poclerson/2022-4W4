@@ -20,8 +20,13 @@
                 <?php while (have_posts()): the_post(); ?>
                     <?php $categorie = get_the_category(); ?>
                     <a href=<?= get_permalink(); ?> class="carte">
-                        <div class="carte__sigle">
-                            <span class="carte__sigle__contenu"><?= le_sigle(get_the_title()); ?></span>
+                        <div class="carte__etiquettes">
+                            <div class="carte__etiquettes__sigle">
+                                <span class="carte__etiquettes__sigle__contenu"><?= le_sigle(get_the_title()); ?></span>
+                            </div>
+                            <div class="carte__etiquettes__duree">
+                                <span class="carte__etiquettes__duree__contenu"><?= la_duree(get_the_title()); ?></span>
+                            </div>
                         </div>
                         <h3 class="carte__titre">
                             <?= le_titre_filtre(get_the_title()); ?>

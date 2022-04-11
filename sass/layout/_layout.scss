@@ -5,7 +5,6 @@
 	display: grid;
 	grid-template-columns: auto;
 	grid-template-areas:
-        "sidebar"
         "header"
         "main"
         "footer";
@@ -30,16 +29,13 @@
         grid-template-columns: ($size__site-sidebar) auto;
         grid-template-areas:
             "header header"
-            "sidebar main"
+            "main main"
             "footer footer";
     }
 }
 
 .site__header{
     grid-area: header;
-}
-.site__barre{
-    grid-area: sidebar;
 }
 .site__main{
     grid-area: main;

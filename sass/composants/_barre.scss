@@ -10,27 +10,12 @@
     
     height: 0;
 
-    @media screen and (min-width: $largeur__media-tablette) {
-        height: unset;
-    }
-
     display: flex;
     flex-direction: column;
     align-items: center;
 
     & nav {
         padding: 20px;
-    }
-
-    /**
-     * CONTINUER ICI
-     * Le setup pour afficher le bouton burger du menu principal marche pas encore
-     * Mais tout le reste oui
-     */
-    label.burger__etiquette[for="site__barre__menu-principal-container-checkbox"] {
-        @media screen and (min-width: $largeur__media-tablette) {
-            display: none;
-        }
     }
 
     #site__barre__menu-principal-container-checkbox:checked ~ nav.menu-principal-container {

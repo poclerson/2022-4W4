@@ -58,13 +58,16 @@
         
             &:hover {
                 @include theme_sombre;
-    
-                .carte__sigle {
+                
+                &__etiquettes {
+                    &__sigle,
+                    &__duree {
                     @include etiquette(
                         1.5em,
                         $clr-fond__crt,
                         $clr-texte__crt
-                    )
+                    );
+                }
                 }
             }
         
@@ -82,12 +85,18 @@
                 }
             }
         
-            &__sigle {
-                @include etiquette(
-                    1.5em,
-                    $clr-texte__crt,
-                    $clr-fond__crt
-                );
+            &__etiquettes {
+                display: flex;
+                gap: 15px;
+
+                &__sigle,
+                &__duree {
+                    @include etiquette(
+                        1.5em,
+                        $clr-texte__crt,
+                        $clr-fond__crt
+                    );
+                }
             }
             
             &__miniature {
