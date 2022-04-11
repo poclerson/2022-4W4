@@ -59,15 +59,13 @@
             &:hover {
                 @include theme_sombre;
                 
-                &__etiquettes {
-                    &__sigle,
-                    &__duree {
+                .carte__etiquettes__sigle,
+                &__etiquettes__duree {
                     @include etiquette(
                         1.5em,
                         $clr-fond__crt,
                         $clr-texte__crt
                     );
-                }
                 }
             }
         

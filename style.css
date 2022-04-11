@@ -730,14 +730,14 @@ h6 {
   color: #e4e4e4;
 }
 
-.cours__conteneur .carte:hover__etiquettes__sigle, .cours__conteneur .carte:hover__etiquettes__duree {
+.cours__conteneur .carte:hover .carte__etiquettes__sigle, .cours__conteneur .carte:hover__etiquettes__duree {
   font-weight: bold;
   text-decoration: none;
   font-size: 1.5em;
   margin: 1em 0;
 }
 
-.cours__conteneur .carte:hover__etiquettes__sigle__contenu, .cours__conteneur .carte:hover__etiquettes__duree__contenu {
+.cours__conteneur .carte:hover .carte__etiquettes__sigle__contenu, .cours__conteneur .carte:hover__etiquettes__duree__contenu {
   display: inline;
   background-color: #e4e4e4;
   color: #181818;

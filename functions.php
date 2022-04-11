@@ -28,7 +28,9 @@
             'principal'         => __('Principal', 'cidw_4w4'),
             'footer'            => __('Footer', 'cidw_4w4'),
             'footer-liens'      => __('Footer liens externes', 'cidw-4w4'),
-            'categorie-cours'   => __('Categorie cours', 'cidw-4w4')));
+            'categorie-cours'   => __('Categorie cours', 'cidw-4w4'),
+            'departement'       => __('Département TIM', 'cidw-4w4'),
+            'evenements'        => __('Les évènements à venir', 'cidw-4w4')));
     }
 
     add_action('after_setup_theme', 'cidw_4w4_enregistrer_menu');
