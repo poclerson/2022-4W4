@@ -4,6 +4,10 @@
         justify-content: space-between;
         width: 100%;
 
+        /**
+         * Mettre en position relative pour permettre à la navigation de mieux
+         * se positionner avec son position absolute (pas nécessaire en mobile)
+         */
         @media screen and (min-width: $largeur__media-tablette) {
             position: relative;
             gap: 20px;
@@ -60,6 +64,9 @@
                 justify-content: center;
                 width: 100%;
 
+                cursor: context-menu;
+
+                // Ajouter des bordures
                 @media screen and (min-width: $largeur__media-tablette) {
                     border: 2px solid $clr-fond__main;
                     border-radius: 5px;

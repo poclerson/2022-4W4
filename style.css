@@ -1230,6 +1230,7 @@ nav.menu-principal-container ul.menu li.menu-item a:hover {
 .site__barre {
   background-color: #e4e4e4;
   color: unset;
+  z-index: 10;
   height: 0;
   display: flex;
   flex-direction: column;
@@ -1408,6 +1409,10 @@ form.recherche__bouton {
   display: flex;
   justify-content: space-between;
   width: 100%;
+  /**
+         * Mettre en position relative pour permettre à la navigation de mieux
+         * se positionner avec son position absolute (pas nécessaire en mobile)
+         */
 }
 
 @media screen and (min-width: 600px) {
@@ -1504,6 +1509,7 @@ form.recherche__bouton {
   display: flex;
   justify-content: center;
   width: 100%;
+  cursor: context-menu;
 }
 
 .site__header__navigation__menu__ouverture h1 {
