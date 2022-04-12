@@ -6,6 +6,7 @@
 
         @media screen and (min-width: $largeur__media-tablette) {
             position: relative;
+            gap: 20px;
         }
 
         &__menu {
@@ -58,6 +59,11 @@
                 display: flex;
                 justify-content: center;
                 width: 100%;
+
+                @media screen and (min-width: $largeur__media-tablette) {
+                    border: 2px solid $clr-fond__main;
+                    border-radius: 5px;
+                }
             }
         }
     }
