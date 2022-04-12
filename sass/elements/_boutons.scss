@@ -36,15 +36,7 @@
 }
 
 .burger__etiquette[for="site__header__util-checkbox"] {
-	@include burger(
-		15px,
-		unset,
-		unset,
-		15px,
-
-		$clair,
-		$accents
-	)
+	
 }
 
 .burger__etiquette[for="site__barre__menu-principal-container-checkbox"] {

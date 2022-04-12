@@ -10,8 +10,6 @@
 
     @media screen and (min-width: $largeur__media-tablette) {
         flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
     }
 
     &__titre {
@@ -33,26 +31,40 @@
         }
     } 
 
-    // Fonctionnement du menu burger grâce à la checkbox
-    #site__header__util-checkbox:checked ~ &__util {
-        transform: translate(0);
-    }
+    &__utilitaires {
+        // Fonctionnement du menu burger grâce à la checkbox
+        #site__header__utilitaires__menu-checkbox:checked ~ &__menu {
+            transform: translate(0);
+        }
 
-    &__util {
-        @include theme_clair();
-        box-shadow: $ombre-petite;
-        
-        transform: translateX(100%);
-        transition: transform .5s;
+        [for="site__header__utilitaires__menu-checkbox"] {
+            @include burger(
+                15px,
+                unset,
+                unset,
+                15px,
 
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+                $clair,
+                $accents
+            )
+        }
 
-        position: fixed;
-        right: 0;
-        padding: 1em;
-        border-radius: 10px 0 0 10px;
+        &__menu {
+            @include theme_clair();
+            box-shadow: $ombre-petite;
+            
+            transform: translateX(100%);
+            transition: transform .5s;
+    
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+    
+            position: fixed;
+            right: 0;
+            padding: 1em;
+            border-radius: 10px 0 0 10px;
+        }
     }
 }
 

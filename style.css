@@ -431,32 +431,6 @@ html {
 }
 
 /* ===== ELEMENTS ===== */
-.burger__etiquette[for="site__header__util-checkbox"] {
-  cursor: pointer;
-  position: fixed;
-  z-index: 100;
-  top: 15px;
-  left: unset;
-  bottom: unset;
-  right: 15px;
-  background-color: #e4e4e4;
-  padding: 10px;
-  border-radius: 5px;
-  box-shadow: 2.5px 2.5px 5px rgba(0, 0, 0, 0.5);
-}
-
-.burger__etiquette[for="site__header__util-checkbox"] svg {
-  color: #ffa200;
-}
-
-.burger__etiquette[for="site__header__util-checkbox"] ~ .burger__checkbox {
-  display: none;
-}
-
-.burger__etiquette[for="site__header__util-checkbox"]:focus, .burger__etiquette[for="site__header__util-checkbox"]:active, .burger__etiquette[for="site__header__util-checkbox"]:hover {
-  animation: brasser 1s infinite;
-}
-
 .burger__etiquette[for="site__barre__menu-principal-container-checkbox"] {
   cursor: pointer;
   position: fixed;
@@ -848,8 +822,6 @@ h6 {
 @media screen and (min-width: 600px) {
   .site__header {
     flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
   }
 }
 
@@ -872,11 +844,37 @@ h6 {
   animation: changer-couleur__clair 1s infinite;
 }
 
-#site__header__util-checkbox:checked ~ .site__header__util {
+#site__header__utilitaires__menu-checkbox:checked ~ .site__header__utilitaires__menu {
   transform: translate(0);
 }
 
-.site__header__util {
+.site__header__utilitaires [for="site__header__utilitaires__menu-checkbox"] {
+  cursor: pointer;
+  position: fixed;
+  z-index: 100;
+  top: 15px;
+  left: unset;
+  bottom: unset;
+  right: 15px;
+  background-color: #e4e4e4;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 2.5px 2.5px 5px rgba(0, 0, 0, 0.5);
+}
+
+.site__header__utilitaires [for="site__header__utilitaires__menu-checkbox"] svg {
+  color: #ffa200;
+}
+
+.site__header__utilitaires [for="site__header__utilitaires__menu-checkbox"] ~ .burger__checkbox {
+  display: none;
+}
+
+.site__header__utilitaires [for="site__header__utilitaires__menu-checkbox"]:focus, .site__header__utilitaires [for="site__header__utilitaires__menu-checkbox"]:active, .site__header__utilitaires [for="site__header__utilitaires__menu-checkbox"]:hover {
+  animation: brasser 1s infinite;
+}
+
+.site__header__utilitaires__menu {
   background-color: #e4e4e4;
   color: #181818;
   box-shadow: 2.5px 2.5px 5px rgba(0, 0, 0, 0.5);
@@ -891,11 +889,11 @@ h6 {
   border-radius: 10px 0 0 10px;
 }
 
-.site__header__util h1 {
+.site__header__utilitaires__menu h1 {
   color: #181818;
 }
 
-.site__header__util a {
+.site__header__utilitaires__menu a {
   display: inline-block;
   text-decoration: none;
   padding: 10px;
@@ -904,26 +902,26 @@ h6 {
   border: 2px solid transparent;
 }
 
-.site__header__util a:visited {
+.site__header__utilitaires__menu a:visited {
   color: gray;
   opacity: .8;
 }
 
-.site__header__util a:visited svg {
+.site__header__utilitaires__menu a:visited svg {
   color: gray;
 }
 
-.site__header__util a:hover, .site__header__util a:focus, .site__header__util a:active {
+.site__header__utilitaires__menu a:hover, .site__header__utilitaires__menu a:focus, .site__header__utilitaires__menu a:active {
   color: #ffa200;
   border-radius: 10px;
   border: 2px solid #ffa200;
 }
 
-.site__header__util a:hover svg, .site__header__util a:focus svg, .site__header__util a:active svg {
+.site__header__utilitaires__menu a:hover svg, .site__header__utilitaires__menu a:focus svg, .site__header__utilitaires__menu a:active svg {
   color: #ffa200;
 }
 
-.site__header__util a svg {
+.site__header__utilitaires__menu a svg {
   color: #181818;
 }
 
@@ -1400,6 +1398,143 @@ form.recherche__bouton {
 
 .home__menu .menu .menu-item {
   width: 100%;
+}
+
+.site__header__navigation {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+@media screen and (min-width: 600px) {
+  .site__header__navigation {
+    position: relative;
+  }
+}
+
+.site__header__navigation__menu {
+  width: 100%;
+}
+
+.site__header__navigation__menu:hover .site__header__navigation__menu__nav {
+  display: block;
+}
+
+.site__header__navigation__menu > * {
+  background-color: #181818;
+  color: #e4e4e4;
+}
+
+.site__header__navigation__menu > * h1 {
+  color: #ffa200;
+}
+
+.site__header__navigation__menu > * a {
+  display: inline-block;
+  text-decoration: none;
+  padding: 10px;
+  color: #e4e4e4;
+  box-sizing: border-box;
+  border: 2px solid transparent;
+}
+
+.site__header__navigation__menu > * a:visited {
+  color: gray;
+  opacity: .8;
+}
+
+.site__header__navigation__menu > * a:visited svg {
+  color: gray;
+}
+
+.site__header__navigation__menu > * a:hover, .site__header__navigation__menu > * a:focus, .site__header__navigation__menu > * a:active {
+  color: #ffa200;
+  border-radius: 10px;
+  border: 2px solid #ffa200;
+}
+
+.site__header__navigation__menu > * a:hover svg, .site__header__navigation__menu > * a:focus svg, .site__header__navigation__menu > * a:active svg {
+  color: #ffa200;
+}
+
+.site__header__navigation__menu > * a svg {
+  color: #e4e4e4;
+}
+
+.site__header__navigation__menu__nav {
+  width: 100vw;
+  position: absolute;
+  left: 0;
+  display: none;
+}
+
+@media screen and (min-width: 600px) {
+  .site__header__navigation__menu__nav {
+    width: 50vw;
+  }
+}
+
+.site__header__navigation__menu__nav .menu {
+  display: flex;
+  justify-content: space-between;
+  list-style-type: none;
+  padding: 0;
+  margin: 0 2rem;
+}
+
+.site__header__navigation__menu__nav .menu .menu-item {
+  display: flex;
+  justify-content: center;
+}
+
+.site__header__navigation__menu__nav .menu .menu-item a {
+  font-family: "League Spartan";
+  font-size: 1.5em;
+}
+
+.site__header__navigation__menu__ouverture {
+  border-top: 2px solid #e4e4e4;
+  background-color: #181818;
+  color: #e4e4e4;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.site__header__navigation__menu__ouverture h1 {
+  color: #ffa200;
+}
+
+.site__header__navigation__menu__ouverture a {
+  display: inline-block;
+  text-decoration: none;
+  padding: 10px;
+  color: #e4e4e4;
+  box-sizing: border-box;
+  border: 2px solid transparent;
+}
+
+.site__header__navigation__menu__ouverture a:visited {
+  color: gray;
+  opacity: .8;
+}
+
+.site__header__navigation__menu__ouverture a:visited svg {
+  color: gray;
+}
+
+.site__header__navigation__menu__ouverture a:hover, .site__header__navigation__menu__ouverture a:focus, .site__header__navigation__menu__ouverture a:active {
+  color: #ffa200;
+  border-radius: 10px;
+  border: 2px solid #ffa200;
+}
+
+.site__header__navigation__menu__ouverture a:hover svg, .site__header__navigation__menu__ouverture a:focus svg, .site__header__navigation__menu__ouverture a:active svg {
+  color: #ffa200;
+}
+
+.site__header__navigation__menu__ouverture a svg {
+  color: #e4e4e4;
 }
 
 /* ===== GLOBAL ===== */

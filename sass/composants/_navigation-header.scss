@@ -1,0 +1,64 @@
+.site__header{
+    &__navigation {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+
+        @media screen and (min-width: $largeur__media-tablette) {
+            position: relative;
+        }
+
+        &__menu {
+            width: 100%;
+
+            &:hover {
+                .site__header__navigation__menu__nav {
+                    display: block;
+                }
+            }
+
+            & > * {
+                @include theme_sombre;
+            }
+
+            &__nav {
+                width: 100vw;
+                position: absolute;
+                left: 0;
+                display: none;
+
+                @media screen and (min-width: $largeur__media-tablette) {
+                    width: 50vw;
+                }
+
+                .menu {
+                    display: flex;
+                    justify-content: space-between;
+
+                    list-style-type: none;
+                    padding: 0;
+                    margin: 0 2rem;
+
+                    .menu-item {
+                        display: flex;
+                        justify-content: center;
+
+                        a {
+                            font-family: $font__sous-titre;
+                            font-size: 1.5em;
+                        }
+                    }
+                }
+            }
+
+            &__ouverture {
+                border-top: 2px solid $clr-fond__main;
+                @include theme_sombre;
+
+                display: flex;
+                justify-content: center;
+                width: 100%;
+            }
+        }
+    }
+}
