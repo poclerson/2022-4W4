@@ -562,24 +562,25 @@ h6 {
 }
 
 .cours__filtre {
-  display: flex;
+  width: 100%;
 }
 
-.cours__filtre .menu-categorie-cours-container .menu {
+.cours__filtre__menu__ul {
+  width: 100%;
   display: flex;
   list-style-type: none;
 }
 
-.cours__filtre .menu-categorie-cours-container .menu li a {
+.cours__filtre__menu__ul li {
   font-weight: bold;
   text-decoration: none;
   font-size: 2em;
   margin: 1em 0;
 }
 
-.cours__filtre .menu-categorie-cours-container .menu li a__contenu {
+.cours__filtre__menu__ul li >  * {
   display: inline;
-  background-color: #ffa200;
+  background-color: #181818;
   color: #e4e4e4;
   padding: 10px;
   border-radius: 5px;
@@ -711,7 +712,7 @@ h6 {
   margin: 1em 0;
 }
 
-.cours__conteneur .carte:hover .carte__etiquettes__sigle__contenu, .cours__conteneur .carte:hover__etiquettes__duree__contenu {
+.cours__conteneur .carte:hover .carte__etiquettes__sigle >  *, .cours__conteneur .carte:hover__etiquettes__duree >  * {
   display: inline;
   background-color: #e4e4e4;
   color: #181818;
@@ -746,7 +747,7 @@ h6 {
   margin: 1em 0;
 }
 
-.cours__conteneur .carte__etiquettes__sigle__contenu, .cours__conteneur .carte__etiquettes__duree__contenu {
+.cours__conteneur .carte__etiquettes__sigle >  *, .cours__conteneur .carte__etiquettes__duree >  * {
   display: inline;
   background-color: #181818;
   color: #e4e4e4;
@@ -1094,6 +1095,18 @@ h6 {
   height: 100%;
 }
 
+.site__footer__colonne__picto .sidebar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform .5s ease-in-out;
+}
+
+.site__footer__colonne__picto .sidebar:hover {
+  transform: rotate(20deg) scale(1.1);
+  transition: transform .5s ease-in-out;
+}
+
 .site__footer__rangee {
   flex-direction: column;
   align-items: center;
@@ -1107,12 +1120,32 @@ h6 {
   text-align: center;
 }
 
-.site__footer__rangee__menu__ul .menu-item a {
+.site__footer__rangee__menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-y: hidden;
+  width: 50vw;
+  height: 6.5em;
+}
+
+.site__footer__rangee__menu__navigation {
+  width: 100%;
+  overflow-x: scroll;
+}
+
+.site__footer__rangee__menu__navigation__ul {
+  display: flex;
+  padding: 0;
+  margin: 0;
+}
+
+.site__footer__rangee__menu__navigation__ul .menu-item a {
   display: flex;
   align-items: center;
 }
 
-.site__footer__rangee__menu__ul .menu-item a svg {
+.site__footer__rangee__menu__navigation__ul .menu-item a svg {
   margin-right: .5em;
 }
 
@@ -1318,7 +1351,7 @@ nav.menu-principal-container ul.menu li.menu-item a:hover {
   margin: 1em 0;
 }
 
-.cours__etiquettes__sigle__contenu, .cours__etiquettes__duree__contenu {
+.cours__etiquettes__sigle >  *, .cours__etiquettes__duree >  * {
   display: inline;
   background-color: #181818;
   color: #e4e4e4;
@@ -1481,6 +1514,7 @@ form.recherche__bouton {
 @media screen and (min-width: 600px) {
   .site__header__navigation__menu__nav {
     width: 50vw;
+    padding-top: 1em;
   }
 }
 
@@ -1490,14 +1524,23 @@ form.recherche__bouton {
   list-style-type: none;
   padding: 0;
   margin: 0 2rem;
+  height: 5.5em;
 }
 
 .site__header__navigation__menu__nav .menu .menu-item {
   display: flex;
   justify-content: center;
+  align-items: center;
+}
+
+.site__header__navigation__menu__nav .menu .menu-item:hover {
+  animation: hover-ombre .5s forwards;
 }
 
 .site__header__navigation__menu__nav .menu .menu-item a {
+  display: block;
+  height: 100%;
+  text-align: center;
   font-family: "League Spartan";
   font-size: 1.5em;
 }
@@ -1546,6 +1589,10 @@ form.recherche__bouton {
 
 .site__header__navigation__menu__ouverture a svg {
   color: #e4e4e4;
+}
+
+.site__header__navigation__menu__ouverture:hover {
+  animation: brasser 1s infinite;
 }
 
 @media screen and (min-width: 600px) {

@@ -4,7 +4,7 @@
     font-size: $taille-texte;
     margin: 1em 0;
 
-    &__contenu {
+    & > * {
         display: inline;
         background-color: $couleur-fond;
         color: $couleur-texte;

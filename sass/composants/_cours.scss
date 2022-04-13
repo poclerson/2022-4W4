@@ -4,16 +4,18 @@
     align-items: center;
 
     &__filtre {
-        display: flex;
+        width: 100%;
 
-        .menu-categorie-cours-container {
-            .menu {
+        &__menu {
+            &__ul {
+                width: 100%;
                 display: flex;
                 list-style-type: none;
 
                 li {
+                    @include etiquette(2em, $sombre, $clair);
+                    
                     a {
-                        @include etiquette(2em, $accents, $clair);
                     }
                 }
             }
