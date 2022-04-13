@@ -17,8 +17,7 @@
 
 	background-color: $couleur-fond;
 	padding: 10px;
-	border-radius: 5px;
-	box-shadow: $ombre-petite;
+	border-radius: 50%;
 
 	svg {
 		color: $couleur-icone;
@@ -42,7 +41,18 @@
 		unset,
 		unset,
 
-		$accents,
-		$clair
+		$rose,
+		$bleu
 	)
+}
+
+@mixin bouton-rond(
+    $couleur-fond,
+    $couleur-icone
+) {
+    background-color: $couleur-fond;
+
+    svg {
+        color: $couleur-icone;
+    }
 }

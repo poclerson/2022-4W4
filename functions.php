@@ -8,7 +8,7 @@
             false);
 
             
-        wp_enqueue_style('cidw-4w4-police-google', "https://fonts.googleapis.com/css2?family=League+Spartan:wght@100;200;300;500;600;700;800;900&display=swap", false);
+        wp_enqueue_style('cidw-4w4-police-google', "https://fonts.googleapis.com/css2?family=Bungee&display=swap", false);
     } 
 
     add_action("wp_enqueue_scripts", "cidw_4w4_enqueue");
@@ -156,14 +156,16 @@
      */
     function cidw_4w4_pre_get_posts(WP_Query $query)
     {
-        if (is_admin() || !$query->is_main_query() || !is_category(array('cours','web','jeu','design','utilitaire','creation-3d','video'))   )
+        if (is_admin() || 
+            !$query->is_main_query() || 
+            !$query->is_category(array('cours','web','jeu','design','utilitaire','creation-3d','video'))   )
         {
             return $query;
         }        
         else
         {
             $ordre = get_query_var('ordre');
-            $cle = get_query_var('cletri');       
+            $cle = get_query_var('cletri', 'title');       
             $query->set('order',  $ordre);
             $query->set('orderby', $cle);
 

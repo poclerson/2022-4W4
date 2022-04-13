@@ -35,13 +35,13 @@
 }
 
 @keyframes changer-couleur__clair {
-    from {color: $clair}
-    to {color: $accents}
+    from {color: $jaune}
+    to {color: $rose}
 }
 
 @keyframes changer-couleur__sombre {
-    from {color: $sombre}
-    to {color: $accents}
+    from {color: $bleu}
+    to {color: $rose}
 }
 
 /**

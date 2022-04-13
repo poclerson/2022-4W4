@@ -13,10 +13,7 @@
                 list-style-type: none;
 
                 li {
-                    @include etiquette(2em, $sombre, $clair);
-                    
-                    a {
-                    }
+                    @include etiquette(2em, $jaune, $bleu);
                 }
             }
         }
@@ -30,7 +27,7 @@
         gap: 2rem;
 
         .carte {
-            @include theme_clair;
+            @include theme_sombre;
             @include hover-ombre__rapide;
         
             display: flex;

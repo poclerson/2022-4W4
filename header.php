@@ -48,26 +48,26 @@
         <section class="site__header__navigation">
             <div class="site__header__navigation__menu">
                 <span class="site__header__navigation__menu__ouverture">
-                    <svg width="50px" height="50px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" color="#ffa200"><path d="M0 0h24v24H0z" fill="none"></path><path d="M7 10l5 5 5-5z"></path></svg>
+                    <svg width="50px" height="50px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" color="rgb(221, 255, 0)"><path d="M0 0h24v24H0z" fill="none"></path><path d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3L1 9l11 6 9-4.91V17h2V9L12 3z"></path></svg>
                 </span>
 
                 <?php
                     wp_nav_menu(array(
                         "menu" => "departement",
                         "container" => "nav",
-                        "container_class" => "site__header__navigation__menu__nav menu__departement"
+                        "container_class" => "site__header__navigation__menu__nav menu__departement",
                     ));
                 ?>
             </div>
             <div class="site__header__navigation__menu">
                 <span class="site__header__navigation__menu__ouverture">
-                    <svg width="50px" height="50px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" color="#ffa200"><path d="M0 0h24v24H0z" fill="none"></path><path d="M7 10l5 5 5-5z"></path></svg>
+                    <svg width="50px" height="50px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" color="rgb(221, 255, 0)"><path d="M0 0h24v24H0z" fill="none"></path><path d="M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19a2 2 0 002 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V1h-2zm3 18H5V8h14v11z"></path></svg>
                 </span>
                 <?php
                     wp_nav_menu(array(
                         "menu" => "evenements",
                         "container" => "nav",
-                        "container_class" => "site__header__navigation__menu__nav menu__evenements"
+                        "container_class" => "site__header__navigation__menu__nav menu__evenements",
                     ));
                 ?>
             </div>

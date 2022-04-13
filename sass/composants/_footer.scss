@@ -20,9 +20,9 @@
 
         a {
             @include lien(	
-                $sombre, 
-                $accents, 
-                $accents, 
+                $clr-lien__ftr, 
+                $clr-lien-hover__ftr, 
+                $clr-lien-visite__ftr, 
             );
         }
 

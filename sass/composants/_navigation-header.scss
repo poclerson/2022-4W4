@@ -65,23 +65,20 @@
             }
 
             &__ouverture {
-                border-top: 2px solid $clr-fond__main;
-                @include theme_sombre;
+                @include bouton-rond($clr-texte__hdr, $clr-fond__hdr);
 
-                display: flex;
+                display: inline-flex;
                 justify-content: center;
-                width: 100%;
+                align-items: center;
+                border-radius: 50%;
+
+                width: 75px;
+                height: 75px;
 
                 cursor: context-menu;
 
                 &:hover {
                     animation: brasser 1s infinite;
-                }
-
-                // Ajouter des bordures
-                @media screen and (min-width: $largeur__media-tablette) {
-                    border: 2px solid $clr-fond__main;
-                    border-radius: 5px;
                 }
             }
         }
