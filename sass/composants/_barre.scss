@@ -1,12 +1,5 @@
 .site__barre {
-    @include theme(
-        $clr-fond__nav,
-        unset,
-        unset,
-        $clr-lien__nav,
-        $clr-lien-visite__nav,
-        $clr-lien-hover__nav
-    );
+    @include theme_rose;
 
     z-index: 10;
     

@@ -1,8 +1,10 @@
+$largeur__icone-ouverture: 75px;
+
 .site__header{
     &__navigation {
         display: flex;
-        justify-content: space-between;
-        width: 100%;
+        flex-direction: column;
+        justify-content: flex-end;
 
         /**
          * Mettre en position relative pour permettre à la navigation de mieux
@@ -22,36 +24,37 @@
                 }
             }
 
-            & > * {
-                @include theme_sombre;
-            }
-
             &__nav {
                 width: 100vw;
-                position: absolute;
                 left: 0;
+                position: absolute;
                 display: none;
+                border-radius: 5px;
+
+                @include genererTheme($navigation__couleurs);
 
                 @media screen and (min-width: $largeur__media-tablette) {
-                    width: 50vw;
-                    padding-top: 1em;
+                    left: unset;
+                    right: $largeur__icone-ouverture;
+                    bottom: 0;
+                    width: 20vw;
                 }
 
                 .menu {
                     display: flex;
+                    flex-direction: column;
                     justify-content: space-between;
 
                     list-style-type: none;
                     padding: 0;
                     margin: 0 2rem;
-                    height: 5.5em;
 
                     .menu-item {
                         display: flex;
                         justify-content: center;
                         align-items: center;
 
-                        @include hover-ombre__rapide;
+                        @include elargir__hover(.1s, 1.25);
 
                         a {
                             display: block;
@@ -65,14 +68,13 @@
             }
 
             &__ouverture {
-                @include bouton-rond($clr-texte__hdr, $clr-fond__hdr);
+                @include bouton-rond($header__couleurs);
 
                 display: inline-flex;
                 justify-content: center;
                 align-items: center;
-                border-radius: 50%;
 
-                width: 75px;
+                width: $largeur__icone-ouverture;
                 height: 75px;
 
                 cursor: context-menu;

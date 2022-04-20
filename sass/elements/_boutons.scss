@@ -1,11 +1,30 @@
+@use "sass:maps";
+
+@mixin bouton-rond($theme) {
+    background-color: map-get($theme, "fond");
+    border-radius: 50%;
+    border: 2px solid map-get($theme, "bordure");
+
+    svg {
+        color: map-get($theme, "icone");
+    }
+
+    &:hover {
+        background-color: map-get($theme, "icone");
+        
+        svg {
+            color: map-get($theme, "fond");
+        }
+    }
+}
+
 @mixin burger (
 	$position-haut,
 	$position-gauche,
 	$position-bas,
 	$position-droite,
 
-	$couleur-fond,
-	$couleur-icone
+	$theme
 ) {
 	cursor: pointer;
 	position: fixed;
@@ -15,13 +34,8 @@
 	bottom: $position-bas;
 	right: $position-droite;
 
-	background-color: $couleur-fond;
 	padding: 10px;
 	border-radius: 50%;
-
-	svg {
-		color: $couleur-icone;
-	}
 
 	& ~ .burger__checkbox {
 		display: none;
@@ -32,27 +46,6 @@
     &:hover {
         animation: brasser 1s infinite;
     }
-}
 
-.burger__etiquette[for="site__barre__menu-principal-container-checkbox"] {
-	@include burger(
-		15px,
-		15px,
-		unset,
-		unset,
-
-		$rose,
-		$bleu
-	)
-}
-
-@mixin bouton-rond(
-    $couleur-fond,
-    $couleur-icone
-) {
-    background-color: $couleur-fond;
-
-    svg {
-        color: $couleur-icone;
-    }
+    @include bouton-rond($theme);
 }

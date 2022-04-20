@@ -1,34 +1,6 @@
-@mixin theme($clr-fond, $clr-texte, $clr-titre, $clr-lien, $clr-lien-visite, $clr-lien-hover) {
-    background-color: $clr-fond;
-    color: $clr-texte;
 
-    h1,
-    h2,
-    h3 {
-        color: $clr-titre;
-    }
 
-    h4,
-    h5,
-    h6,
-    p {
-        color: $clr-texte;
-    }
-
-    a {
-        @include lien(
-            $clr-lien,
-            $clr-lien-visite,
-            $clr-lien-hover
-        )
-    }
-
-    svg & {
-        color: $clr-fond;
-    }
-}
-
-@mixin theme_clair () {
+@mixin theme_jaune () {
     @include theme(
         $jaune,
         $bleu,
@@ -39,13 +11,24 @@
     )
 }
 
-@mixin theme_sombre () {
+@mixin theme_bleu () {
     @include theme(
         $bleu,
         $jaune,
         $rose,
-        $rose,
+        $jaune,
         $jaune,
         $rose
+    )
+}
+
+@mixin theme_rose () { 
+    @include theme(
+        $rose,
+        $jaune,
+        $bleu,
+        $bleu,
+        $bleu,
+        $bleu
     )
 }

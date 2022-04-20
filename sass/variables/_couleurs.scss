@@ -1,58 +1,120 @@
+@use 'sass:map';
+@use "sass:color";
+
 $jaune: rgb(255, 225, 0);
 $bleu: rgb(0, 107, 126);
 $alternative: rgb(0, 107, 126);
 $rose: rgb(255, 184, 209);
 
-$ombre-petite: 2.5px 2.5px 5px rgba(0, 0, 0, .5);
+@mixin ombre--petite($theme) {
+    box-shadow: 2.5px 2.5px 5px map-get($theme, "icone");
+}
 
 /* --- Éléments principaux --- */
 /* Site */
 $clr-fond__select: $rose;
 $clr-text__select: $bleu;
 
+@mixin theme(
+    $clr-fond, 
+    $clr-texte, 
+    $clr-titre, 
+    $clr-bordure, 
+    $clr-icone, 
+    $clr-lien) {
+        
+    background-color: $clr-fond;
+    color: $clr-texte;
+    border-color: $clr-bordure;
+
+    h1,
+    h2,
+    h3 {
+        color: $clr-titre;
+    }
+
+    h4,
+    h5,
+    h6,
+    p {
+        color: $clr-texte;
+    }
+
+    a {
+        @include lien(
+            $clr-lien,
+            adjust-color($clr-lien, $alpha: .75),
+            adjust-color($clr-lien, $lightness: .5)
+        )
+    }
+
+    svg {
+        color: $clr-icone;
+    }
+}
+
 /* Header */
-$clr-fond__hdr: $jaune;
-$clr-titre__hdr: $rose;
-$clr-texte__hdr: $bleu;
+$header__couleurs: (
+    fond: $bleu,
+    titre: $rose,
+    texte: $jaune,
+    bordure: $jaune,
+    icone: $jaune,
+    lien: $rose
+);
 
-$clr-lien__hdr: $rose;
-$clr-lien-hover__hdr: $bleu;
-$clr-lien-visite__hdr: $rose;
+$footer__couleurs: (
+    fond: $bleu,
+    titre: $rose,
+    texte: $jaune,
+    bordure: $jaune,
+    icone: $jaune,
+    lien: $rose
+);
 
-/* Footer */
-$clr-fond__ftr: $jaune;
-$clr-texte__ftr: $bleu;
-$clr-titre__ftr: $rose;
-$clr-lien__ftr: $bleu;
-$clr-lien-visite__ftr: $alternative;
-$clr-lien-hover__ftr: $rose;
+$footer-colonnes__couleurs: (
+    fond: $jaune,
+    titre: $bleu,
+    texte: $bleu,
+    bordure: $bleu,
+    icone: $bleu,
+    lien: $bleu
+);
 
-$clr-fond__ftr-cln: $bleu;
-$clr-texte__ftr-cln: $jaune;
-$clr-titre__ftr-cln: $rose;
-$clr-lien__ftr-cln: $jaune;
-$clr-lien-visite__ftr-cln: $alternative;
-$clr-lien-hover__ftr-cln: $rose;
+$navigation__couleurs: (
+    fond: $rose,
+    titre: $jaune,
+    texte: $bleu,
+    bordure: $bleu,
+    icone: $bleu,
+    lien: $bleu
+);
 
-/* Navigation */
-$clr-fond__nav: $bleu;
-$clr-lien__nav: $jaune;
-$clr-lien-visite__nav: $alternative;
-$clr-lien-hover__nav: $rose;
+$main__couleurs: (
+    fond: $jaune,
+    titre: $bleu,
+    texte: $bleu,
+    bordure: $bleu,
+    icone: $bleu,
+    lien: $bleu
+);
 
-/* Main */
-$clr-fond__main: $bleu;
-$clr-texte__main: $jaune;
-$clr-titre__main: $jaune;
-$clr-lien__main: $jaune;
-$clr-lien-visite__main: $alternative;
-$clr-lien-hover__main: $rose;
+$carte__couleurs: (
+    fond: $bleu,
+    titre: $rose,
+    texte: $jaune,
+    bordure: $jaune,
+    icone: $jaune,
+    lien: $jaune
+);
 
-/* --- Éléments de contenu --- */
-/* Carte */
-$clr-fond__crt: $bleu;
-$clr-texte__crt: $jaune;
-$clr-titre__crt: $jaune;
-$clr-lien__crt: $jaune;
-$clr-lien-visite__crt: $alternative;
-$clr-lien-hover__crt: $rose;
+@mixin genererTheme($theme){
+	@include theme(
+        map-get($theme, "fond"),
+        map-get($theme, "titre"),
+        map-get($theme, "texte"),
+        map-get($theme, "bordure"),
+        map-get($theme, "icone"),
+        map-get($theme, "lien"),
+    )
+}

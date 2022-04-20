@@ -1,3 +1,5 @@
+@use "sass:maps";
+
 .cours {
     display: flex;
     flex-direction: column;
@@ -12,8 +14,11 @@
                 display: flex;
                 list-style-type: none;
 
-                li {
-                    @include etiquette(2em, $jaune, $bleu);
+                .menu-item {
+                    @include etiquette(
+                        2em, 
+                        $main__couleurs
+                    );
                 }
             }
         }
@@ -27,8 +32,7 @@
         gap: 2rem;
 
         .carte {
-            @include theme_sombre;
-            @include hover-ombre__rapide;
+            @include genererTheme($carte__couleurs);
         
             display: flex;
             flex-direction: column;
@@ -36,7 +40,7 @@
         
             padding: 2em;
         
-            border: 2px solid $clr-texte__crt;
+            //border: 2px solid $clr-texte__crt;
             border-radius: 10px;
     
             font-size: 1em;
@@ -56,14 +60,13 @@
             }
         
             &:hover {
-                @include theme_sombre;
+                @include theme_rose;
                 
                 .carte__etiquettes__sigle,
                 &__etiquettes__duree {
                     @include etiquette(
                         1.5em,
-                        $clr-fond__crt,
-                        $clr-texte__crt
+                        $carte__couleurs
                     );
                 }
             }
@@ -75,6 +78,8 @@
                 border-radius: 5px;
                 font-weight: bold;
                 text-decoration: none;
+
+                @include elargir__hover(.1s, 1.25);
         
                 h3 {
                     margin-block-start: 0;
@@ -90,17 +95,16 @@
                 &__duree {
                     @include etiquette(
                         1.5em,
-                        $clr-texte__crt,
-                        $clr-fond__crt
+                        $carte__couleurs
                     );
                 }
             }
             
             &__miniature {
-                @include filtre($clr-lien-hover__crt);
+                //@include filtre($clr-lien-hover__crt);
                 height: 10rem;
                 border-radius: 5px;
-                border: 2px solid $clr-texte__crt;
+                //border: 2px solid $clr-texte__crt;
     
                 img {
                     width: 100%;

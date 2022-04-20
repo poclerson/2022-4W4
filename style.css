@@ -332,14 +332,11 @@ html {
 }
 
 /* ===== VARIABLES ===== */
+@use 'sass:map';
+@use "sass:color";
 /* --- Éléments principaux --- */
 /* Site */
 /* Header */
-/* Footer */
-/* Navigation */
-/* Main */
-/* --- Éléments de contenu --- */
-/* Carte */
 /**
  * Animations globales
  */
@@ -379,21 +376,6 @@ html {
   }
 }
 
-@keyframes hover-ombre {
-  0% {
-    transform: scale(1);
-    box-shadow: none;
-  }
-  50% {
-    transform: scale(1.08);
-    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
-  }
-  100% {
-    transform: scale(1.1);
-    box-shadow: 2.5px 2.5px 5px rgba(0, 0, 0, 0.5);
-  }
-}
-
 @keyframes changer-couleur__clair {
   from {
     color: #ffe100;
@@ -413,6 +395,9 @@ html {
 }
 
 /**
+ * Mixins d'animations/transitions pour utilisation plsu rapide
+ */
+/**
  * Animations spécifiques
  */
 @keyframes glisser-arrivee__hdr {
@@ -431,31 +416,8 @@ html {
 }
 
 /* ===== ELEMENTS ===== */
-.burger__etiquette[for="site__barre__menu-principal-container-checkbox"] {
-  cursor: pointer;
-  position: fixed;
-  z-index: 100;
-  top: 15px;
-  left: 15px;
-  bottom: unset;
-  right: unset;
-  background-color: #ffb8d1;
-  padding: 10px;
-  border-radius: 50%;
-}
-
-.burger__etiquette[for="site__barre__menu-principal-container-checkbox"] svg {
-  color: #006b7e;
-}
-
-.burger__etiquette[for="site__barre__menu-principal-container-checkbox"] ~ .burger__checkbox {
-  display: none;
-}
-
-.burger__etiquette[for="site__barre__menu-principal-container-checkbox"]:focus, .burger__etiquette[for="site__barre__menu-principal-container-checkbox"]:active, .burger__etiquette[for="site__barre__menu-principal-container-checkbox"]:hover {
-  animation: brasser 1s infinite;
-}
-
+@use "sass:maps";
+@use "sass:maps";
 h1 {
   font-family: "Bungee";
   font-size: clamp(0.8rem, 8vw, 10rem);
@@ -485,6 +447,7 @@ h6 {
 .site__main {
   background-color: #ffe100;
   color: #006b7e;
+  border-color: #006b7e;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
@@ -510,7 +473,6 @@ h6 {
   padding: 10px;
   color: #006b7e;
   box-sizing: border-box;
-  border: 2px solid transparent;
 }
 
 .site__main a:visited {
@@ -523,21 +485,19 @@ h6 {
 }
 
 .site__main a:hover, .site__main a:focus, .site__main a:active {
-  color: #006b7e;
-  border-radius: 10px;
-  border: 2px solid #006b7e;
+  color: #006d81;
 }
 
 .site__main a:hover svg, .site__main a:focus svg, .site__main a:active svg {
-  color: #006b7e;
+  color: #006d81;
 }
 
 .site__main a svg {
   color: #006b7e;
 }
 
-svg .site__main {
-  color: #ffe100;
+.site__main svg {
+  color: #006b7e;
 }
 
 .site__main__titre {
@@ -567,6 +527,7 @@ svg .site__main {
 }
 
 /* ===== COMPOSANTS ===== */
+@use "sass:maps";
 .cours {
   display: flex;
   flex-direction: column;
@@ -583,17 +544,23 @@ svg .site__main {
   list-style-type: none;
 }
 
-.cours__filtre__menu__ul li {
+.cours__filtre__menu__ul .menu-item {
   font-weight: bold;
   text-decoration: none;
   font-size: 2em;
   margin: 1em 0;
+  display: inline;
+  background-color: #006b7e;
+  color: #ffe100;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 2.5px 2.5px 5px rgba(0, 0, 0, 0.5);
 }
 
-.cours__filtre__menu__ul li >  * {
+.cours__filtre__menu__ul .menu-item >  * {
   display: inline;
-  background-color: #ffe100;
-  color: #006b7e;
+  background-color: #006b7e;
+  color: #ffe100;
   padding: 10px;
   border-radius: 5px;
   box-shadow: 2.5px 2.5px 5px rgba(0, 0, 0, 0.5);
@@ -609,12 +576,12 @@ svg .site__main {
 
 .cours__conteneur .carte {
   background-color: #006b7e;
-  color: #ffe100;
+  color: #ffb8d1;
+  border-color: #ffe100;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   padding: 2em;
-  border: 2px solid #ffe100;
   border-radius: 10px;
   font-size: 1em;
   /* Largeur adaptative */
@@ -627,23 +594,22 @@ svg .site__main {
 .cours__conteneur .carte h1,
 .cours__conteneur .carte h2,
 .cours__conteneur .carte h3 {
-  color: #ffb8d1;
+  color: #ffe100;
 }
 
 .cours__conteneur .carte h4,
 .cours__conteneur .carte h5,
 .cours__conteneur .carte h6,
 .cours__conteneur .carte p {
-  color: #ffe100;
+  color: #ffb8d1;
 }
 
 .cours__conteneur .carte a {
   display: inline-block;
   text-decoration: none;
   padding: 10px;
-  color: #ffb8d1;
+  color: #ffe100;
   box-sizing: border-box;
-  border: 2px solid transparent;
 }
 
 .cours__conteneur .carte a:visited {
@@ -656,25 +622,19 @@ svg .site__main {
 }
 
 .cours__conteneur .carte a:hover, .cours__conteneur .carte a:focus, .cours__conteneur .carte a:active {
-  color: #ffb8d1;
-  border-radius: 10px;
-  border: 2px solid #ffb8d1;
+  color: #ffe103;
 }
 
 .cours__conteneur .carte a:hover svg, .cours__conteneur .carte a:focus svg, .cours__conteneur .carte a:active svg {
-  color: #ffb8d1;
+  color: #ffe103;
 }
 
 .cours__conteneur .carte a svg {
-  color: #ffb8d1;
+  color: #ffe100;
 }
 
-svg .cours__conteneur .carte {
-  color: #006b7e;
-}
-
-.cours__conteneur .carte:hover {
-  animation: hover-ombre .5s forwards;
+.cours__conteneur .carte svg {
+  color: #ffe100;
 }
 
 @media screen and (min-width: 600px) {
@@ -690,14 +650,15 @@ svg .cours__conteneur .carte {
 }
 
 .cours__conteneur .carte:hover {
-  background-color: #006b7e;
+  background-color: #ffb8d1;
   color: #ffe100;
+  border-color: #006b7e;
 }
 
 .cours__conteneur .carte:hover h1,
 .cours__conteneur .carte:hover h2,
 .cours__conteneur .carte:hover h3 {
-  color: #ffb8d1;
+  color: #006b7e;
 }
 
 .cours__conteneur .carte:hover h4,
@@ -711,35 +672,32 @@ svg .cours__conteneur .carte {
   display: inline-block;
   text-decoration: none;
   padding: 10px;
-  color: #ffb8d1;
+  color: #006b7e;
   box-sizing: border-box;
-  border: 2px solid transparent;
 }
 
 .cours__conteneur .carte:hover a:visited {
-  color: #ffe100;
+  color: #006b7e;
   opacity: .8;
 }
 
 .cours__conteneur .carte:hover a:visited svg {
-  color: #ffe100;
+  color: #006b7e;
 }
 
 .cours__conteneur .carte:hover a:hover, .cours__conteneur .carte:hover a:focus, .cours__conteneur .carte:hover a:active {
-  color: #ffb8d1;
-  border-radius: 10px;
-  border: 2px solid #ffb8d1;
+  color: #006d81;
 }
 
 .cours__conteneur .carte:hover a:hover svg, .cours__conteneur .carte:hover a:focus svg, .cours__conteneur .carte:hover a:active svg {
-  color: #ffb8d1;
+  color: #006d81;
 }
 
 .cours__conteneur .carte:hover a svg {
-  color: #ffb8d1;
+  color: #006b7e;
 }
 
-svg .cours__conteneur .carte:hover {
+.cours__conteneur .carte:hover svg {
   color: #006b7e;
 }
 
@@ -748,12 +706,18 @@ svg .cours__conteneur .carte:hover {
   text-decoration: none;
   font-size: 1.5em;
   margin: 1em 0;
+  display: inline;
+  background-color: #ffe100;
+  color: #006b7e;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 2.5px 2.5px 5px rgba(0, 0, 0, 0.5);
 }
 
 .cours__conteneur .carte:hover .carte__etiquettes__sigle >  *, .cours__conteneur .carte:hover__etiquettes__duree >  * {
   display: inline;
-  background-color: #006b7e;
-  color: #ffe100;
+  background-color: #ffe100;
+  color: #006b7e;
   padding: 10px;
   border-radius: 5px;
   box-shadow: 2.5px 2.5px 5px rgba(0, 0, 0, 0.5);
@@ -766,6 +730,14 @@ svg .cours__conteneur .carte:hover {
   border-radius: 5px;
   font-weight: bold;
   text-decoration: none;
+}
+
+.cours__conteneur .carte__titre, .cours__conteneur .carte__titre:hover {
+  transition: transform 0.1s ease-in-out;
+}
+
+.cours__conteneur .carte__titre:hover {
+  transform: scaleY(1.25);
 }
 
 .cours__conteneur .carte__titre h3 {
@@ -783,6 +755,12 @@ svg .cours__conteneur .carte:hover {
   text-decoration: none;
   font-size: 1.5em;
   margin: 1em 0;
+  display: inline;
+  background-color: #ffe100;
+  color: #006b7e;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 2.5px 2.5px 5px rgba(0, 0, 0, 0.5);
 }
 
 .cours__conteneur .carte__etiquettes__sigle >  *, .cours__conteneur .carte__etiquettes__duree >  * {
@@ -795,15 +773,8 @@ svg .cours__conteneur .carte:hover {
 }
 
 .cours__conteneur .carte__miniature {
-  background-color: #ffb8d1;
   height: 10rem;
   border-radius: 5px;
-  border: 2px solid #ffe100;
-}
-
-.cours__conteneur .carte__miniature img {
-  filter: grayscale(100%);
-  opacity: .5;
 }
 
 .cours__conteneur .carte__miniature img {
@@ -812,27 +783,28 @@ svg .cours__conteneur .carte:hover {
   object-fit: cover;
 }
 
+@use "sass:maps";
 .site__header {
   background-color: #006b7e;
-  color: #ffe100;
+  color: #ffb8d1;
+  border-color: #ffe100;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  align-items: center;
   padding: 2rem;
 }
 
 .site__header h1,
 .site__header h2,
 .site__header h3 {
-  color: #ffb8d1;
+  color: #ffe100;
 }
 
 .site__header h4,
 .site__header h5,
 .site__header h6,
 .site__header p {
-  color: #ffe100;
+  color: #ffb8d1;
 }
 
 .site__header a {
@@ -841,34 +813,31 @@ svg .cours__conteneur .carte:hover {
   padding: 10px;
   color: #ffb8d1;
   box-sizing: border-box;
-  border: 2px solid transparent;
 }
 
 .site__header a:visited {
-  color: #ffe100;
+  color: #ffb8d1;
   opacity: .8;
 }
 
 .site__header a:visited svg {
-  color: #ffe100;
+  color: #ffb8d1;
 }
 
 .site__header a:hover, .site__header a:focus, .site__header a:active {
-  color: #ffb8d1;
-  border-radius: 10px;
-  border: 2px solid #ffb8d1;
+  color: #ffbbd3;
 }
 
 .site__header a:hover svg, .site__header a:focus svg, .site__header a:active svg {
-  color: #ffb8d1;
+  color: #ffbbd3;
 }
 
 .site__header a svg {
   color: #ffb8d1;
 }
 
-svg .site__header {
-  color: #006b7e;
+.site__header svg {
+  color: #ffe100;
 }
 
 @media screen and (min-width: 600px) {
@@ -888,7 +857,7 @@ svg .site__header {
   margin-block-end: 0;
 }
 
-.site__header__titre a:hover {
+.site__header__titre a, .site__header__titre a:hover {
   border: none;
 }
 
@@ -912,13 +881,11 @@ svg .site__header {
   left: unset;
   bottom: unset;
   right: 15px;
-  background-color: #006b7e;
   padding: 10px;
   border-radius: 50%;
-}
-
-.site__header__utilitaires [for="site__header__utilitaires__menu-checkbox"] svg {
-  color: #ffe100;
+  background-color: #006b7e;
+  border-radius: 50%;
+  border: 2px solid #ffe100;
 }
 
 .site__header__utilitaires [for="site__header__utilitaires__menu-checkbox"] ~ .burger__checkbox {
@@ -929,9 +896,22 @@ svg .site__header {
   animation: brasser 1s infinite;
 }
 
-.site__header__utilitaires__menu {
+.site__header__utilitaires [for="site__header__utilitaires__menu-checkbox"] svg {
+  color: #ffe100;
+}
+
+.site__header__utilitaires [for="site__header__utilitaires__menu-checkbox"]:hover {
   background-color: #ffe100;
+}
+
+.site__header__utilitaires [for="site__header__utilitaires__menu-checkbox"]:hover svg {
   color: #006b7e;
+}
+
+.site__header__utilitaires__menu {
+  background-color: #ffb8d1;
+  color: #ffe100;
+  border-color: #006b7e;
   box-shadow: 2.5px 2.5px 5px rgba(0, 0, 0, 0.5);
   transform: translateX(100%);
   transition: transform .5s;
@@ -954,7 +934,7 @@ svg .site__header {
 .site__header__utilitaires__menu h5,
 .site__header__utilitaires__menu h6,
 .site__header__utilitaires__menu p {
-  color: #006b7e;
+  color: #ffe100;
 }
 
 .site__header__utilitaires__menu a {
@@ -963,7 +943,6 @@ svg .site__header {
   padding: 10px;
   color: #006b7e;
   box-sizing: border-box;
-  border: 2px solid transparent;
 }
 
 .site__header__utilitaires__menu a:visited {
@@ -976,21 +955,19 @@ svg .site__header {
 }
 
 .site__header__utilitaires__menu a:hover, .site__header__utilitaires__menu a:focus, .site__header__utilitaires__menu a:active {
-  color: #006b7e;
-  border-radius: 10px;
-  border: 2px solid #006b7e;
+  color: #006d81;
 }
 
 .site__header__utilitaires__menu a:hover svg, .site__header__utilitaires__menu a:focus svg, .site__header__utilitaires__menu a:active svg {
-  color: #006b7e;
+  color: #006d81;
 }
 
 .site__header__utilitaires__menu a svg {
   color: #006b7e;
 }
 
-svg .site__header__utilitaires__menu {
-  color: #ffe100;
+.site__header__utilitaires__menu svg {
+  color: #006b7e;
 }
 
 .icone {
@@ -1005,22 +982,24 @@ svg .site__header__utilitaires__menu {
   }
 }
 
+@use "sass:maps";
 .site__footer {
   background-color: #006b7e;
-  color: #ffe100;
+  color: #ffb8d1;
+  border-color: #ffe100;
 }
 
 .site__footer h1,
 .site__footer h2,
 .site__footer h3 {
-  color: #ffb8d1;
+  color: #ffe100;
 }
 
 .site__footer h4,
 .site__footer h5,
 .site__footer h6,
 .site__footer p {
-  color: #ffe100;
+  color: #ffb8d1;
 }
 
 .site__footer a {
@@ -1029,34 +1008,31 @@ svg .site__header__utilitaires__menu {
   padding: 10px;
   color: #ffb8d1;
   box-sizing: border-box;
-  border: 2px solid transparent;
 }
 
 .site__footer a:visited {
-  color: #ffe100;
+  color: #ffb8d1;
   opacity: .8;
 }
 
 .site__footer a:visited svg {
-  color: #ffe100;
+  color: #ffb8d1;
 }
 
 .site__footer a:hover, .site__footer a:focus, .site__footer a:active {
-  color: #ffb8d1;
-  border-radius: 10px;
-  border: 2px solid #ffb8d1;
+  color: #ffbbd3;
 }
 
 .site__footer a:hover svg, .site__footer a:focus svg, .site__footer a:active svg {
-  color: #ffb8d1;
+  color: #ffbbd3;
 }
 
 .site__footer a svg {
   color: #ffb8d1;
 }
 
-svg .site__footer {
-  color: #006b7e;
+.site__footer svg {
+  color: #ffe100;
 }
 
 .site__footer ul {
@@ -1077,44 +1053,13 @@ svg .site__footer {
   flex-direction: row;
 }
 
-.site__footer__colonne a {
-  display: inline-block;
-  text-decoration: none;
-  padding: 10px;
-  color: #006b7e;
-  box-sizing: border-box;
-  border: 2px solid transparent;
-}
-
-.site__footer__colonne a:visited {
-  color: #ffb8d1;
-  opacity: .8;
-}
-
-.site__footer__colonne a:visited svg {
-  color: #ffb8d1;
-}
-
-.site__footer__colonne a:hover, .site__footer__colonne a:focus, .site__footer__colonne a:active {
-  color: #006b7e;
-  border-radius: 10px;
-  border: 2px solid #006b7e;
-}
-
-.site__footer__colonne a:hover svg, .site__footer__colonne a:focus svg, .site__footer__colonne a:active svg {
-  color: #006b7e;
-}
-
-.site__footer__colonne a svg {
-  color: #006b7e;
-}
-
 .site__footer__colonne > * {
   margin: 1em;
   padding: 1em;
   border-radius: 10px;
   background-color: #ffe100;
   color: #006b7e;
+  border-color: #006b7e;
 }
 
 .site__footer__colonne > * h1,
@@ -1136,7 +1081,6 @@ svg .site__footer {
   padding: 10px;
   color: #006b7e;
   box-sizing: border-box;
-  border: 2px solid transparent;
 }
 
 .site__footer__colonne > * a:visited {
@@ -1149,21 +1093,19 @@ svg .site__footer {
 }
 
 .site__footer__colonne > * a:hover, .site__footer__colonne > * a:focus, .site__footer__colonne > * a:active {
-  color: #006b7e;
-  border-radius: 10px;
-  border: 2px solid #006b7e;
+  color: #006d81;
 }
 
 .site__footer__colonne > * a:hover svg, .site__footer__colonne > * a:focus svg, .site__footer__colonne > * a:active svg {
-  color: #006b7e;
+  color: #006d81;
 }
 
 .site__footer__colonne > * a svg {
   color: #006b7e;
 }
 
-svg .site__footer__colonne > * {
-  color: #ffe100;
+.site__footer__colonne > * svg {
+  color: #006b7e;
 }
 
 .site__footer__colonne > * > * {
@@ -1171,7 +1113,7 @@ svg .site__footer__colonne > * {
 }
 
 .site__footer__colonne > * > * .wp-block-image {
-  background-color: #ffb8d1;
+  background-color: #006b7e;
 }
 
 .site__footer__colonne > * > * .wp-block-image img {
@@ -1249,7 +1191,6 @@ svg .site__footer__colonne > * {
   padding: 10px;
   color: unset;
   box-sizing: border-box;
-  border: 2px solid transparent;
 }
 
 .site__footer__rangee__sociaux .sidebar .widget ul li a:visited {
@@ -1263,8 +1204,6 @@ svg .site__footer__colonne > * {
 
 .site__footer__rangee__sociaux .sidebar .widget ul li a:hover, .site__footer__rangee__sociaux .sidebar .widget ul li a:focus, .site__footer__rangee__sociaux .sidebar .widget ul li a:active {
   color: unset;
-  border-radius: 10px;
-  border: 2px solid unset;
 }
 
 .site__footer__rangee__sociaux .sidebar .widget ul li a:hover svg, .site__footer__rangee__sociaux .sidebar .widget ul li a:focus svg, .site__footer__rangee__sociaux .sidebar .widget ul li a:active svg {
@@ -1276,8 +1215,9 @@ svg .site__footer__colonne > * {
 }
 
 nav.menu-principal-container {
-  background-color: #ffe100;
-  color: #006b7e;
+  background-color: #ffb8d1;
+  color: #ffe100;
+  border-color: #006b7e;
   padding: 15px;
   font-size: 1.5em;
   width: 100vw;
@@ -1299,7 +1239,7 @@ nav.menu-principal-container h4,
 nav.menu-principal-container h5,
 nav.menu-principal-container h6,
 nav.menu-principal-container p {
-  color: #006b7e;
+  color: #ffe100;
 }
 
 nav.menu-principal-container a {
@@ -1308,7 +1248,6 @@ nav.menu-principal-container a {
   padding: 10px;
   color: #006b7e;
   box-sizing: border-box;
-  border: 2px solid transparent;
 }
 
 nav.menu-principal-container a:visited {
@@ -1321,21 +1260,19 @@ nav.menu-principal-container a:visited svg {
 }
 
 nav.menu-principal-container a:hover, nav.menu-principal-container a:focus, nav.menu-principal-container a:active {
-  color: #006b7e;
-  border-radius: 10px;
-  border: 2px solid #006b7e;
+  color: #006d81;
 }
 
 nav.menu-principal-container a:hover svg, nav.menu-principal-container a:focus svg, nav.menu-principal-container a:active svg {
-  color: #006b7e;
+  color: #006d81;
 }
 
 nav.menu-principal-container a svg {
   color: #006b7e;
 }
 
-svg nav.menu-principal-container {
-  color: #ffe100;
+nav.menu-principal-container svg {
+  color: #006b7e;
 }
 
 @media screen and (min-width: 600px) {
@@ -1352,18 +1289,59 @@ nav.menu-principal-container ul.menu li.menu-item {
   margin: 0;
 }
 
+nav.menu-principal-container ul.menu li.menu-item, nav.menu-principal-container ul.menu li.menu-item:hover {
+  transition: transform 0.1s ease-in-out;
+}
+
+nav.menu-principal-container ul.menu li.menu-item:hover {
+  transform: scaleY(1.25);
+}
+
 nav.menu-principal-container ul.menu li.menu-item a {
   padding: 5px;
   text-decoration: none;
+  font-family: "Bungee";
 }
 
-nav.menu-principal-container ul.menu li.menu-item a:hover {
-  animation: hover-ombre .5s forwards;
+.burger__etiquette[for="site__barre__menu-principal-container-checkbox"] {
+  cursor: pointer;
+  position: fixed;
+  z-index: 100;
+  top: 15px;
+  left: 15px;
+  bottom: unset;
+  right: unset;
+  padding: 10px;
+  border-radius: 50%;
+  background-color: #006b7e;
+  border-radius: 50%;
+  border: 2px solid #ffe100;
+}
+
+.burger__etiquette[for="site__barre__menu-principal-container-checkbox"] ~ .burger__checkbox {
+  display: none;
+}
+
+.burger__etiquette[for="site__barre__menu-principal-container-checkbox"]:focus, .burger__etiquette[for="site__barre__menu-principal-container-checkbox"]:active, .burger__etiquette[for="site__barre__menu-principal-container-checkbox"]:hover {
+  animation: brasser 1s infinite;
+}
+
+.burger__etiquette[for="site__barre__menu-principal-container-checkbox"] svg {
+  color: #ffe100;
+}
+
+.burger__etiquette[for="site__barre__menu-principal-container-checkbox"]:hover {
+  background-color: #ffe100;
+}
+
+.burger__etiquette[for="site__barre__menu-principal-container-checkbox"]:hover svg {
+  color: #006b7e;
 }
 
 .site__barre {
-  background-color: #006b7e;
-  color: unset;
+  background-color: #ffb8d1;
+  color: #ffe100;
+  border-color: #006b7e;
   z-index: 10;
   height: 0;
   display: flex;
@@ -1374,23 +1352,22 @@ nav.menu-principal-container ul.menu li.menu-item a:hover {
 .site__barre h1,
 .site__barre h2,
 .site__barre h3 {
-  color: unset;
+  color: #006b7e;
 }
 
 .site__barre h4,
 .site__barre h5,
 .site__barre h6,
 .site__barre p {
-  color: unset;
+  color: #ffe100;
 }
 
 .site__barre a {
   display: inline-block;
   text-decoration: none;
   padding: 10px;
-  color: #ffe100;
+  color: #006b7e;
   box-sizing: border-box;
-  border: 2px solid transparent;
 }
 
 .site__barre a:visited {
@@ -1403,20 +1380,18 @@ nav.menu-principal-container ul.menu li.menu-item a:hover {
 }
 
 .site__barre a:hover, .site__barre a:focus, .site__barre a:active {
-  color: #ffb8d1;
-  border-radius: 10px;
-  border: 2px solid #ffb8d1;
+  color: #006d81;
 }
 
 .site__barre a:hover svg, .site__barre a:focus svg, .site__barre a:active svg {
-  color: #ffb8d1;
+  color: #006d81;
 }
 
 .site__barre a svg {
-  color: #ffe100;
+  color: #006b7e;
 }
 
-svg .site__barre {
+.site__barre svg {
   color: #006b7e;
 }
 
@@ -1463,12 +1438,18 @@ svg .site__barre {
   text-decoration: none;
   font-size: 2em;
   margin: 1em 0;
+  display: inline;
+  background-color: #006b7e;
+  color: #ffe100;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 2.5px 2.5px 5px rgba(0, 0, 0, 0.5);
 }
 
 .cours__etiquettes__sigle >  *, .cours__etiquettes__duree >  * {
   display: inline;
-  background-color: #ffe100;
-  color: #006b7e;
+  background-color: #006b7e;
+  color: #ffe100;
   padding: 10px;
   border-radius: 5px;
   box-shadow: 2.5px 2.5px 5px rgba(0, 0, 0, 0.5);
@@ -1554,8 +1535,8 @@ form.recherche__bouton {
 
 .site__header__navigation {
   display: flex;
-  justify-content: space-between;
-  width: 100%;
+  flex-direction: column;
+  justify-content: flex-end;
   /**
          * Mettre en position relative pour permettre à la navigation de mieux
          * se positionner avec son position absolute (pas nécessaire en mobile)
@@ -1577,81 +1558,79 @@ form.recherche__bouton {
   display: block;
 }
 
-.site__header__navigation__menu > * {
-  background-color: #006b7e;
+.site__header__navigation__menu__nav {
+  width: 100vw;
+  left: 0;
+  position: absolute;
+  display: none;
+  border-radius: 5px;
+  background-color: #ffb8d1;
   color: #ffe100;
+  border-color: #006b7e;
 }
 
-.site__header__navigation__menu > * h1,
-.site__header__navigation__menu > * h2,
-.site__header__navigation__menu > * h3 {
-  color: #ffb8d1;
-}
-
-.site__header__navigation__menu > * h4,
-.site__header__navigation__menu > * h5,
-.site__header__navigation__menu > * h6,
-.site__header__navigation__menu > * p {
-  color: #ffe100;
-}
-
-.site__header__navigation__menu > * a {
-  display: inline-block;
-  text-decoration: none;
-  padding: 10px;
-  color: #ffb8d1;
-  box-sizing: border-box;
-  border: 2px solid transparent;
-}
-
-.site__header__navigation__menu > * a:visited {
-  color: #ffe100;
-  opacity: .8;
-}
-
-.site__header__navigation__menu > * a:visited svg {
-  color: #ffe100;
-}
-
-.site__header__navigation__menu > * a:hover, .site__header__navigation__menu > * a:focus, .site__header__navigation__menu > * a:active {
-  color: #ffb8d1;
-  border-radius: 10px;
-  border: 2px solid #ffb8d1;
-}
-
-.site__header__navigation__menu > * a:hover svg, .site__header__navigation__menu > * a:focus svg, .site__header__navigation__menu > * a:active svg {
-  color: #ffb8d1;
-}
-
-.site__header__navigation__menu > * a svg {
-  color: #ffb8d1;
-}
-
-svg .site__header__navigation__menu > * {
+.site__header__navigation__menu__nav h1,
+.site__header__navigation__menu__nav h2,
+.site__header__navigation__menu__nav h3 {
   color: #006b7e;
 }
 
-.site__header__navigation__menu__nav {
-  width: 100vw;
-  position: absolute;
-  left: 0;
-  display: none;
+.site__header__navigation__menu__nav h4,
+.site__header__navigation__menu__nav h5,
+.site__header__navigation__menu__nav h6,
+.site__header__navigation__menu__nav p {
+  color: #ffe100;
+}
+
+.site__header__navigation__menu__nav a {
+  display: inline-block;
+  text-decoration: none;
+  padding: 10px;
+  color: #006b7e;
+  box-sizing: border-box;
+}
+
+.site__header__navigation__menu__nav a:visited {
+  color: #006b7e;
+  opacity: .8;
+}
+
+.site__header__navigation__menu__nav a:visited svg {
+  color: #006b7e;
+}
+
+.site__header__navigation__menu__nav a:hover, .site__header__navigation__menu__nav a:focus, .site__header__navigation__menu__nav a:active {
+  color: #006d81;
+}
+
+.site__header__navigation__menu__nav a:hover svg, .site__header__navigation__menu__nav a:focus svg, .site__header__navigation__menu__nav a:active svg {
+  color: #006d81;
+}
+
+.site__header__navigation__menu__nav a svg {
+  color: #006b7e;
+}
+
+.site__header__navigation__menu__nav svg {
+  color: #006b7e;
 }
 
 @media screen and (min-width: 600px) {
   .site__header__navigation__menu__nav {
-    width: 50vw;
-    padding-top: 1em;
+    left: unset;
+    right: 75px;
+    bottom: 0;
+    width: 20vw;
   }
 }
 
 .site__header__navigation__menu__nav .menu {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   list-style-type: none;
   padding: 0;
   margin: 0 2rem;
-  height: 5.5em;
 }
 
 .site__header__navigation__menu__nav .menu .menu-item {
@@ -1660,8 +1639,12 @@ svg .site__header__navigation__menu > * {
   align-items: center;
 }
 
+.site__header__navigation__menu__nav .menu .menu-item, .site__header__navigation__menu__nav .menu .menu-item:hover {
+  transition: transform 0.1s ease-in-out;
+}
+
 .site__header__navigation__menu__nav .menu .menu-item:hover {
-  animation: hover-ombre .5s forwards;
+  transform: scaleY(1.25);
 }
 
 .site__header__navigation__menu__nav .menu .menu-item a {
@@ -1674,10 +1657,11 @@ svg .site__header__navigation__menu > * {
 
 .site__header__navigation__menu__ouverture {
   background-color: #006b7e;
+  border-radius: 50%;
+  border: 2px solid #ffe100;
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  border-radius: 50%;
   width: 75px;
   height: 75px;
   cursor: context-menu;
@@ -1685,6 +1669,14 @@ svg .site__header__navigation__menu > * {
 
 .site__header__navigation__menu__ouverture svg {
   color: #ffe100;
+}
+
+.site__header__navigation__menu__ouverture:hover {
+  background-color: #ffe100;
+}
+
+.site__header__navigation__menu__ouverture:hover svg {
+  color: #006b7e;
 }
 
 .site__header__navigation__menu__ouverture:hover {

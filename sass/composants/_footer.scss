@@ -1,5 +1,7 @@
+@use "sass:maps";
+
 .site__footer {
-    @include theme_sombre;
+    @include genererTheme($footer__couleurs);
     
     ul {
         list-style-type: none;
@@ -18,28 +20,20 @@
         justify-content: space-between;
         flex-direction: row;
 
-        a {
-            @include lien(	
-                $clr-lien__ftr, 
-                $clr-lien-hover__ftr, 
-                $clr-lien-visite__ftr, 
-            );
-        }
-
         // Chaque colonne
         & > * {
             margin: 1em;
             padding: 1em;
             border-radius: 10px;
 
-            @include theme_clair;
+            @include genererTheme($footer-colonnes__couleurs);
 
             // Chaque sidebar de chaque colonne
             & > * {
                 width: 100%;
 
                 .wp-block-image {
-                    @include filtre($clr-lien-hover__crt);
+                    @include filtre(map-get($footer-colonnes__couleurs, "texte"));
 
                     img {
                         width: 100%;
@@ -90,10 +84,6 @@
 
             width: 50vw;
             height: 6.5em;
-
-            &__titre {
-
-            }
 
             &__navigation {
                 width: 100%;

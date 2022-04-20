@@ -1,11 +1,11 @@
+@use "sass:maps";
+
 .site__header {
-    @include theme_sombre();
+    @include genererTheme($header__couleurs);
 
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    align-items: center;
-
     padding: 2rem;
 
     @media screen and (min-width: $largeur__media-tablette) {
@@ -24,7 +24,7 @@
 
         a {
             // Annuler les styles de la mixin @lien
-            &:hover {
+            &, &:hover {
                 border: none;
             }
 
@@ -51,13 +51,12 @@
                 unset,
                 15px,
 
-                $clr-texte__hdr,
-                $clr-fond__hdr
-            )
+                $header__couleurs
+            );
         }
 
         &__menu {
-            @include theme_clair();
+            @include genererTheme($navigation__couleurs);
             box-shadow: $ombre-petite;
             
             transform: translateX(100%);

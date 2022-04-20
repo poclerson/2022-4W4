@@ -3,8 +3,7 @@
 	text-decoration: none;
 	padding: 10px;
 	color: $couleur;
-	box-sizing: border-box;
-	border: 2px solid transparent;
+    box-sizing: border-box;
 
 	&:visited {
 		color: $couleur__visite;
@@ -19,8 +18,6 @@
 	&:focus,
 	&:active {
 		color: $couleur__hover;
-		border-radius: 10px;
-		border: 2px solid $couleur__hover;
 
 		svg {
 			color: $couleur__hover;

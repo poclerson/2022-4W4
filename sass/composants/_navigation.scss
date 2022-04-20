@@ -1,5 +1,6 @@
 nav.menu-principal-container {
-    @include theme_clair();
+    @include genererTheme($navigation__couleurs);
+
     padding: 15px;
     font-size: 1.5em;
     width: 100vw;
@@ -21,11 +22,24 @@ nav.menu-principal-container {
         li.menu-item {
             margin: 0;
 
+            @include elargir__hover(.1s, 1.25);
+
             a {
                 padding: 5px;
                 text-decoration: none;
-                @include hover-ombre__rapide;
+                font-family: $font__sous-titre;
             }
         }
     }
+}
+
+.burger__etiquette[for="site__barre__menu-principal-container-checkbox"] {
+	@include burger(
+		15px,
+		15px,
+		unset,
+		unset,
+
+		$header__couleurs
+	)
 }
