@@ -108,6 +108,15 @@ $carte__couleurs: (
     lien: $jaune
 );
 
+$overlay__couleurs: (
+    fond: $rose,
+    titre: $bleu,
+    texte: $bleu,
+    bordure: $bleu,
+    icone: $bleu,
+    lien: $bleu
+);
+
 @mixin genererTheme($theme){
 	@include theme(
         map-get($theme, "fond"),

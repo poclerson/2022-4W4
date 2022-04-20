@@ -1,0 +1,10 @@
+.boite-modale {
+    position: fixed;
+    width: 50vw;
+    height: 50vh;
+    top: 25vh;
+    left: 25vw;
+    z-index: 100;
+
+    @include genererTheme($overlay__couleurs);
+}

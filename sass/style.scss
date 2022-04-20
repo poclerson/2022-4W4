@@ -30,7 +30,7 @@ Text Domain: cidw-4w4
 @import "elements/themes";
 
 /* ===== LAYOUT ===== */
-@import "layout/_layout";
+@import "layout/layout";
 
 /* ===== COMPOSANTS ===== */
 @import "composants/cours";
@@ -45,6 +45,7 @@ Text Domain: cidw-4w4
 @import "composants/navigation_accueil";
 @import "composants/navigation-header";
 @import "composants/evenement";
+@import "composants/boite-modale";
 
 /* ===== GLOBAL ===== */ 
 body {

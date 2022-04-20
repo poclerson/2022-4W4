@@ -3,20 +3,22 @@ $largeur__icone-ouverture: 75px;
 .site__header{
     &__navigation {
         display: flex;
-        flex-direction: column;
         justify-content: flex-end;
 
-        /**
-         * Mettre en position relative pour permettre à la navigation de mieux
-         * se positionner avec son position absolute (pas nécessaire en mobile)
-         */
+        position: relative;
+
         @media screen and (min-width: $largeur__media-tablette) {
-            position: relative;
+            flex-direction: column;
             gap: 20px;
         }
 
         &__menu {
+            flex: 1;
             width: 100%;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
 
             &:hover {
                 .site__header__navigation__menu__nav {
@@ -25,8 +27,9 @@ $largeur__icone-ouverture: 75px;
             }
 
             &__nav {
-                width: 100vw;
-                left: 0;
+                width: 110vw;
+                top: 6rem;
+                left: -2rem;
                 position: absolute;
                 display: none;
                 border-radius: 5px;

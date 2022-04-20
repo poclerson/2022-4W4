@@ -503,8 +503,6 @@ h6 {
 .site__main__titre {
   font-size: 5rem;
   width: 100%;
-  margin-block-start: 0;
-  margin-block-end: 0;
 }
 
 @media screen and (min-width: 600px) {
@@ -512,6 +510,10 @@ h6 {
     grid-template-columns: clamp(200px, 30vw, 350px) auto;
     grid-template-areas: "header header" "main main" "footer footer";
   }
+}
+
+.site__header, .site__main, .site__footer {
+  width: 100vw;
 }
 
 .site__header {
@@ -554,7 +556,7 @@ h6 {
   color: #ffe100;
   padding: 10px;
   border-radius: 5px;
-  box-shadow: 2.5px 2.5px 5px rgba(0, 0, 0, 0.5);
+  box-shadow: 2.5px 2.5px 5px #006b7e;
 }
 
 .cours__filtre__menu__ul .menu-item >  * {
@@ -563,7 +565,7 @@ h6 {
   color: #ffe100;
   padding: 10px;
   border-radius: 5px;
-  box-shadow: 2.5px 2.5px 5px rgba(0, 0, 0, 0.5);
+  box-shadow: 2.5px 2.5px 5px #006b7e;
 }
 
 .cours__conteneur {
@@ -711,7 +713,7 @@ h6 {
   color: #006b7e;
   padding: 10px;
   border-radius: 5px;
-  box-shadow: 2.5px 2.5px 5px rgba(0, 0, 0, 0.5);
+  box-shadow: 2.5px 2.5px 5px #ffe100;
 }
 
 .cours__conteneur .carte:hover .carte__etiquettes__sigle >  *, .cours__conteneur .carte:hover__etiquettes__duree >  * {
@@ -720,7 +722,7 @@ h6 {
   color: #006b7e;
   padding: 10px;
   border-radius: 5px;
-  box-shadow: 2.5px 2.5px 5px rgba(0, 0, 0, 0.5);
+  box-shadow: 2.5px 2.5px 5px #ffe100;
 }
 
 .cours__conteneur .carte__titre {
@@ -760,7 +762,7 @@ h6 {
   color: #006b7e;
   padding: 10px;
   border-radius: 5px;
-  box-shadow: 2.5px 2.5px 5px rgba(0, 0, 0, 0.5);
+  box-shadow: 2.5px 2.5px 5px #ffe100;
 }
 
 .cours__conteneur .carte__etiquettes__sigle >  *, .cours__conteneur .carte__etiquettes__duree >  * {
@@ -769,7 +771,7 @@ h6 {
   color: #006b7e;
   padding: 10px;
   border-radius: 5px;
-  box-shadow: 2.5px 2.5px 5px rgba(0, 0, 0, 0.5);
+  box-shadow: 2.5px 2.5px 5px #ffe100;
 }
 
 .cours__conteneur .carte__miniature {
@@ -869,6 +871,10 @@ h6 {
   animation: changer-couleur__clair 1s infinite;
 }
 
+.site__header__utilitaires {
+  z-index: 10;
+}
+
 #site__header__utilitaires__menu-checkbox:checked ~ .site__header__utilitaires__menu {
   transform: translate(0);
 }
@@ -912,7 +918,7 @@ h6 {
   background-color: #ffb8d1;
   color: #ffe100;
   border-color: #006b7e;
-  box-shadow: 2.5px 2.5px 5px rgba(0, 0, 0, 0.5);
+  box-shadow: 2.5px 2.5px 5px #006b7e;
   transform: translateX(100%);
   transition: transform .5s;
   display: flex;
@@ -1443,7 +1449,7 @@ nav.menu-principal-container ul.menu li.menu-item a {
   color: #ffe100;
   padding: 10px;
   border-radius: 5px;
-  box-shadow: 2.5px 2.5px 5px rgba(0, 0, 0, 0.5);
+  box-shadow: 2.5px 2.5px 5px #006b7e;
 }
 
 .cours__etiquettes__sigle >  *, .cours__etiquettes__duree >  * {
@@ -1452,7 +1458,7 @@ nav.menu-principal-container ul.menu li.menu-item a {
   color: #ffe100;
   padding: 10px;
   border-radius: 5px;
-  box-shadow: 2.5px 2.5px 5px rgba(0, 0, 0, 0.5);
+  box-shadow: 2.5px 2.5px 5px #006b7e;
 }
 
 .cours__contenu {
@@ -1535,23 +1541,23 @@ form.recherche__bouton {
 
 .site__header__navigation {
   display: flex;
-  flex-direction: column;
   justify-content: flex-end;
-  /**
-         * Mettre en position relative pour permettre à la navigation de mieux
-         * se positionner avec son position absolute (pas nécessaire en mobile)
-         */
+  position: relative;
 }
 
 @media screen and (min-width: 600px) {
   .site__header__navigation {
-    position: relative;
+    flex-direction: column;
     gap: 20px;
   }
 }
 
 .site__header__navigation__menu {
+  flex: 1;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .site__header__navigation__menu:hover .site__header__navigation__menu__nav {
@@ -1559,8 +1565,9 @@ form.recherche__bouton {
 }
 
 .site__header__navigation__menu__nav {
-  width: 100vw;
-  left: 0;
+  width: 110vw;
+  top: 6rem;
+  left: -2rem;
   position: absolute;
   display: none;
   border-radius: 5px;
@@ -1681,6 +1688,138 @@ form.recherche__bouton {
 
 .site__header__navigation__menu__ouverture:hover {
   animation: brasser 1s infinite;
+}
+
+.evenement {
+  width: 100%;
+}
+
+.evenement__image {
+  width: 100%;
+}
+
+.evenement__image__miniature {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+.evenement__champs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.evenement__champs div {
+  background-color: #006b7e;
+  color: #ffb8d1;
+  border-color: #ffe100;
+  padding: 2em;
+  border-radius: 10px;
+}
+
+.evenement__champs div h1,
+.evenement__champs div h2,
+.evenement__champs div h3 {
+  color: #ffe100;
+}
+
+.evenement__champs div h4,
+.evenement__champs div h5,
+.evenement__champs div h6,
+.evenement__champs div p {
+  color: #ffb8d1;
+}
+
+.evenement__champs div a {
+  display: inline-block;
+  text-decoration: none;
+  padding: 10px;
+  color: #ffe100;
+  box-sizing: border-box;
+}
+
+.evenement__champs div a:visited {
+  color: #ffe100;
+  opacity: .8;
+}
+
+.evenement__champs div a:visited svg {
+  color: #ffe100;
+}
+
+.evenement__champs div a:hover, .evenement__champs div a:focus, .evenement__champs div a:active {
+  color: #ffe103;
+}
+
+.evenement__champs div a:hover svg, .evenement__champs div a:focus svg, .evenement__champs div a:active svg {
+  color: #ffe103;
+}
+
+.evenement__champs div a svg {
+  color: #ffe100;
+}
+
+.evenement__champs div svg {
+  color: #ffe100;
+}
+
+.boite-modale {
+  position: fixed;
+  width: 50vw;
+  height: 50vh;
+  top: 25vh;
+  left: 25vw;
+  z-index: 100;
+  background-color: #ffb8d1;
+  color: #006b7e;
+  border-color: #006b7e;
+}
+
+.boite-modale h1,
+.boite-modale h2,
+.boite-modale h3 {
+  color: #006b7e;
+}
+
+.boite-modale h4,
+.boite-modale h5,
+.boite-modale h6,
+.boite-modale p {
+  color: #006b7e;
+}
+
+.boite-modale a {
+  display: inline-block;
+  text-decoration: none;
+  padding: 10px;
+  color: #006b7e;
+  box-sizing: border-box;
+}
+
+.boite-modale a:visited {
+  color: #006b7e;
+  opacity: .8;
+}
+
+.boite-modale a:visited svg {
+  color: #006b7e;
+}
+
+.boite-modale a:hover, .boite-modale a:focus, .boite-modale a:active {
+  color: #006d81;
+}
+
+.boite-modale a:hover svg, .boite-modale a:focus svg, .boite-modale a:active svg {
+  color: #006d81;
+}
+
+.boite-modale a svg {
+  color: #006b7e;
+}
+
+.boite-modale svg {
+  color: #006b7e;
 }
 
 /* ===== GLOBAL ===== */

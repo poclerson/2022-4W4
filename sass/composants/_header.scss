@@ -39,6 +39,8 @@
     } 
 
     &__utilitaires {
+        z-index: 10;
+
         // Fonctionnement du menu burger grâce à la checkbox
         #site__header__utilitaires__menu-checkbox:checked ~ &__menu {
             transform: translate(0);
@@ -57,7 +59,7 @@
 
         &__menu {
             @include genererTheme($navigation__couleurs);
-            box-shadow: $ombre-petite;
+            @include ombre--petite($navigation__couleurs);
             
             transform: translateX(100%);
             transition: transform .5s;
