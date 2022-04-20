@@ -10,5 +10,5 @@
 
     boiteModale.addEventListener("click", function() {
         boiteModale.classList.remove("boite-modale--ouverte")
-    })
+    }) 
 })()
