@@ -10,6 +10,11 @@
 </head>
 <body <?php body_class("site"); ?> >
     <header class="site__header">
+        <div class="boite-modale">
+            <p class="boite-modale__texte">
+                Ceci est un test
+            </p>
+        </div>
         <?php the_custom_logo(); ?>
         <section class="site__header__titre">
             <a href="<?= esc_url(home_url('/')); ?>">

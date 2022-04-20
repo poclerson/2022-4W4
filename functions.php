@@ -4,11 +4,25 @@
         wp_enqueue_style('  
             style_css', 
             get_template_directory_uri() . '/style.css', 
-            array(), filemtime(get_template_directory() . '/style.css'), 
-            false);
+            array(), 
+            filemtime(get_template_directory() . '/style.css'), 
+            false
+        );
 
             
-        wp_enqueue_style('cidw-4w4-police-google', "https://fonts.googleapis.com/css2?family=Bungee&display=swap", false);
+        wp_enqueue_style(
+            'cidw-4w4-police-google', 
+            "https://fonts.googleapis.com/css2?family=Bungee&display=swap",
+            false
+        );
+
+        wp_enqueue_script(
+            'cidw-4w4-boite-modale', 
+            get_template_directory_uri() . "/scripts/boite-modale.js", 
+            array(), 
+            filemtime(get_template_directory() . '/scripts/boite-modale.js'), 
+            true
+        );
     } 
 
     add_action("wp_enqueue_scripts", "cidw_4w4_enqueue");

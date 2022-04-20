@@ -1774,6 +1774,8 @@ form.recherche__bouton {
   background-color: #ffb8d1;
   color: #006b7e;
   border-color: #006b7e;
+  transition: all .5s ease-in-out;
+  transform: scaleY(0);
 }
 
 .boite-modale h1,
@@ -1820,6 +1822,10 @@ form.recherche__bouton {
 
 .boite-modale svg {
   color: #006b7e;
+}
+
+.boite-modale--ouverte {
+  transform: scaleY(1);
 }
 
 /* ===== GLOBAL ===== */

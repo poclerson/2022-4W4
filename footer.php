@@ -25,10 +25,5 @@
             </div>
         </footer>
         <?php wp_footer(); ?>
-        <div class="boite-modale">
-            <p class="boite-modale__texte">
-                Ceci est un test
-            </p>
-        </div>
     </body>
 </html>
