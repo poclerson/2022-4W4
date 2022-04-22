@@ -26,6 +26,9 @@
                 </div>
                 <div class="carte__desc">
                     <button class="carte__desc__bouton">Voir plus</button>
+                    <p class="carte__desc__contenu">
+                        <?= get_the_content(); ?>
+                    </p>
                 </div>
             </section>
             

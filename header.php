@@ -12,7 +12,7 @@
     <header class="site__header">
         <div class="boite-modale">
             <p class="boite-modale__texte">
-                Ceci est un test
+                
             </p>
         </div>
         <?php the_custom_logo(); ?>

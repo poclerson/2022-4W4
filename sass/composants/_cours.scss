@@ -100,15 +100,20 @@
             }
             
             &__miniature {
-                //@include filtre($clr-lien-hover__crt);
+                @include filtre(map-get($carte__couleurs));
                 height: 10rem;
                 border-radius: 5px;
-                //border: 2px solid $clr-texte__crt;
     
                 img {
                     width: 100%;
                     height: 100%;
                     object-fit: cover;
+                }
+            }
+
+            &__desc {
+                &__contenu {
+                    display: none;
                 }
             }
         }

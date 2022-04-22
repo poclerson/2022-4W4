@@ -785,6 +785,10 @@ h6 {
   object-fit: cover;
 }
 
+.cours__conteneur .carte__desc__contenu {
+  display: none;
+}
+
 @use "sass:maps";
 .site__header {
   background-color: #006b7e;
