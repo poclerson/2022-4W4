@@ -25,8 +25,11 @@
                     <?php the_post_thumbnail(); ?>
                 </div>
                 <div class="carte__desc">
-                    <button class="carte__desc__bouton">Voir plus</button>
+                    <button class="carte__desc__bouton">
+                        <p class="carte__desc__bouton__texte">Voir plus</p>
+                    </button>
                     <p class="carte__desc__contenu">
+                        <?= le_titre_filtre(get_the_title()); ?>
                         <?= get_the_content(); ?>
                     </p>
                 </div>

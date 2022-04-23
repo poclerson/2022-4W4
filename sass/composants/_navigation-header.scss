@@ -57,7 +57,7 @@ $largeur__icone-ouverture: 75px;
                         justify-content: center;
                         align-items: center;
 
-                        @include elargir__hover(.1s, 1.25);
+                        @include elargir(.1s, 1.25, true);
 
                         a {
                             display: block;
@@ -71,7 +71,7 @@ $largeur__icone-ouverture: 75px;
             }
 
             &__ouverture {
-                @include bouton-rond($header__couleurs);
+                @include bouton--rond($header__couleurs);
 
                 display: inline-flex;
                 justify-content: center;

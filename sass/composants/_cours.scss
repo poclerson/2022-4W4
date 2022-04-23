@@ -4,6 +4,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100%;
 
     &__filtre {
         width: 100%;
@@ -12,12 +13,17 @@
             &__ul {
                 width: 100%;
                 display: flex;
+                flex-wrap: wrap;
+                gap: 20px;
+                padding: unset;
+
                 list-style-type: none;
 
                 .menu-item {
                     @include etiquette(
                         2em, 
-                        $main__couleurs
+                        $main__couleurs,
+                        true
                     );
                 }
             }
@@ -37,6 +43,8 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            gap: 20px;
+            max-width: 80vw;
         
             padding: 2em;
         
@@ -58,27 +66,14 @@
                 width: 30%;
             }
         
-            &:hover {
-                @include theme_rose;
-                
-                .carte__etiquettes__sigle,
-                &__etiquettes__duree {
-                    @include etiquette(
-                        1.5em,
-                        $carte__couleurs
-                    );
-                }
-            }
-        
             &__titre {
-                padding: .5rem;
                 width: 100%;
                 font-size: 1.5rem;
                 border-radius: 5px;
                 font-weight: bold;
                 text-decoration: none;
 
-                @include elargir__hover(.1s, 1.25);
+                @include elargir(.1s, 1.25, true);
         
                 h3 {
                     margin-block-start: 0;
@@ -94,13 +89,14 @@
                 &__duree {
                     @include etiquette(
                         1.5em,
-                        $carte__couleurs
+                        $carte__couleurs,
+                        false
                     );
                 }
             }
             
             &__miniature {
-                @include filtre(map-get($carte__couleurs));
+                @include filtre(map-get($carte__couleurs, "icone"));
                 height: 10rem;
                 border-radius: 5px;
     
@@ -112,8 +108,13 @@
             }
 
             &__desc {
+                // Cacher toute la description parce qu'elle ne sera qu'affichée dans la boite modale
                 &__contenu {
                     display: none;
+                }
+
+                &__bouton {
+                    @include bouton--texte($carte__couleurs, 1.25em, true);
                 }
             }
         }

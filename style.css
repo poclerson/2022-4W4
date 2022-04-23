@@ -436,10 +436,10 @@ h6 {
 
 /* ===== LAYOUT ===== */
 .site {
+  width: 100vw;
   font-size: 12px;
-  background-color: #006b7e;
-  gap: 2px;
   display: grid;
+  overflow-x: hidden;
   grid-template-columns: auto;
   grid-template-areas: "header" "main" "footer";
 }
@@ -534,6 +534,7 @@ h6 {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
 }
 
 .cours__filtre {
@@ -543,6 +544,9 @@ h6 {
 .cours__filtre__menu__ul {
   width: 100%;
   display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: unset;
   list-style-type: none;
 }
 
@@ -550,22 +554,23 @@ h6 {
   font-weight: bold;
   text-decoration: none;
   font-size: 2em;
-  margin: 1em 0;
   display: inline;
   background-color: #006b7e;
   color: #ffe100;
   padding: 10px;
   border-radius: 5px;
-  box-shadow: 2.5px 2.5px 5px #006b7e;
 }
 
-.cours__filtre__menu__ul .menu-item >  * {
-  display: inline;
-  background-color: #006b7e;
+.cours__filtre__menu__ul .menu-item p, .cours__filtre__menu__ul .menu-item a, .cours__filtre__menu__ul .menu-item h1, .cours__filtre__menu__ul .menu-item h2, .cours__filtre__menu__ul .menu-item h3, .cours__filtre__menu__ul .menu-item h4, .cours__filtre__menu__ul .menu-item h5, .cours__filtre__menu__ul .menu-item h6 {
   color: #ffe100;
-  padding: 10px;
-  border-radius: 5px;
-  box-shadow: 2.5px 2.5px 5px #006b7e;
+}
+
+.cours__filtre__menu__ul .menu-item:hover {
+  background-color: #ffb8d1;
+}
+
+.cours__filtre__menu__ul .menu-item:hover p, .cours__filtre__menu__ul .menu-item:hover a, .cours__filtre__menu__ul .menu-item:hover h1, .cours__filtre__menu__ul .menu-item:hover h2, .cours__filtre__menu__ul .menu-item:hover h3, .cours__filtre__menu__ul .menu-item:hover h4, .cours__filtre__menu__ul .menu-item:hover h5, .cours__filtre__menu__ul .menu-item:hover h6 {
+  color: #006b7e;
 }
 
 .cours__conteneur {
@@ -583,6 +588,8 @@ h6 {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  gap: 20px;
+  max-width: 80vw;
   padding: 2em;
   border-radius: 10px;
   font-size: 1em;
@@ -651,82 +658,7 @@ h6 {
   }
 }
 
-.cours__conteneur .carte:hover {
-  background-color: #ffb8d1;
-  color: #ffe100;
-  border-color: #006b7e;
-}
-
-.cours__conteneur .carte:hover h1,
-.cours__conteneur .carte:hover h2,
-.cours__conteneur .carte:hover h3 {
-  color: #006b7e;
-}
-
-.cours__conteneur .carte:hover h4,
-.cours__conteneur .carte:hover h5,
-.cours__conteneur .carte:hover h6,
-.cours__conteneur .carte:hover p {
-  color: #ffe100;
-}
-
-.cours__conteneur .carte:hover a {
-  display: inline-block;
-  text-decoration: none;
-  padding: 10px;
-  color: #006b7e;
-  box-sizing: border-box;
-}
-
-.cours__conteneur .carte:hover a:visited {
-  color: #006b7e;
-  opacity: .8;
-}
-
-.cours__conteneur .carte:hover a:visited svg {
-  color: #006b7e;
-}
-
-.cours__conteneur .carte:hover a:hover, .cours__conteneur .carte:hover a:focus, .cours__conteneur .carte:hover a:active {
-  color: #006d81;
-}
-
-.cours__conteneur .carte:hover a:hover svg, .cours__conteneur .carte:hover a:focus svg, .cours__conteneur .carte:hover a:active svg {
-  color: #006d81;
-}
-
-.cours__conteneur .carte:hover a svg {
-  color: #006b7e;
-}
-
-.cours__conteneur .carte:hover svg {
-  color: #006b7e;
-}
-
-.cours__conteneur .carte:hover .carte__etiquettes__sigle, .cours__conteneur .carte:hover__etiquettes__duree {
-  font-weight: bold;
-  text-decoration: none;
-  font-size: 1.5em;
-  margin: 1em 0;
-  display: inline;
-  background-color: #ffe100;
-  color: #006b7e;
-  padding: 10px;
-  border-radius: 5px;
-  box-shadow: 2.5px 2.5px 5px #ffe100;
-}
-
-.cours__conteneur .carte:hover .carte__etiquettes__sigle >  *, .cours__conteneur .carte:hover__etiquettes__duree >  * {
-  display: inline;
-  background-color: #ffe100;
-  color: #006b7e;
-  padding: 10px;
-  border-radius: 5px;
-  box-shadow: 2.5px 2.5px 5px #ffe100;
-}
-
 .cours__conteneur .carte__titre {
-  padding: .5rem;
   width: 100%;
   font-size: 1.5rem;
   border-radius: 5px;
@@ -756,27 +688,26 @@ h6 {
   font-weight: bold;
   text-decoration: none;
   font-size: 1.5em;
-  margin: 1em 0;
   display: inline;
   background-color: #ffe100;
   color: #006b7e;
   padding: 10px;
   border-radius: 5px;
-  box-shadow: 2.5px 2.5px 5px #ffe100;
 }
 
-.cours__conteneur .carte__etiquettes__sigle >  *, .cours__conteneur .carte__etiquettes__duree >  * {
-  display: inline;
-  background-color: #ffe100;
+.cours__conteneur .carte__etiquettes__sigle p, .cours__conteneur .carte__etiquettes__sigle a, .cours__conteneur .carte__etiquettes__sigle h1, .cours__conteneur .carte__etiquettes__sigle h2, .cours__conteneur .carte__etiquettes__sigle h3, .cours__conteneur .carte__etiquettes__sigle h4, .cours__conteneur .carte__etiquettes__sigle h5, .cours__conteneur .carte__etiquettes__sigle h6, .cours__conteneur .carte__etiquettes__duree p, .cours__conteneur .carte__etiquettes__duree a, .cours__conteneur .carte__etiquettes__duree h1, .cours__conteneur .carte__etiquettes__duree h2, .cours__conteneur .carte__etiquettes__duree h3, .cours__conteneur .carte__etiquettes__duree h4, .cours__conteneur .carte__etiquettes__duree h5, .cours__conteneur .carte__etiquettes__duree h6 {
   color: #006b7e;
-  padding: 10px;
-  border-radius: 5px;
-  box-shadow: 2.5px 2.5px 5px #ffe100;
 }
 
 .cours__conteneur .carte__miniature {
+  background-color: #ffe100;
   height: 10rem;
   border-radius: 5px;
+}
+
+.cours__conteneur .carte__miniature img {
+  filter: grayscale(100%);
+  opacity: .5;
 }
 
 .cours__conteneur .carte__miniature img {
@@ -787,6 +718,35 @@ h6 {
 
 .cours__conteneur .carte__desc__contenu {
   display: none;
+}
+
+.cours__conteneur .carte__desc__bouton {
+  background-color: #ffe100;
+  border-radius: 10px;
+  padding: 1em;
+  cursor: pointer;
+  border: none;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 1.25em;
+  display: block;
+  width: 100%;
+}
+
+.cours__conteneur .carte__desc__bouton p, .cours__conteneur .carte__desc__bouton a, .cours__conteneur .carte__desc__bouton h1, .cours__conteneur .carte__desc__bouton h2, .cours__conteneur .carte__desc__bouton h3, .cours__conteneur .carte__desc__bouton h4, .cours__conteneur .carte__desc__bouton h5, .cours__conteneur .carte__desc__bouton h6 {
+  color: #006b7e;
+}
+
+.cours__conteneur .carte__desc__bouton:hover {
+  background-color: #ffb8d1;
+}
+
+.cours__conteneur .carte__desc__bouton:hover p, .cours__conteneur .carte__desc__bouton:hover a, .cours__conteneur .carte__desc__bouton:hover h1, .cours__conteneur .carte__desc__bouton:hover h2, .cours__conteneur .carte__desc__bouton:hover h3, .cours__conteneur .carte__desc__bouton:hover h4, .cours__conteneur .carte__desc__bouton:hover h5, .cours__conteneur .carte__desc__bouton:hover h6 {
+  transform: scaleY(1.5);
+}
+
+.cours__conteneur .carte__desc__bouton:hover p, .cours__conteneur .carte__desc__bouton:hover p:hover, .cours__conteneur .carte__desc__bouton:hover a, .cours__conteneur .carte__desc__bouton:hover a:hover, .cours__conteneur .carte__desc__bouton:hover h1, .cours__conteneur .carte__desc__bouton:hover h1:hover, .cours__conteneur .carte__desc__bouton:hover h2, .cours__conteneur .carte__desc__bouton:hover h2:hover, .cours__conteneur .carte__desc__bouton:hover h3, .cours__conteneur .carte__desc__bouton:hover h3:hover, .cours__conteneur .carte__desc__bouton:hover h4, .cours__conteneur .carte__desc__bouton:hover h4:hover, .cours__conteneur .carte__desc__bouton:hover h5, .cours__conteneur .carte__desc__bouton:hover h5:hover, .cours__conteneur .carte__desc__bouton:hover h6, .cours__conteneur .carte__desc__bouton:hover h6:hover {
+  transition: transform 0.25s ease-in-out;
 }
 
 @use "sass:maps";
@@ -1447,22 +1407,15 @@ nav.menu-principal-container ul.menu li.menu-item a {
   font-weight: bold;
   text-decoration: none;
   font-size: 2em;
-  margin: 1em 0;
   display: inline;
   background-color: #006b7e;
   color: #ffe100;
   padding: 10px;
   border-radius: 5px;
-  box-shadow: 2.5px 2.5px 5px #006b7e;
 }
 
-.cours__etiquettes__sigle >  *, .cours__etiquettes__duree >  * {
-  display: inline;
-  background-color: #006b7e;
+.cours__etiquettes__sigle p, .cours__etiquettes__sigle a, .cours__etiquettes__sigle h1, .cours__etiquettes__sigle h2, .cours__etiquettes__sigle h3, .cours__etiquettes__sigle h4, .cours__etiquettes__sigle h5, .cours__etiquettes__sigle h6, .cours__etiquettes__duree p, .cours__etiquettes__duree a, .cours__etiquettes__duree h1, .cours__etiquettes__duree h2, .cours__etiquettes__duree h3, .cours__etiquettes__duree h4, .cours__etiquettes__duree h5, .cours__etiquettes__duree h6 {
   color: #ffe100;
-  padding: 10px;
-  border-radius: 5px;
-  box-shadow: 2.5px 2.5px 5px #006b7e;
 }
 
 .cours__contenu {
@@ -1770,16 +1723,27 @@ form.recherche__bouton {
 
 .boite-modale {
   position: fixed;
-  width: 50vw;
-  height: 50vh;
-  top: 25vh;
-  left: 25vw;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  padding: 2em;
+  font-size: 1.35em;
   z-index: 100;
   background-color: #ffb8d1;
   color: #006b7e;
   border-color: #006b7e;
   transition: all .5s ease-in-out;
   transform: scaleY(0);
+}
+
+@media screen and (min-width: 600px) {
+  .boite-modale {
+    width: 50vw;
+    height: 50vh;
+    top: 25vh;
+    left: 25vw;
+  }
 }
 
 .boite-modale h1,

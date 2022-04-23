@@ -1,24 +1,27 @@
 @use "sass:maps";
 
-@mixin etiquette ($taille-texte, $theme) {
+@mixin etiquette ($taille-texte, $theme, $estCliquable) {
     font-weight: bold;
     text-decoration: none;
     font-size: $taille-texte;
-    margin: 1em 0;
 
     display: inline;
     background-color: map-get($theme, "icone");
     color: map-get($theme, "fond");
     padding: 10px;
     border-radius: 5px;
-    @include ombre--petite($theme);
 
-    & > * {
-        display: inline;
-        background-color: map-get($theme, "icone");
+    p, a, h1, h2, h3, h4, h5, h6 {
         color: map-get($theme, "fond");
-        padding: 10px;
-        border-radius: 5px;
-        @include ombre--petite($theme);
+    }
+
+    @if ($estCliquable) {
+        &:hover {
+            background-color: map-get($theme, "hover");
+
+            p, a, h1, h2, h3, h4, h5, h6 {
+                color: map-get($theme, "texte");
+            }
+        }
     }
 }

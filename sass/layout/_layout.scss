@@ -1,8 +1,8 @@
 .site {
+    width: 100vw;
     font-size: 12px;
-    background-color: $bleu;
-    gap: 2px;
-	display: grid;
+    display: grid;
+    overflow-x: hidden;
 	grid-template-columns: auto;
 	grid-template-areas:
         "header"
@@ -10,7 +10,7 @@
         "footer";
 
     &__main {
-        @include theme_jaune;
+        @include genererTheme($main__couleurs);
         
         display: flex;
         flex-wrap: wrap;

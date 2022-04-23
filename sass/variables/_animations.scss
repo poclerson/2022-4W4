@@ -29,12 +29,18 @@
  * Mixins d'animations/transitions pour utilisation plsu rapide
  */
 
-@mixin elargir__hover($duree, $elargissement) {
+@mixin elargir($duree, $elargissement, $siHover) {
     &, &:hover {
         transition: transform $duree ease-in-out;
     }
 
-    &:hover {
+    @if ($siHover) {
+        &:hover {
+            transform: scaleY($elargissement);
+        }
+    }
+
+    @else {
         transform: scaleY($elargissement);
     }
 }

@@ -22,7 +22,7 @@ nav.menu-principal-container {
         li.menu-item {
             margin: 0;
 
-            @include elargir__hover(.1s, 1.25);
+            @include elargir(.1s, 1.25, true);
 
             a {
                 padding: 5px;

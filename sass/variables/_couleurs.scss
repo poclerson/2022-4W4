@@ -60,7 +60,8 @@ $header__couleurs: (
     texte: $jaune,
     bordure: $jaune,
     icone: $jaune,
-    lien: $rose
+    lien: $rose,
+    hover: $jaune
 );
 
 $footer__couleurs: (
@@ -69,7 +70,8 @@ $footer__couleurs: (
     texte: $jaune,
     bordure: $jaune,
     icone: $jaune,
-    lien: $rose
+    lien: $rose,
+    hover: $jaune
 );
 
 $footer-colonnes__couleurs: (
@@ -78,7 +80,8 @@ $footer-colonnes__couleurs: (
     texte: $bleu,
     bordure: $bleu,
     icone: $bleu,
-    lien: $bleu
+    lien: $bleu,
+    hover: $bleu
 );
 
 $navigation__couleurs: (
@@ -87,7 +90,8 @@ $navigation__couleurs: (
     texte: $bleu,
     bordure: $bleu,
     icone: $bleu,
-    lien: $bleu
+    lien: $bleu,
+    hover: $jaune
 );
 
 $main__couleurs: (
@@ -96,7 +100,8 @@ $main__couleurs: (
     texte: $bleu,
     bordure: $bleu,
     icone: $bleu,
-    lien: $bleu
+    lien: $bleu,
+    hover: $rose
 );
 
 $carte__couleurs: (
@@ -105,7 +110,8 @@ $carte__couleurs: (
     texte: $jaune,
     bordure: $jaune,
     icone: $jaune,
-    lien: $jaune
+    lien: $jaune,
+    hover: $rose
 );
 
 $overlay__couleurs: (
@@ -114,10 +120,11 @@ $overlay__couleurs: (
     texte: $bleu,
     bordure: $bleu,
     icone: $bleu,
-    lien: $bleu
+    lien: $bleu,
+    hover: $jaune
 );
 
-@mixin genererTheme($theme){
+@mixin genererTheme($theme){  
 	@include theme(
         map-get($theme, "fond"),
         map-get($theme, "titre"),

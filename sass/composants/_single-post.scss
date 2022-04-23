@@ -25,7 +25,8 @@
         &__duree {
             @include etiquette(
                 2em,
-                $main__couleurs
+                $main__couleurs,
+                false
             )
         } 
     }
