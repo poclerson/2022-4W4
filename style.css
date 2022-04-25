@@ -1648,6 +1648,9 @@ form.recherche__bouton {
 }
 
 .evenement {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
   width: 100%;
 }
 
@@ -1794,6 +1797,25 @@ form.recherche__bouton {
 
 .boite-modale--ouverte {
   transform: scaleY(1);
+}
+
+.boite-modale__fermer {
+  background-color: #ffb8d1;
+  border-radius: 50%;
+  border: 2px solid #006b7e;
+  cursor: pointer;
+}
+
+.boite-modale__fermer svg {
+  color: #006b7e;
+}
+
+.boite-modale__fermer:hover {
+  background-color: #006b7e;
+}
+
+.boite-modale__fermer:hover svg {
+  color: #ffb8d1;
 }
 
 /* ===== GLOBAL ===== */

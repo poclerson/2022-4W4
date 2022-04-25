@@ -30,4 +30,9 @@
     &__texte {
 
     }
+
+    &__fermer {
+        @include bouton--rond($overlay__couleurs);
+        cursor: pointer;
+    }
 }

@@ -28,10 +28,14 @@
                     <button class="carte__desc__bouton">
                         <p class="carte__desc__bouton__texte">Voir plus</p>
                     </button>
-                    <p class="carte__desc__contenu">
-                        <?= le_titre_filtre(get_the_title()); ?>
-                        <?= get_the_content(); ?>
-                    </p>
+                    <article class="carte__desc__contenu">
+                        <h2 class="carte__desc__contenu__titre">
+                            <?= le_titre_filtre(get_the_title()); ?>
+                        </h2>
+                        <p class="carte__desc__contenu__texte">
+                            <?= get_the_content(); ?>
+                        </p>
+                    </article>
                 </div>
             </section>
             
