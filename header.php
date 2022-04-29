@@ -7,8 +7,17 @@
     <title>Les cours du TIM</title>
     <?php wp_head(); ?>
     <?php show_admin_bar(true); ?>
+    <style>
+        header.site__header {
+            background-color: <?= get_theme_mod('header_fond') ?>;
+        }
+
+        main.site__main {
+            background: <?= get_theme_mod('main_fond') ?>;
+        }
+    </style>
 </head>
-<body <?php body_class("site"); ?> >
+<body <?php body_class("site"); ?>>
     <header class="site__header">
         <div class="boite-modale">
             <button class="boite-modale__fermer">

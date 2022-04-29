@@ -14,15 +14,25 @@
         }
     }
 
-    &__champs {
+    &__info {
         display: flex;
         flex-wrap: wrap;
         gap: 20px;
 
-        div {
+        &__champs {
             @include genererTheme($carte__couleurs);
-            padding: 2em;
+            padding: clamp(1em, 2.5vw, 2em);
             border-radius: 10px;
+
+            &__titre,
+            h2 {
+                font-size: clamp(1em, 2.5vw, 2em);
+            }
+
+            &__info,
+            p {
+                font-size: clamp(.75em, 2.5vw, 1.25em);
+            }
         }
     }
 }

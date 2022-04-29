@@ -12,10 +12,13 @@
         flex-direction: row;
     }
 
+    section {
+        margin: 2rem 0;
+    }
+
     &__titre {
         display: flex;
         flex-direction: column;
-        margin: 2rem 0;
 
         h1, h2 {
             margin-block-start: 0;

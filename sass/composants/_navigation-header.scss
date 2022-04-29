@@ -1,4 +1,5 @@
 $largeur__icone-ouverture: 75px;
+$bordure__faux-espacement: 2rem solid map-get($header__couleurs, 'fond');
 
 .site__header{
     &__navigation {
@@ -28,18 +29,21 @@ $largeur__icone-ouverture: 75px;
 
             &__nav {
                 width: 110vw;
-                top: 6rem;
+                top: 100%;
                 left: -2rem;
                 position: absolute;
                 display: none;
-                border-radius: 5px;
+                border-top: $bordure__faux-espacement;
 
                 @include genererTheme($navigation__couleurs);
 
                 @media screen and (min-width: $largeur__media-tablette) {
                     left: unset;
                     right: $largeur__icone-ouverture;
+                    top: 0;
                     bottom: 0;
+                    border-top: unset;
+                    border-right: $bordure__faux-espacement;
                     width: 20vw;
                 }
 
@@ -50,7 +54,9 @@ $largeur__icone-ouverture: 75px;
 
                     list-style-type: none;
                     padding: 0;
-                    margin: 0 2rem;
+                    margin: 2rem 0;
+
+                    height: 75%;
 
                     .menu-item {
                         display: flex;

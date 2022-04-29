@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /**
-Theme name: TP1 Pierre-Olivier Clerson
+Theme name: 2022-4W4 Exercice #4
 Author: Pierre-Olivier Clerson
 Author URI: https://github.com/poclerson/4w4/tree/ex2
 Description: Travail pratique dans le cadre du cours 4W4
@@ -441,7 +441,9 @@ h6 {
   display: grid;
   overflow-x: hidden;
   grid-template-columns: auto;
-  grid-template-areas: "header" "main" "footer";
+  grid-template-areas: "header"
+ "main"
+ "footer";
 }
 
 .site__main {
@@ -501,14 +503,16 @@ h6 {
 }
 
 .site__main__titre {
-  font-size: 5rem;
+  font-size: clamp(3rem, 10vw, 7rem);
   width: 100%;
 }
 
 @media screen and (min-width: 600px) {
   .site {
     grid-template-columns: clamp(200px, 30vw, 350px) auto;
-    grid-template-areas: "header header" "main main" "footer footer";
+    grid-template-areas: "header header"
+ "main main"
+ "footer footer";
   }
 }
 
@@ -812,10 +816,13 @@ h6 {
   }
 }
 
+.site__header section {
+  margin: 2rem 0;
+}
+
 .site__header__titre {
   display: flex;
   flex-direction: column;
-  margin: 2rem 0;
 }
 
 .site__header__titre h1, .site__header__titre h2 {
@@ -1084,6 +1091,7 @@ h6 {
 
 .site__footer__colonne > * > * .wp-block-image {
   background-color: #006b7e;
+  object-fit: cover;
 }
 
 .site__footer__colonne > * > * .wp-block-image img {
@@ -1092,8 +1100,8 @@ h6 {
 }
 
 .site__footer__colonne > * > * .wp-block-image img {
-  width: 100%;
-  height: 100%;
+  max-height: 500px;
+  background-repeat: repeat;
 }
 
 .site__footer__colonne__picto .sidebar {
@@ -1125,20 +1133,48 @@ h6 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  overflow-y: hidden;
-  width: 50vw;
-  height: 6.5em;
+  width: 100%;
+}
+
+@media screen and (min-width: 600px) {
+  .site__footer__rangee__menu {
+    width: 50%;
+  }
 }
 
 .site__footer__rangee__menu__navigation {
   width: 100%;
-  overflow-x: scroll;
 }
 
 .site__footer__rangee__menu__navigation__ul {
   display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
   padding: 0;
   margin: 0;
+}
+
+.site__footer__rangee__menu__navigation__ul .menu-item {
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 1.5em;
+  display: inline;
+  background-color: #ffe100;
+  color: #006b7e;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.site__footer__rangee__menu__navigation__ul .menu-item p, .site__footer__rangee__menu__navigation__ul .menu-item a, .site__footer__rangee__menu__navigation__ul .menu-item h1, .site__footer__rangee__menu__navigation__ul .menu-item h2, .site__footer__rangee__menu__navigation__ul .menu-item h3, .site__footer__rangee__menu__navigation__ul .menu-item h4, .site__footer__rangee__menu__navigation__ul .menu-item h5, .site__footer__rangee__menu__navigation__ul .menu-item h6 {
+  color: #006b7e;
+}
+
+.site__footer__rangee__menu__navigation__ul .menu-item:hover {
+  background-color: #ffb8d1;
+}
+
+.site__footer__rangee__menu__navigation__ul .menu-item:hover p, .site__footer__rangee__menu__navigation__ul .menu-item:hover a, .site__footer__rangee__menu__navigation__ul .menu-item:hover h1, .site__footer__rangee__menu__navigation__ul .menu-item:hover h2, .site__footer__rangee__menu__navigation__ul .menu-item:hover h3, .site__footer__rangee__menu__navigation__ul .menu-item:hover h4, .site__footer__rangee__menu__navigation__ul .menu-item:hover h5, .site__footer__rangee__menu__navigation__ul .menu-item:hover h6 {
+  color: #ffe100;
 }
 
 .site__footer__rangee__menu__navigation__ul .menu-item a {
@@ -1523,11 +1559,11 @@ form.recherche__bouton {
 
 .site__header__navigation__menu__nav {
   width: 110vw;
-  top: 6rem;
+  top: 100%;
   left: -2rem;
   position: absolute;
   display: none;
-  border-radius: 5px;
+  border-top: 2rem solid #006b7e;
   background-color: #ffb8d1;
   color: #ffe100;
   border-color: #006b7e;
@@ -1583,7 +1619,10 @@ form.recherche__bouton {
   .site__header__navigation__menu__nav {
     left: unset;
     right: 75px;
+    top: 0;
     bottom: 0;
+    border-top: unset;
+    border-right: 2rem solid #006b7e;
     width: 20vw;
   }
 }
@@ -1594,7 +1633,8 @@ form.recherche__bouton {
   justify-content: space-between;
   list-style-type: none;
   padding: 0;
-  margin: 0 2rem;
+  margin: 2rem 0;
+  height: 75%;
 }
 
 .site__header__navigation__menu__nav .menu .menu-item {
@@ -1664,34 +1704,34 @@ form.recherche__bouton {
   object-fit: cover;
 }
 
-.evenement__champs {
+.evenement__info {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
 }
 
-.evenement__champs div {
+.evenement__info__champs {
   background-color: #006b7e;
   color: #ffb8d1;
   border-color: #ffe100;
-  padding: 2em;
+  padding: clamp(1em, 2.5vw, 2em);
   border-radius: 10px;
 }
 
-.evenement__champs div h1,
-.evenement__champs div h2,
-.evenement__champs div h3 {
+.evenement__info__champs h1,
+.evenement__info__champs h2,
+.evenement__info__champs h3 {
   color: #ffe100;
 }
 
-.evenement__champs div h4,
-.evenement__champs div h5,
-.evenement__champs div h6,
-.evenement__champs div p {
+.evenement__info__champs h4,
+.evenement__info__champs h5,
+.evenement__info__champs h6,
+.evenement__info__champs p {
   color: #ffb8d1;
 }
 
-.evenement__champs div a {
+.evenement__info__champs a {
   display: inline-block;
   text-decoration: none;
   padding: 10px;
@@ -1699,29 +1739,39 @@ form.recherche__bouton {
   box-sizing: border-box;
 }
 
-.evenement__champs div a:visited {
+.evenement__info__champs a:visited {
   color: #ffe100;
   opacity: .8;
 }
 
-.evenement__champs div a:visited svg {
+.evenement__info__champs a:visited svg {
   color: #ffe100;
 }
 
-.evenement__champs div a:hover, .evenement__champs div a:focus, .evenement__champs div a:active {
+.evenement__info__champs a:hover, .evenement__info__champs a:focus, .evenement__info__champs a:active {
   color: #ffe103;
 }
 
-.evenement__champs div a:hover svg, .evenement__champs div a:focus svg, .evenement__champs div a:active svg {
+.evenement__info__champs a:hover svg, .evenement__info__champs a:focus svg, .evenement__info__champs a:active svg {
   color: #ffe103;
 }
 
-.evenement__champs div a svg {
+.evenement__info__champs a svg {
   color: #ffe100;
 }
 
-.evenement__champs div svg {
+.evenement__info__champs svg {
   color: #ffe100;
+}
+
+.evenement__info__champs__titre,
+.evenement__info__champs h2 {
+  font-size: clamp(1em, 2.5vw, 2em);
+}
+
+.evenement__info__champs__info,
+.evenement__info__champs p {
+  font-size: clamp(0.75em, 2.5vw, 1.25em);
 }
 
 .boite-modale {

@@ -1,4 +1,6 @@
 <?php
+    require_once("options/apparence.php");
+
     /* Enqueue */
     function cidw_4w4_enqueue() {
         wp_enqueue_style('  
