@@ -10,21 +10,40 @@
             filemtime(get_template_directory() . '/style.css'), 
             false
         );
-
-            
+ 
         wp_enqueue_style(
             'cidw-4w4-police-google', 
             "https://fonts.googleapis.com/css2?family=Bungee&display=swap",
             false
         );
 
-        wp_enqueue_script(
+        wp_enqueue_style(
+            'cidw-4w4-police-google', 
+            "https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@300;500;700&display=swap",
+            false
+        );
+
+        wp_register_script(
             'cidw-4w4-boite-modale', 
             get_template_directory_uri() . "/scripts/boite-modale.js", 
             array(), 
             filemtime(get_template_directory() . '/scripts/boite-modale.js'), 
             true
-        );
+        ); 
+
+        wp_register_script(
+            'cidw-4w4-carousel', 
+            get_template_directory_uri() . "/scripts/carousel.js", 
+            array(), 
+            filemtime(get_template_directory() . '/scripts/carousel.js'), 
+            true
+        ); 
+
+        if(is_category('cours')) {
+            wp_enqueue_script('cidw-4w4-boite-modale');
+        }
+
+        wp_enqueue_script('cidw-4w4-carousel');  
     } 
 
     add_action("wp_enqueue_scripts", "cidw_4w4_enqueue");

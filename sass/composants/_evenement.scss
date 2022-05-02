@@ -4,34 +4,58 @@
     gap: 20px;
     width: 100%;
 
-    &__image {
-        width: 100%;
-
-        &__miniature {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-        }
+    &__sous-titre {
+        font-size: clamp(2em, 2.5vw, 3em);
     }
 
-    &__info {
+    &__champs {
         display: flex;
-        flex-wrap: wrap;
         gap: 20px;
 
-        &__champs {
-            @include genererTheme($carte__couleurs);
-            padding: clamp(1em, 2.5vw, 2em);
-            border-radius: 10px;
+        section {
+            flex: 1;
+        }
 
-            &__titre,
-            h2 {
-                font-size: clamp(1em, 2.5vw, 2em);
+        &__image {
+            &__contenu {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+
+                &__image {
+                    border-radius: 10px;
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
             }
+        }
 
-            &__info,
-            p {
-                font-size: clamp(.75em, 2.5vw, 1.25em);
+        &__texte {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+
+            &__contenu {
+                @include genererTheme($carte__couleurs);
+                padding: clamp(1em, 2.5vw, 2em);
+                border-radius: 10px;
+    
+                &__titre,
+                h2 {
+                    font-size: clamp(1em, 2.5vw, 2em);
+                }
+    
+                &__info,
+                p {
+                    font-size: clamp(.75em, 2.5vw, 1.25em);
+                }
+    
+                &__image {
+                    width: 100%;
+                    max-height: 100px;
+                    object-fit: cover;
+                }        
             }
         }
     }

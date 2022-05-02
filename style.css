@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /**
-Theme name: 2022-4W4 Exercice #4
+Theme name: TP1 Pierre-Olivier Clerson
 Author: Pierre-Olivier Clerson
 Author URI: https://github.com/poclerson/4w4/tree/ex2
 Description: Travail pratique dans le cadre du cours 4W4
@@ -334,8 +334,6 @@ html {
 /* ===== VARIABLES ===== */
 @use 'sass:map';
 @use "sass:color";
-/* --- Éléments principaux --- */
-/* Site */
 /* Header */
 /**
  * Animations globales
@@ -417,21 +415,36 @@ html {
 
 /* ===== ELEMENTS ===== */
 @use "sass:maps";
+input[type="checkbox"].burger__checkbox {
+  display: none;
+}
+
 @use "sass:maps";
 h1 {
-  font-family: "Bungee";
-  font-size: clamp(0.8rem, 8vw, 10rem);
+  font-size: clamp(4rem, 2.5vw, 8rem);
+  font-family: 'Bungee';
 }
 
-h2,
-h3 {
-  font-family: "Bungee";
+h2 {
+  font-size: clamp(3rem, 2.5vw, 6rem);
+  font-family: 'Bungee';
 }
 
-h4,
+h3,
+h4 {
+  font-size: clamp(1.75rem, 2.5vw, 3.5rem);
+  font-family: 'Lexend Deca';
+}
+
 h5,
 h6 {
-  font-family: "Helvetica";
+  font-size: clamp(1.25rem, 2.5vw, 2.5rem);
+  font-family: 'Lexend Deca';
+}
+
+body {
+  font-size: clamp(1rem, 2.5vw, 2rem);
+  font-family: 'Lexend Deca';
 }
 
 /* ===== LAYOUT ===== */
@@ -441,9 +454,7 @@ h6 {
   display: grid;
   overflow-x: hidden;
   grid-template-columns: auto;
-  grid-template-areas: "header"
- "main"
- "footer";
+  grid-template-areas: "header" "main" "footer";
 }
 
 .site__main {
@@ -502,6 +513,11 @@ h6 {
   color: #006b7e;
 }
 
+.site__main ::selection {
+  color: #ffe100;
+  background-color: #006b7e;
+}
+
 .site__main__titre {
   font-size: clamp(3rem, 10vw, 7rem);
   width: 100%;
@@ -510,9 +526,7 @@ h6 {
 @media screen and (min-width: 600px) {
   .site {
     grid-template-columns: clamp(200px, 30vw, 350px) auto;
-    grid-template-areas: "header header"
- "main main"
- "footer footer";
+    grid-template-areas: "header header" "main main" "footer footer";
   }
 }
 
@@ -567,6 +581,8 @@ h6 {
 
 .cours__filtre__menu__ul .menu-item p, .cours__filtre__menu__ul .menu-item a, .cours__filtre__menu__ul .menu-item h1, .cours__filtre__menu__ul .menu-item h2, .cours__filtre__menu__ul .menu-item h3, .cours__filtre__menu__ul .menu-item h4, .cours__filtre__menu__ul .menu-item h5, .cours__filtre__menu__ul .menu-item h6 {
   color: #ffe100;
+  margin-block-start: 0;
+  margin-block-end: 0;
 }
 
 .cours__filtre__menu__ul .menu-item:hover {
@@ -650,6 +666,11 @@ h6 {
   color: #ffe100;
 }
 
+.cours__conteneur .carte ::selection {
+  color: #006b7e;
+  background-color: #ffb8d1;
+}
+
 @media screen and (min-width: 600px) {
   .cours__conteneur .carte {
     width: 45%;
@@ -701,6 +722,8 @@ h6 {
 
 .cours__conteneur .carte__etiquettes__sigle p, .cours__conteneur .carte__etiquettes__sigle a, .cours__conteneur .carte__etiquettes__sigle h1, .cours__conteneur .carte__etiquettes__sigle h2, .cours__conteneur .carte__etiquettes__sigle h3, .cours__conteneur .carte__etiquettes__sigle h4, .cours__conteneur .carte__etiquettes__sigle h5, .cours__conteneur .carte__etiquettes__sigle h6, .cours__conteneur .carte__etiquettes__duree p, .cours__conteneur .carte__etiquettes__duree a, .cours__conteneur .carte__etiquettes__duree h1, .cours__conteneur .carte__etiquettes__duree h2, .cours__conteneur .carte__etiquettes__duree h3, .cours__conteneur .carte__etiquettes__duree h4, .cours__conteneur .carte__etiquettes__duree h5, .cours__conteneur .carte__etiquettes__duree h6 {
   color: #006b7e;
+  margin-block-start: 0;
+  margin-block-end: 0;
 }
 
 .cours__conteneur .carte__miniature {
@@ -810,6 +833,11 @@ h6 {
   color: #ffe100;
 }
 
+.site__header ::selection {
+  color: #006b7e;
+  background-color: #ffb8d1;
+}
+
 @media screen and (min-width: 600px) {
   .site__header {
     flex-direction: row;
@@ -850,7 +878,7 @@ h6 {
   transform: translate(0);
 }
 
-.site__header__utilitaires [for="site__header__utilitaires__menu-checkbox"] {
+.site__header__utilitaires .burger__etiquette {
   cursor: pointer;
   position: fixed;
   z-index: 100;
@@ -865,23 +893,19 @@ h6 {
   border: 2px solid #ffe100;
 }
 
-.site__header__utilitaires [for="site__header__utilitaires__menu-checkbox"] ~ .burger__checkbox {
-  display: none;
-}
-
-.site__header__utilitaires [for="site__header__utilitaires__menu-checkbox"]:focus, .site__header__utilitaires [for="site__header__utilitaires__menu-checkbox"]:active, .site__header__utilitaires [for="site__header__utilitaires__menu-checkbox"]:hover {
+.site__header__utilitaires .burger__etiquette:focus, .site__header__utilitaires .burger__etiquette:active, .site__header__utilitaires .burger__etiquette:hover {
   animation: brasser 1s infinite;
 }
 
-.site__header__utilitaires [for="site__header__utilitaires__menu-checkbox"] svg {
+.site__header__utilitaires .burger__etiquette svg {
   color: #ffe100;
 }
 
-.site__header__utilitaires [for="site__header__utilitaires__menu-checkbox"]:hover {
+.site__header__utilitaires .burger__etiquette:hover {
   background-color: #ffe100;
 }
 
-.site__header__utilitaires [for="site__header__utilitaires__menu-checkbox"]:hover svg {
+.site__header__utilitaires .burger__etiquette:hover svg {
   color: #006b7e;
 }
 
@@ -947,6 +971,11 @@ h6 {
   color: #006b7e;
 }
 
+.site__header__utilitaires__menu ::selection {
+  color: #ffb8d1;
+  background-color: #ffe100;
+}
+
 .icone {
   display: flex;
   flex-direction: column;
@@ -1010,6 +1039,11 @@ h6 {
 
 .site__footer svg {
   color: #ffe100;
+}
+
+.site__footer ::selection {
+  color: #006b7e;
+  background-color: #ffb8d1;
 }
 
 .site__footer ul {
@@ -1083,6 +1117,11 @@ h6 {
 
 .site__footer__colonne > * svg {
   color: #006b7e;
+}
+
+.site__footer__colonne > * ::selection {
+  color: #ffe100;
+  background-color: #006b7e;
 }
 
 .site__footer__colonne > * > * {
@@ -1167,6 +1206,8 @@ h6 {
 
 .site__footer__rangee__menu__navigation__ul .menu-item p, .site__footer__rangee__menu__navigation__ul .menu-item a, .site__footer__rangee__menu__navigation__ul .menu-item h1, .site__footer__rangee__menu__navigation__ul .menu-item h2, .site__footer__rangee__menu__navigation__ul .menu-item h3, .site__footer__rangee__menu__navigation__ul .menu-item h4, .site__footer__rangee__menu__navigation__ul .menu-item h5, .site__footer__rangee__menu__navigation__ul .menu-item h6 {
   color: #006b7e;
+  margin-block-start: 0;
+  margin-block-end: 0;
 }
 
 .site__footer__rangee__menu__navigation__ul .menu-item:hover {
@@ -1281,6 +1322,11 @@ nav.menu-principal-container svg {
   color: #006b7e;
 }
 
+nav.menu-principal-container ::selection {
+  color: #ffb8d1;
+  background-color: #ffe100;
+}
+
 @media screen and (min-width: 600px) {
   nav.menu-principal-container {
     width: 30vw;
@@ -1324,10 +1370,6 @@ nav.menu-principal-container ul.menu li.menu-item a {
   border: 2px solid #ffe100;
 }
 
-.burger__etiquette[for="site__barre__menu-principal-container-checkbox"] ~ .burger__checkbox {
-  display: none;
-}
-
 .burger__etiquette[for="site__barre__menu-principal-container-checkbox"]:focus, .burger__etiquette[for="site__barre__menu-principal-container-checkbox"]:active, .burger__etiquette[for="site__barre__menu-principal-container-checkbox"]:hover {
   animation: brasser 1s infinite;
 }
@@ -1342,6 +1384,22 @@ nav.menu-principal-container ul.menu li.menu-item a {
 
 .burger__etiquette[for="site__barre__menu-principal-container-checkbox"]:hover svg {
   color: #006b7e;
+}
+
+#site__barre__menu-principal-container-checkbox + .burger__etiquette .burger__etiquette--ouvert {
+  display: none;
+}
+
+#site__barre__menu-principal-container-checkbox + .burger__etiquette .burger__etiquette--ferme {
+  display: block;
+}
+
+#site__barre__menu-principal-container-checkbox:checked + .burger__etiquette .burger__etiquette--ouvert {
+  display: block;
+}
+
+#site__barre__menu-principal-container-checkbox:checked + .burger__etiquette .burger__etiquette--ferme {
+  display: none;
 }
 
 .site__barre {
@@ -1401,6 +1459,11 @@ nav.menu-principal-container ul.menu li.menu-item a {
   color: #006b7e;
 }
 
+.site__barre ::selection {
+  color: #ffb8d1;
+  background-color: #ffe100;
+}
+
 .site__barre nav {
   padding: 20px;
 }
@@ -1452,6 +1515,8 @@ nav.menu-principal-container ul.menu li.menu-item a {
 
 .cours__etiquettes__sigle p, .cours__etiquettes__sigle a, .cours__etiquettes__sigle h1, .cours__etiquettes__sigle h2, .cours__etiquettes__sigle h3, .cours__etiquettes__sigle h4, .cours__etiquettes__sigle h5, .cours__etiquettes__sigle h6, .cours__etiquettes__duree p, .cours__etiquettes__duree a, .cours__etiquettes__duree h1, .cours__etiquettes__duree h2, .cours__etiquettes__duree h3, .cours__etiquettes__duree h4, .cours__etiquettes__duree h5, .cours__etiquettes__duree h6 {
   color: #ffe100;
+  margin-block-start: 0;
+  margin-block-end: 0;
 }
 
 .cours__contenu {
@@ -1615,6 +1680,11 @@ form.recherche__bouton {
   color: #006b7e;
 }
 
+.site__header__navigation__menu__nav ::selection {
+  color: #ffb8d1;
+  background-color: #ffe100;
+}
+
 @media screen and (min-width: 600px) {
   .site__header__navigation__menu__nav {
     left: unset;
@@ -1694,23 +1764,39 @@ form.recherche__bouton {
   width: 100%;
 }
 
-.evenement__image {
-  width: 100%;
+.evenement__sous-titre {
+  font-size: clamp(2em, 2.5vw, 3em);
 }
 
-.evenement__image__miniature {
+.evenement__champs {
+  display: flex;
+  gap: 20px;
+}
+
+.evenement__champs section {
+  flex: 1;
+}
+
+.evenement__champs__image__contenu {
   width: 100%;
-  height: 250px;
+  height: 100%;
   object-fit: cover;
 }
 
-.evenement__info {
+.evenement__champs__image__contenu__image {
+  border-radius: 10px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.evenement__champs__texte {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
 }
 
-.evenement__info__champs {
+.evenement__champs__texte__contenu {
   background-color: #006b7e;
   color: #ffb8d1;
   border-color: #ffe100;
@@ -1718,20 +1804,20 @@ form.recherche__bouton {
   border-radius: 10px;
 }
 
-.evenement__info__champs h1,
-.evenement__info__champs h2,
-.evenement__info__champs h3 {
+.evenement__champs__texte__contenu h1,
+.evenement__champs__texte__contenu h2,
+.evenement__champs__texte__contenu h3 {
   color: #ffe100;
 }
 
-.evenement__info__champs h4,
-.evenement__info__champs h5,
-.evenement__info__champs h6,
-.evenement__info__champs p {
+.evenement__champs__texte__contenu h4,
+.evenement__champs__texte__contenu h5,
+.evenement__champs__texte__contenu h6,
+.evenement__champs__texte__contenu p {
   color: #ffb8d1;
 }
 
-.evenement__info__champs a {
+.evenement__champs__texte__contenu a {
   display: inline-block;
   text-decoration: none;
   padding: 10px;
@@ -1739,39 +1825,50 @@ form.recherche__bouton {
   box-sizing: border-box;
 }
 
-.evenement__info__champs a:visited {
+.evenement__champs__texte__contenu a:visited {
   color: #ffe100;
   opacity: .8;
 }
 
-.evenement__info__champs a:visited svg {
+.evenement__champs__texte__contenu a:visited svg {
   color: #ffe100;
 }
 
-.evenement__info__champs a:hover, .evenement__info__champs a:focus, .evenement__info__champs a:active {
+.evenement__champs__texte__contenu a:hover, .evenement__champs__texte__contenu a:focus, .evenement__champs__texte__contenu a:active {
   color: #ffe103;
 }
 
-.evenement__info__champs a:hover svg, .evenement__info__champs a:focus svg, .evenement__info__champs a:active svg {
+.evenement__champs__texte__contenu a:hover svg, .evenement__champs__texte__contenu a:focus svg, .evenement__champs__texte__contenu a:active svg {
   color: #ffe103;
 }
 
-.evenement__info__champs a svg {
+.evenement__champs__texte__contenu a svg {
   color: #ffe100;
 }
 
-.evenement__info__champs svg {
+.evenement__champs__texte__contenu svg {
   color: #ffe100;
 }
 
-.evenement__info__champs__titre,
-.evenement__info__champs h2 {
+.evenement__champs__texte__contenu ::selection {
+  color: #006b7e;
+  background-color: #ffb8d1;
+}
+
+.evenement__champs__texte__contenu__titre,
+.evenement__champs__texte__contenu h2 {
   font-size: clamp(1em, 2.5vw, 2em);
 }
 
-.evenement__info__champs__info,
-.evenement__info__champs p {
+.evenement__champs__texte__contenu__info,
+.evenement__champs__texte__contenu p {
   font-size: clamp(0.75em, 2.5vw, 1.25em);
+}
+
+.evenement__champs__texte__contenu__image {
+  width: 100%;
+  max-height: 100px;
+  object-fit: cover;
 }
 
 .boite-modale {
@@ -1845,6 +1942,11 @@ form.recherche__bouton {
   color: #006b7e;
 }
 
+.boite-modale ::selection {
+  color: #ffb8d1;
+  background-color: #006b7e;
+}
+
 .boite-modale--ouverte {
   transform: scaleY(1);
 }
@@ -1866,10 +1968,5 @@ form.recherche__bouton {
 
 .boite-modale__fermer:hover svg {
   color: #ffb8d1;
-}
-
-/* ===== GLOBAL ===== */
-body {
-  font-family: Helvetica, sans-serif;
 }
 /*# sourceMappingURL=style.css.map */

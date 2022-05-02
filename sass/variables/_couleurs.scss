@@ -10,11 +10,6 @@ $rose: rgb(255, 184, 209);
     box-shadow: 2.5px 2.5px 5px map-get($theme, "icone");
 }
 
-/* --- Éléments principaux --- */
-/* Site */
-$clr-fond__select: $rose;
-$clr-text__select: $bleu;
-
 @mixin theme(
     $clr-fond, 
     $clr-texte, 
@@ -50,6 +45,11 @@ $clr-text__select: $bleu;
 
     svg {
         color: $clr-icone;
+    }
+
+    ::selection {
+        color: $clr-fond;
+        background-color: $clr-texte;
     }
 }
 

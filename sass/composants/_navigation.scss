@@ -43,3 +43,7 @@ nav.menu-principal-container {
 		$header__couleurs
 	)
 }
+
+#site__barre__menu-principal-container-checkbox {
+    @include changer-icone;
+}

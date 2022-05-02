@@ -49,7 +49,7 @@
             transform: translate(0);
         }
 
-        [for="site__header__utilitaires__menu-checkbox"] {
+        .burger__etiquette {
             @include burger(
                 15px,
                 unset,

@@ -1,15 +1,21 @@
 h1 {
-    font-family: $font__titre;
-    font-size: clamp(.8rem, 8vw, 10rem);
+    @include taille-police(titre);
 }
 
-h2, 
-h3 {
-    font-family: $font__sous-titre;
+h2 {
+    @include taille-police(sousTitre);
 }
 
-h4,
+h3,
+h4 {
+    @include taille-police(grand);
+}
+
 h5,
 h6 {
-    font-family: $font__texte;
+    @include taille-police(moyen);
+}
+
+body {
+    @include taille-police(petit);
 }
