@@ -844,7 +844,7 @@ body {
   }
 }
 
-.site__header section {
+.site__header > section {
   margin: 2rem 0;
 }
 
@@ -1879,6 +1879,10 @@ form.recherche__bouton {
   left: 0;
   padding: 2em;
   font-size: 1.35em;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
   z-index: 100;
   background-color: #ffb8d1;
   color: #006b7e;
@@ -1951,22 +1955,32 @@ form.recherche__bouton {
   transform: scaleY(1);
 }
 
-.boite-modale__fermer {
+.boite-modale__contenu {
+  width: 100%;
+}
+
+.boite-modale__contenu img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.boite-modale__bouton__fermer {
   background-color: #ffb8d1;
   border-radius: 50%;
   border: 2px solid #006b7e;
   cursor: pointer;
+  display: block;
 }
 
-.boite-modale__fermer svg {
+.boite-modale__bouton__fermer svg {
   color: #006b7e;
 }
 
-.boite-modale__fermer:hover {
+.boite-modale__bouton__fermer:hover {
   background-color: #006b7e;
 }
 
-.boite-modale__fermer:hover svg {
+.boite-modale__bouton__fermer:hover svg {
   color: #ffb8d1;
 }
 /*# sourceMappingURL=style.css.map */

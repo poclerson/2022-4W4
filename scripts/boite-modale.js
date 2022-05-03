@@ -11,7 +11,7 @@
 
             // Afficher le contenu trouvé
             if (e.target.parentElement.querySelector(".carte__desc__contenu") != undefined) {
-                boiteModale.querySelector(".boite-modale__texte").innerHTML = 
+                boiteModale.querySelector(".boite-modale__contenu__texte").innerHTML = 
 
                 [].slice.call(e.target.parentElement.querySelector(".carte__desc__contenu").children).map(
                     enfant => enfant.innerHTML
@@ -20,7 +20,7 @@
 
             // Gestion des erreurs
             else {
-                boiteModale.querySelector(".boite-modale__texte").innerText = "Désolé, les informations n'ont pas pu être chargées. Veuillez rafraichir la page et recommencer";
+                boiteModale.querySelector(".boite-modale__contenu__texte").innerText = "Désolé, les informations n'ont pas pu être chargées. Veuillez rafraichir la page et recommencer";
             }
         })
     }

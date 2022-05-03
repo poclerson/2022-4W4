@@ -4,18 +4,21 @@
 
     let imageBoiteModale;
 
-    const btnFermer = boiteModale.querySelector(".boite-modale__fermer");
+    const btnFermer = boiteModale.querySelector(".boite-modale__bouton__fermer");
 
     for (const image of images) {
         image.addEventListener('click', () => {
-            // Ajouter la classe d'ouverture de la boite modale
-            boiteModale.classList.add('boite-modale--ouverte');
 
-            // Créer un élément <img/> afin de permettre l'affichage d'une image
-            imageBoiteModale = boiteModale.querySelector(".boite-modale__texte").appendChild(document.createElement("img"));
+            if (!boiteModale.classList.contains('boite-modale--ouverte')) {
+                // Ajouter la classe d'ouverture de la boite modale
+                boiteModale.classList.add('boite-modale--ouverte');
 
-            // Transmettre la valeur de l'attribut src à l'image nouvelle créée de la boite modale
-            imageBoiteModale.setAttribute("src", image.getAttribute("src"));
+                // Créer un élément <img/> afin de permettre l'affichage d'une image
+                imageBoiteModale = boiteModale.querySelector(".boite-modale__contenu__image").appendChild(document.createElement("img"));
+
+                // Transmettre la valeur de l'attribut src à l'image nouvelle créée de la boite modale
+                imageBoiteModale.setAttribute("src", image.getAttribute("src"));
+            }
         })
     }
 
