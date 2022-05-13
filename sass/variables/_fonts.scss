@@ -21,10 +21,12 @@ $font__texte: 'Lexend Deca';
     @else if($taille == sousTitre) {
         font-size: clamp(3rem, 2.5vw, 6rem);
         font-family: 'Bungee';
+        line-height: .9;
     }
 
     @else if($taille == titre) {
         font-size: clamp(4rem, 2.5vw, 8rem);
         font-family: 'Bungee';
+        line-height: .75;
     }
 }

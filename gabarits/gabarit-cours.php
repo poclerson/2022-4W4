@@ -16,11 +16,11 @@
                         </span>
                     </div>
                 </div>
-                <h3 class="carte__titre">
+                <h2 class="carte__titre">
                     <a href=<?= get_permalink(); ?>>
                         <?= le_titre_filtre(get_the_title()); ?>
                     </a>
-                </h3>
+                </h2>
                 <div class="carte__miniature">
                     <?php the_post_thumbnail(); ?>
                 </div>

@@ -1,11 +1,9 @@
 h1 {
     @include taille-police(titre);
-    line-height: .75;
 }
 
 h2 {
     @include taille-police(sousTitre);
-    line-height: .75;
 }
 
 h3,

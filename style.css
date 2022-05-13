@@ -429,7 +429,7 @@ h1 {
 h2 {
   font-size: clamp(3rem, 2.5vw, 6rem);
   font-family: 'Bungee';
-  line-height: .75;
+  line-height: .9;
 }
 
 h3,
@@ -688,7 +688,6 @@ body {
 .cours__conteneur .carte__titre {
   width: 100%;
   font-size: 1.5rem;
-  border-radius: 5px;
   font-weight: bold;
   text-decoration: none;
 }
