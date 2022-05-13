@@ -1,8 +1,0 @@
-@mixin filtre($couleur) {
-    background-color: $couleur;
-
-    img {
-        filter: grayscale(100%);
-        opacity: .5;
-    }
-}
