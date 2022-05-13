@@ -52,10 +52,14 @@
         </div>
         <?php the_custom_logo(); ?>
         <section class="site__header__titre">
-            <a href="<?= esc_url(home_url('/')); ?>">
-                <h1 class="header__titre"><?= get_bloginfo('name'); ?></h1>
-            </a>
-            <h2><?= get_bloginfo('description'); ?></h2>
+            <div class="site__header__titre__principal">
+                <a href="<?= esc_url(home_url('/')); ?>">
+                    <h1 class="site__header__titre__principal__contenu"><?= get_bloginfo('name'); ?></h1>
+                </a>
+            </div>
+            <div class="site__header__titre__secondaire">
+                <h2 class="site__header__titre__secondaire__contenu"><?= get_bloginfo('description'); ?></h2>
+            </div>
         </section>
 
         <section class="site__header__utilitaires">
@@ -87,6 +91,9 @@
         </section>
         <section class="site__header__navigation">
             <div class="site__header__navigation__menu">
+                <span class="site__header__navigation__menu__ouverture">
+                    <svg width="50px" height="50px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" color="rgb(221, 255, 0)"><path d="M0 0h24v24H0z" fill="none"></path><path d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3L1 9l11 6 9-4.91V17h2V9L12 3z"></path></svg>
+                </span>
                 <?php
                     wp_nav_menu(array(
                         "menu" => "departement",
@@ -94,12 +101,11 @@
                         "container_class" => "site__header__navigation__menu__nav menu__departement",
                     ));
                 ?>
-                <div class="site__header__navigation__menu__espaceur"></div>
-                <span class="site__header__navigation__menu__ouverture">
-                    <svg width="50px" height="50px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" color="rgb(221, 255, 0)"><path d="M0 0h24v24H0z" fill="none"></path><path d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3L1 9l11 6 9-4.91V17h2V9L12 3z"></path></svg>
-                </span>
             </div>
             <div class="site__header__navigation__menu">
+                <span class="site__header__navigation__menu__ouverture">
+                    <svg width="50px" height="50px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" color="rgb(221, 255, 0)"><path d="M0 0h24v24H0z" fill="none"></path><path d="M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19a2 2 0 002 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V1h-2zm3 18H5V8h14v11z"></path></svg>
+                </span>
                 <?php
                     wp_nav_menu(array(
                         "menu" => "evenements",
@@ -107,10 +113,6 @@
                         "container_class" => "site__header__navigation__menu__nav menu__evenements",
                     ));
                 ?>
-                <div class="site__header__navigation__menu__espaceur"></div>
-                <span class="site__header__navigation__menu__ouverture">
-                    <svg width="50px" height="50px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" color="rgb(221, 255, 0)"><path d="M0 0h24v24H0z" fill="none"></path><path d="M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19a2 2 0 002 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V1h-2zm3 18H5V8h14v11z"></path></svg>
-                </span>
             </div>
         </section>
     </header>

@@ -39,20 +39,11 @@
             true
         );
 
-        wp_register_script(
-            'cidw-4w4-header-nav', 
-            get_template_directory_uri() . "/scripts/header-nav.js", 
-            array(), 
-            filemtime(get_template_directory() . '/scripts/header-nav.js'), 
-            true
-        ); 
-
         if(is_category('cours')) {
             wp_enqueue_script('cidw-4w4-boite-modale');
         }
 
         wp_enqueue_script('cidw-4w4-carousel');  
-        wp_enqueue_script('cidw-4w4-header-nav');  
     } 
 
     add_action("wp_enqueue_scripts", "cidw_4w4_enqueue");

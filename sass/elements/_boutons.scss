@@ -1,49 +1,77 @@
 @use "sass:maps";
 
-@mixin bouton--rond($theme) {
-    background-color: map-get($theme, "fond");
-    border-radius: 50%;
-    border: 2px solid map-get($theme, "bordure");
+@mixin bouton($theme, $couleurs-normales) {
+    cursor: pointer;
 
-    svg {
-        color: map-get($theme, "icone");
+    @if ($couleurs-normales) {
+        background-color: map-get($theme, "bordure");
+        border: 2px solid map-get($theme, "fond");
+
+        svg, p, h1, h2, h3, h4, h5, h6 {
+            color: map-get($theme, "fond");
+        }
+    
+        &:hover {
+            background-color: map-get($theme, "hover");
+    
+            svg, p, h1, h2, h3, h4, h5, h6 {
+                @include elargir(.25s, 1.5, false);
+            }
+        }
     }
 
-    &:hover {
-        background-color: map-get($theme, "icone");
-        
-        svg {
-            color: map-get($theme, "fond");
+    @else {
+        background-color: map-get($theme, "fond");
+        border: 2px solid map-get($theme, "bordure");
+
+        & > * {
+            color: map-get($theme, "icone");
+        }
+
+        &:hover {
+            background-color: map-get($theme, "icone");
+            
+            & > * {
+                color: map-get($theme, "fond");
+            }
         }
     }
 }
 
+@mixin bouton--rond($theme, $marge) {
+    @include bouton($theme, false);
+
+    border-radius: 10px;
+    
+    margin: $marge;
+}
+
 @mixin bouton--texte($theme, $taille-texte, $pleine-largeur) {
-    background-color: map-get($theme, "bordure");
+    @include bouton($theme, true);
+
     border-radius: 10px;
     padding: 1em;
-    cursor: pointer;
     border: none;
     text-transform: uppercase;
     font-weight: bold;
     font-size: $taille-texte;
 
-    p, a, h1, h2, h3, h4, h5, h6  {
-        color: map-get($theme, "fond");
-    }
-
-    &:hover {
-        background-color: map-get($theme, "hover");
-
-        p, a, h1, h2, h3, h4, h5, h6  {
-            @include elargir(.25s, 1.5, false);
-        }
-    }
-
     @if ($pleine-largeur) {
         display: block;
         width: 100%;
+        gap: 20px;
     }
+}
+
+@mixin bouton--pleine-largeur($theme, $taille-texte) {
+    @include bouton($theme, true);
+
+    padding: 1em;
+    border: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: $taille-texte;
+
 }
 
 @mixin burger (
@@ -71,7 +99,7 @@
         animation: brasser 1s infinite;
     }
 
-    @include bouton--rond($theme);
+    @include bouton--rond($theme, 0);
 }
 
 @mixin changer-icone() {

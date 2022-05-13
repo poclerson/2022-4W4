@@ -8,12 +8,12 @@
 
     @media screen and (min-width: $largeur__media-tablette) {
         width: 50vw;
-        height: unset;
+        max-height: 80vh;
         top: 25vh;
         left: 25vw;
     }
 
-    padding: 2em;
+    padding: 2em 0;
     font-size: 1.35em;
     border-radius: 10px;
 
@@ -44,7 +44,7 @@
 
     &__bouton {
         &__fermer {
-            @include bouton--rond($overlay__couleurs);
+            @include bouton--rond($overlay__couleurs, 1em);
             cursor: pointer;
             display: block;
         }   
@@ -57,7 +57,8 @@
         justify-content: space-between;
 
         &__bouton {
-            @include bouton--texte($overlay__couleurs, 1em, false);
+            width: 100%;
+            @include bouton--pleine-largeur($overlay__couleurs, 1em);
 
             p {
                 margin: 0;
