@@ -1894,7 +1894,7 @@ form.recherche__bouton {
 @media screen and (min-width: 600px) {
   .boite-modale {
     width: 50vw;
-    height: 50vh;
+    height: unset;
     top: 25vh;
     left: 25vw;
   }
@@ -1982,5 +1982,192 @@ form.recherche__bouton {
 
 .boite-modale__bouton__fermer:hover svg {
   color: #ffb8d1;
+}
+
+.boite-modale__navigation {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.boite-modale__navigation__bouton {
+  background-color: #006b7e;
+  border-radius: 10px;
+  padding: 1em;
+  cursor: pointer;
+  border: none;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 1em;
+}
+
+.boite-modale__navigation__bouton p, .boite-modale__navigation__bouton a, .boite-modale__navigation__bouton h1, .boite-modale__navigation__bouton h2, .boite-modale__navigation__bouton h3, .boite-modale__navigation__bouton h4, .boite-modale__navigation__bouton h5, .boite-modale__navigation__bouton h6 {
+  color: #ffb8d1;
+}
+
+.boite-modale__navigation__bouton:hover {
+  background-color: #ffe100;
+}
+
+.boite-modale__navigation__bouton:hover p, .boite-modale__navigation__bouton:hover a, .boite-modale__navigation__bouton:hover h1, .boite-modale__navigation__bouton:hover h2, .boite-modale__navigation__bouton:hover h3, .boite-modale__navigation__bouton:hover h4, .boite-modale__navigation__bouton:hover h5, .boite-modale__navigation__bouton:hover h6 {
+  transform: scaleY(1.5);
+}
+
+.boite-modale__navigation__bouton:hover p, .boite-modale__navigation__bouton:hover p:hover, .boite-modale__navigation__bouton:hover a, .boite-modale__navigation__bouton:hover a:hover, .boite-modale__navigation__bouton:hover h1, .boite-modale__navigation__bouton:hover h1:hover, .boite-modale__navigation__bouton:hover h2, .boite-modale__navigation__bouton:hover h2:hover, .boite-modale__navigation__bouton:hover h3, .boite-modale__navigation__bouton:hover h3:hover, .boite-modale__navigation__bouton:hover h4, .boite-modale__navigation__bouton:hover h4:hover, .boite-modale__navigation__bouton:hover h5, .boite-modale__navigation__bouton:hover h5:hover, .boite-modale__navigation__bouton:hover h6, .boite-modale__navigation__bouton:hover h6:hover {
+  transition: transform 0.25s ease-in-out;
+}
+
+.boite-modale__navigation__bouton p {
+  margin: 0;
+}
+
+.boite-carousel {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  padding: 2em;
+  font-size: 1.35em;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  z-index: 100;
+  background-color: #ffb8d1;
+  color: #006b7e;
+  border-color: #006b7e;
+  transition: all .5s ease-in-out;
+  transform: scaleY(0);
+}
+
+@media screen and (min-width: 600px) {
+  .boite-carousel {
+    width: 50vw;
+    height: unset;
+    top: 25vh;
+    left: 25vw;
+  }
+}
+
+.boite-carousel h1,
+.boite-carousel h2,
+.boite-carousel h3 {
+  color: #006b7e;
+}
+
+.boite-carousel h4,
+.boite-carousel h5,
+.boite-carousel h6,
+.boite-carousel p {
+  color: #006b7e;
+}
+
+.boite-carousel a {
+  display: inline-block;
+  text-decoration: none;
+  padding: 10px;
+  color: #006b7e;
+  box-sizing: border-box;
+}
+
+.boite-carousel a:visited {
+  color: #006b7e;
+  opacity: .8;
+}
+
+.boite-carousel a:visited svg {
+  color: #006b7e;
+}
+
+.boite-carousel a:hover, .boite-carousel a:focus, .boite-carousel a:active {
+  color: #006d81;
+}
+
+.boite-carousel a:hover svg, .boite-carousel a:focus svg, .boite-carousel a:active svg {
+  color: #006d81;
+}
+
+.boite-carousel a svg {
+  color: #006b7e;
+}
+
+.boite-carousel svg {
+  color: #006b7e;
+}
+
+.boite-carousel ::selection {
+  color: #ffb8d1;
+  background-color: #006b7e;
+}
+
+.boite-carousel--ouverte {
+  transform: scaleY(1);
+}
+
+.boite-carousel__contenu {
+  width: 100%;
+}
+
+.boite-carousel__contenu img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.boite-carousel__bouton__fermer {
+  background-color: #ffb8d1;
+  border-radius: 50%;
+  border: 2px solid #006b7e;
+  cursor: pointer;
+  display: block;
+}
+
+.boite-carousel__bouton__fermer svg {
+  color: #006b7e;
+}
+
+.boite-carousel__bouton__fermer:hover {
+  background-color: #006b7e;
+}
+
+.boite-carousel__bouton__fermer:hover svg {
+  color: #ffb8d1;
+}
+
+.boite-carousel__navigation {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.boite-carousel__navigation__bouton {
+  background-color: #006b7e;
+  border-radius: 10px;
+  padding: 1em;
+  cursor: pointer;
+  border: none;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 1em;
+}
+
+.boite-carousel__navigation__bouton p, .boite-carousel__navigation__bouton a, .boite-carousel__navigation__bouton h1, .boite-carousel__navigation__bouton h2, .boite-carousel__navigation__bouton h3, .boite-carousel__navigation__bouton h4, .boite-carousel__navigation__bouton h5, .boite-carousel__navigation__bouton h6 {
+  color: #ffb8d1;
+}
+
+.boite-carousel__navigation__bouton:hover {
+  background-color: #ffe100;
+}
+
+.boite-carousel__navigation__bouton:hover p, .boite-carousel__navigation__bouton:hover a, .boite-carousel__navigation__bouton:hover h1, .boite-carousel__navigation__bouton:hover h2, .boite-carousel__navigation__bouton:hover h3, .boite-carousel__navigation__bouton:hover h4, .boite-carousel__navigation__bouton:hover h5, .boite-carousel__navigation__bouton:hover h6 {
+  transform: scaleY(1.5);
+}
+
+.boite-carousel__navigation__bouton:hover p, .boite-carousel__navigation__bouton:hover p:hover, .boite-carousel__navigation__bouton:hover a, .boite-carousel__navigation__bouton:hover a:hover, .boite-carousel__navigation__bouton:hover h1, .boite-carousel__navigation__bouton:hover h1:hover, .boite-carousel__navigation__bouton:hover h2, .boite-carousel__navigation__bouton:hover h2:hover, .boite-carousel__navigation__bouton:hover h3, .boite-carousel__navigation__bouton:hover h3:hover, .boite-carousel__navigation__bouton:hover h4, .boite-carousel__navigation__bouton:hover h4:hover, .boite-carousel__navigation__bouton:hover h5, .boite-carousel__navigation__bouton:hover h5:hover, .boite-carousel__navigation__bouton:hover h6, .boite-carousel__navigation__bouton:hover h6:hover {
+  transition: transform 0.25s ease-in-out;
+}
+
+.boite-carousel__navigation__bouton p {
+  margin: 0;
 }
 /*# sourceMappingURL=style.css.map */
