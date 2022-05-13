@@ -1939,12 +1939,10 @@ form.recherche__bouton {
   height: 100vh;
   top: 0;
   left: 0;
-  padding: 2em 0;
   font-size: 1.35em;
-  border-radius: 10px;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  justify-content: space-between;
   z-index: 100;
   background-color: #ffb8d1;
   color: #006b7e;
@@ -1955,10 +1953,9 @@ form.recherche__bouton {
 
 @media screen and (min-width: 600px) {
   .boite-modale {
-    width: 50vw;
-    max-height: 80vh;
-    top: 25vh;
-    left: 25vw;
+    width: 40vw;
+    left: unset;
+    right: 0;
   }
 }
 
@@ -2019,11 +2016,17 @@ form.recherche__bouton {
 
 .boite-modale__contenu {
   width: 100%;
+  height: 100%;
 }
 
-.boite-modale__contenu img {
+.boite-modale__contenu__images {
+  height: 100%;
+}
+
+.boite-modale__contenu__images img {
   width: 100%;
-  border-radius: 10px;
+  height: 100%;
+  object-fit: cover;
 }
 
 .boite-modale__bouton__fermer {
@@ -2092,12 +2095,10 @@ form.recherche__bouton {
   height: 100vh;
   top: 0;
   left: 0;
-  padding: 2em 0;
   font-size: 1.35em;
-  border-radius: 10px;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  justify-content: space-between;
   z-index: 100;
   background-color: #ffb8d1;
   color: #006b7e;
@@ -2108,10 +2109,9 @@ form.recherche__bouton {
 
 @media screen and (min-width: 600px) {
   .boite-carousel {
-    width: 50vw;
-    max-height: 80vh;
-    top: 25vh;
-    left: 25vw;
+    width: 40vw;
+    left: unset;
+    right: 0;
   }
 }
 
@@ -2172,11 +2172,17 @@ form.recherche__bouton {
 
 .boite-carousel__contenu {
   width: 100%;
+  height: 100%;
 }
 
-.boite-carousel__contenu img {
+.boite-carousel__contenu__images {
+  height: 100%;
+}
+
+.boite-carousel__contenu__images img {
   width: 100%;
-  border-radius: 10px;
+  height: 100%;
+  object-fit: cover;
 }
 
 .boite-carousel__bouton__fermer {
