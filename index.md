@@ -16,7 +16,8 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13
 <style type="text/css">
 img.wp-smiley,
 img.emoji {
-	display: inline !important;
+	display: inline !important;readme.md
+style.css
 	border: none !important;
 	box-shadow: none !important;
 	height: 1em !important;
