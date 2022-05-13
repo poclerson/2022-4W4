@@ -449,6 +449,7 @@ body {
   font-family: 'Lexend Deca';
 }
 
+@use "sass:maps";
 /* ===== LAYOUT ===== */
 .site {
   width: 100vw;
@@ -785,6 +786,11 @@ body {
   gap: 20px;
 }
 
+.cours__conteneur .carte__desc__bouton svg {
+  min-width: 30px;
+  min-height: 30px;
+}
+
 .cours__conteneur .carte__desc__bouton svg, .cours__conteneur .carte__desc__bouton p, .cours__conteneur .carte__desc__bouton h1, .cours__conteneur .carte__desc__bouton h2, .cours__conteneur .carte__desc__bouton h3, .cours__conteneur .carte__desc__bouton h4, .cours__conteneur .carte__desc__bouton h5, .cours__conteneur .carte__desc__bouton h6 {
   color: #006b7e;
 }
@@ -984,6 +990,11 @@ body {
   animation: brasser 1s infinite;
 }
 
+.site__header__utilitaires .burger__etiquette svg {
+  min-width: 30px;
+  min-height: 30px;
+}
+
 .site__header__utilitaires .burger__etiquette > * {
   color: #ffe100;
 }
@@ -1063,14 +1074,68 @@ body {
   background-color: #ffe100;
 }
 
-.icone {
+.site__header__utilitaires__menu__recherche .recherche {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.site__header__utilitaires__menu__recherche .recherche > * {
+  height: 100%;
+  border: none;
+  outline: none;
+  margin: 0;
+}
+
+.site__header__utilitaires__menu__recherche .recherche__input {
+  padding: 1em;
+  background-color: #006b7e;
+  color: #ffb8d1;
+  border-radius: 10px 0 0 10px;
+}
+
+.site__header__utilitaires__menu__recherche .recherche__bouton {
+  cursor: pointer;
+  background-color: #006b7e;
+  border: 2px solid #ffb8d1;
+  border-radius: 10px;
+  padding: 1em;
+  border: none;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 1em;
+  border-radius: 0 10px 10px 0;
+}
+
+.site__header__utilitaires__menu__recherche .recherche__bouton svg {
+  min-width: 30px;
+  min-height: 30px;
+}
+
+.site__header__utilitaires__menu__recherche .recherche__bouton svg, .site__header__utilitaires__menu__recherche .recherche__bouton p, .site__header__utilitaires__menu__recherche .recherche__bouton h1, .site__header__utilitaires__menu__recherche .recherche__bouton h2, .site__header__utilitaires__menu__recherche .recherche__bouton h3, .site__header__utilitaires__menu__recherche .recherche__bouton h4, .site__header__utilitaires__menu__recherche .recherche__bouton h5, .site__header__utilitaires__menu__recherche .recherche__bouton h6 {
+  color: #ffb8d1;
+}
+
+.site__header__utilitaires__menu__recherche .recherche__bouton:hover {
+  background-color: #ffe100;
+}
+
+.site__header__utilitaires__menu__recherche .recherche__bouton:hover svg, .site__header__utilitaires__menu__recherche .recherche__bouton:hover p, .site__header__utilitaires__menu__recherche .recherche__bouton:hover h1, .site__header__utilitaires__menu__recherche .recherche__bouton:hover h2, .site__header__utilitaires__menu__recherche .recherche__bouton:hover h3, .site__header__utilitaires__menu__recherche .recherche__bouton:hover h4, .site__header__utilitaires__menu__recherche .recherche__bouton:hover h5, .site__header__utilitaires__menu__recherche .recherche__bouton:hover h6 {
+  transform: scaleY(1.5);
+}
+
+.site__header__utilitaires__menu__recherche .recherche__bouton:hover svg, .site__header__utilitaires__menu__recherche .recherche__bouton:hover svg:hover, .site__header__utilitaires__menu__recherche .recherche__bouton:hover p, .site__header__utilitaires__menu__recherche .recherche__bouton:hover p:hover, .site__header__utilitaires__menu__recherche .recherche__bouton:hover h1, .site__header__utilitaires__menu__recherche .recherche__bouton:hover h1:hover, .site__header__utilitaires__menu__recherche .recherche__bouton:hover h2, .site__header__utilitaires__menu__recherche .recherche__bouton:hover h2:hover, .site__header__utilitaires__menu__recherche .recherche__bouton:hover h3, .site__header__utilitaires__menu__recherche .recherche__bouton:hover h3:hover, .site__header__utilitaires__menu__recherche .recherche__bouton:hover h4, .site__header__utilitaires__menu__recherche .recherche__bouton:hover h4:hover, .site__header__utilitaires__menu__recherche .recherche__bouton:hover h5, .site__header__utilitaires__menu__recherche .recherche__bouton:hover h5:hover, .site__header__utilitaires__menu__recherche .recherche__bouton:hover h6, .site__header__utilitaires__menu__recherche .recherche__bouton:hover h6:hover {
+  transition: transform 0.25s ease-in-out;
+}
+
+.site__header__utilitaires__menu__icones {
   display: flex;
   flex-direction: column;
   margin: 20px 0;
 }
 
 @media screen and (min-width: 600px) {
-  .icone {
+  .site__header__utilitaires__menu__icones {
     flex-direction: row;
   }
 }
@@ -1253,6 +1318,60 @@ body {
 
 .site__footer__rangee__desc__titre {
   text-align: center;
+}
+
+.site__footer__rangee__recherche .recherche {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.site__footer__rangee__recherche .recherche > * {
+  height: 100%;
+  border: none;
+  outline: none;
+  margin: 0;
+}
+
+.site__footer__rangee__recherche .recherche__input {
+  padding: 1em;
+  background-color: #ffe100;
+  color: #006b7e;
+  border-radius: 10px 0 0 10px;
+}
+
+.site__footer__rangee__recherche .recherche__bouton {
+  cursor: pointer;
+  background-color: #ffe100;
+  border: 2px solid #006b7e;
+  border-radius: 10px;
+  padding: 1em;
+  border: none;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 1em;
+  border-radius: 0 10px 10px 0;
+}
+
+.site__footer__rangee__recherche .recherche__bouton svg {
+  min-width: 30px;
+  min-height: 30px;
+}
+
+.site__footer__rangee__recherche .recherche__bouton svg, .site__footer__rangee__recherche .recherche__bouton p, .site__footer__rangee__recherche .recherche__bouton h1, .site__footer__rangee__recherche .recherche__bouton h2, .site__footer__rangee__recherche .recherche__bouton h3, .site__footer__rangee__recherche .recherche__bouton h4, .site__footer__rangee__recherche .recherche__bouton h5, .site__footer__rangee__recherche .recherche__bouton h6 {
+  color: #006b7e;
+}
+
+.site__footer__rangee__recherche .recherche__bouton:hover {
+  background-color: #ffb8d1;
+}
+
+.site__footer__rangee__recherche .recherche__bouton:hover svg, .site__footer__rangee__recherche .recherche__bouton:hover p, .site__footer__rangee__recherche .recherche__bouton:hover h1, .site__footer__rangee__recherche .recherche__bouton:hover h2, .site__footer__rangee__recherche .recherche__bouton:hover h3, .site__footer__rangee__recherche .recherche__bouton:hover h4, .site__footer__rangee__recherche .recherche__bouton:hover h5, .site__footer__rangee__recherche .recherche__bouton:hover h6 {
+  transform: scaleY(1.5);
+}
+
+.site__footer__rangee__recherche .recherche__bouton:hover svg, .site__footer__rangee__recherche .recherche__bouton:hover svg:hover, .site__footer__rangee__recherche .recherche__bouton:hover p, .site__footer__rangee__recherche .recherche__bouton:hover p:hover, .site__footer__rangee__recherche .recherche__bouton:hover h1, .site__footer__rangee__recherche .recherche__bouton:hover h1:hover, .site__footer__rangee__recherche .recherche__bouton:hover h2, .site__footer__rangee__recherche .recherche__bouton:hover h2:hover, .site__footer__rangee__recherche .recherche__bouton:hover h3, .site__footer__rangee__recherche .recherche__bouton:hover h3:hover, .site__footer__rangee__recherche .recherche__bouton:hover h4, .site__footer__rangee__recherche .recherche__bouton:hover h4:hover, .site__footer__rangee__recherche .recherche__bouton:hover h5, .site__footer__rangee__recherche .recherche__bouton:hover h5:hover, .site__footer__rangee__recherche .recherche__bouton:hover h6, .site__footer__rangee__recherche .recherche__bouton:hover h6:hover {
+  transition: transform 0.25s ease-in-out;
 }
 
 .site__footer__rangee__menu {
@@ -1463,6 +1582,11 @@ nav.menu-principal-container ul.menu li.menu-item a {
   animation: brasser 1s infinite;
 }
 
+.burger__etiquette[for="site__barre__menu-principal-container-checkbox"] svg {
+  min-width: 30px;
+  min-height: 30px;
+}
+
 .burger__etiquette[for="site__barre__menu-principal-container-checkbox"] > * {
   color: #ffe100;
 }
@@ -1611,28 +1735,6 @@ nav.menu-principal-container ul.menu li.menu-item a {
 .cours__contenu {
   font-size: 1.5em;
   text-align: justify;
-}
-
-form.recherche {
-  position: relative;
-  display: flex;
-  align-items: center;
-}
-
-form.recherche__input {
-  outline: none;
-  width: 100%;
-  padding: 1em;
-  background-color: black;
-}
-
-form.recherche__bouton {
-  position: absolute;
-  width: 1em;
-  outline: none;
-  border: none;
-  padding: 0;
-  margin: 0;
 }
 
 .resultats-recherche {
@@ -1820,6 +1922,11 @@ form.recherche__bouton {
   cursor: context-menu;
 }
 
+.site__header__navigation__menu__ouverture svg {
+  min-width: 30px;
+  min-height: 30px;
+}
+
 .site__header__navigation__menu__ouverture > * {
   color: #ffe100;
 }
@@ -2005,6 +2112,11 @@ form.recherche__bouton {
   gap: 20px;
 }
 
+.evenement__champs__carte__desc__bouton svg {
+  min-width: 30px;
+  min-height: 30px;
+}
+
 .evenement__champs__carte__desc__bouton svg, .evenement__champs__carte__desc__bouton p, .evenement__champs__carte__desc__bouton h1, .evenement__champs__carte__desc__bouton h2, .evenement__champs__carte__desc__bouton h3, .evenement__champs__carte__desc__bouton h4, .evenement__champs__carte__desc__bouton h5, .evenement__champs__carte__desc__bouton h6 {
   color: #006b7e;
 }
@@ -2131,6 +2243,11 @@ form.recherche__bouton {
   display: block;
 }
 
+.boite-modale__bouton__fermer svg {
+  min-width: 30px;
+  min-height: 30px;
+}
+
 .boite-modale__bouton__fermer > * {
   color: #006b7e;
 }
@@ -2159,6 +2276,11 @@ form.recherche__bouton {
   text-transform: uppercase;
   font-weight: bold;
   font-size: 1em;
+}
+
+.boite-modale__navigation__bouton svg {
+  min-width: 30px;
+  min-height: 30px;
 }
 
 .boite-modale__navigation__bouton svg, .boite-modale__navigation__bouton p, .boite-modale__navigation__bouton h1, .boite-modale__navigation__bouton h2, .boite-modale__navigation__bouton h3, .boite-modale__navigation__bouton h4, .boite-modale__navigation__bouton h5, .boite-modale__navigation__bouton h6 {
@@ -2291,6 +2413,11 @@ form.recherche__bouton {
   display: block;
 }
 
+.boite-carousel__bouton__fermer svg {
+  min-width: 30px;
+  min-height: 30px;
+}
+
 .boite-carousel__bouton__fermer > * {
   color: #006b7e;
 }
@@ -2319,6 +2446,11 @@ form.recherche__bouton {
   text-transform: uppercase;
   font-weight: bold;
   font-size: 1em;
+}
+
+.boite-carousel__navigation__bouton svg {
+  min-width: 30px;
+  min-height: 30px;
 }
 
 .boite-carousel__navigation__bouton svg, .boite-carousel__navigation__bouton p, .boite-carousel__navigation__bouton h1, .boite-carousel__navigation__bouton h2, .boite-carousel__navigation__bouton h3, .boite-carousel__navigation__bouton h4, .boite-carousel__navigation__bouton h5, .boite-carousel__navigation__bouton h6 {

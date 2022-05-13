@@ -83,17 +83,22 @@
             right: 0;
             padding: 1em;
             border-radius: 10px 0 0 10px;
+
+            &__recherche {
+                @include recherche($overlay__couleurs);
+            }
+
+
+            &__icones {
+                display: flex;
+                flex-direction: column;
+            
+                @media screen and (min-width: $largeur__media-tablette) {
+                    flex-direction: row;
+                }
+            
+                margin: 20px 0;  
+            }
         }
     }
-}
-
-.icone {
-    display: flex;
-    flex-direction: column;
-
-    @media screen and (min-width: $largeur__media-tablette) {
-        flex-direction: row;
-    }
-
-    margin: 20px 0;  
 }

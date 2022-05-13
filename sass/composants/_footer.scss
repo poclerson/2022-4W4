@@ -77,6 +77,10 @@
             }
         }
 
+        &__recherche {
+            @include recherche($footer__couleurs);
+        }
+
         &__menu {
             display: flex;
             flex-direction: column;

@@ -3,6 +3,11 @@
 @mixin bouton($theme, $couleurs-normales) {
     cursor: pointer;
 
+    svg {
+        min-width: 30px;
+        min-height: 30px;
+    }
+
     @if ($couleurs-normales) {
         background-color: map-get($theme, "bordure");
         border: 2px solid map-get($theme, "fond");
