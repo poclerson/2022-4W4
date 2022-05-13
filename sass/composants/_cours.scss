@@ -38,7 +38,16 @@
         gap: 2rem;
 
         .carte {
-            @include carte($carte__couleurs, 1.25rem, column, true, $etiquettes: sigle, duree);
+            $etiquettes: duree, sigle;
+
+            @include carte(
+                $carte__couleurs, 
+                30%, 
+                1.25rem, 
+                column, 
+                true, 
+                $etiquettes
+            );
         }
     }
 }

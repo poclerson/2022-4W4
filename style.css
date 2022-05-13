@@ -607,19 +607,16 @@ body {
   background-color: #006b7e;
   color: #ffb8d1;
   border-color: #ffe100;
+  font-size: 1.25rem;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  gap: 20px;
-  max-width: 80vw;
-  padding: 2em;
+  justify-content: space-around;
+  gap: .5em;
+  padding: clamp(1rem, 1vw, 2rem);
   border-radius: 10px;
-  font-size: 1em;
+  max-width: 80vw;
   /* Largeur adaptative */
-  /* Mobile */
-  width: 100%;
-  /* Tablettes */
-  /* Desktop */
+  width: clamp(30%, 80vw, 90%);
 }
 
 .cours__conteneur .carte h1,
@@ -675,7 +672,7 @@ body {
 
 @media screen and (min-width: 600px) {
   .cours__conteneur .carte {
-    width: 45%;
+    width: clamp(30%, 40vw, 37.5%);
   }
 }
 
@@ -685,11 +682,60 @@ body {
   }
 }
 
-.cours__conteneur .carte__titre {
-  width: 100%;
-  font-size: 1.5rem;
+.cours__conteneur .carte__titre, .cours__conteneur .carte__sous-titre, .cours__conteneur .carte__desc, .cours__conteneur .carte__desc__contenu {
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin: 0;
+}
+
+.cours__conteneur .carte__etiquettes {
+  display: flex;
+  gap: 1em;
+}
+
+.cours__conteneur .carte__etiquettes__duree {
   font-weight: bold;
   text-decoration: none;
+  font-size: 1em;
+  display: inline;
+  background-color: #ffe100;
+  color: #006b7e;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.cours__conteneur .carte__etiquettes__duree p, .cours__conteneur .carte__etiquettes__duree a, .cours__conteneur .carte__etiquettes__duree h1, .cours__conteneur .carte__etiquettes__duree h2, .cours__conteneur .carte__etiquettes__duree h3, .cours__conteneur .carte__etiquettes__duree h4, .cours__conteneur .carte__etiquettes__duree h5, .cours__conteneur .carte__etiquettes__duree h6 {
+  color: #006b7e;
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+
+.cours__conteneur .carte__etiquettes__sigle {
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 1em;
+  display: inline;
+  background-color: #ffe100;
+  color: #006b7e;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.cours__conteneur .carte__etiquettes__sigle p, .cours__conteneur .carte__etiquettes__sigle a, .cours__conteneur .carte__etiquettes__sigle h1, .cours__conteneur .carte__etiquettes__sigle h2, .cours__conteneur .carte__etiquettes__sigle h3, .cours__conteneur .carte__etiquettes__sigle h4, .cours__conteneur .carte__etiquettes__sigle h5, .cours__conteneur .carte__etiquettes__sigle h6 {
+  color: #006b7e;
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+
+.cours__conteneur .carte__titre {
+  width: 100%;
+  font-size: clamp(1em, 2vw, 3em);
+}
+
+@media screen and (min-width: 600px) {
+  .cours__conteneur .carte__titre {
+    font-size: clamp(1.5em, 3vw, 3.5em);
+  }
 }
 
 .cours__conteneur .carte__titre, .cours__conteneur .carte__titre:hover {
@@ -700,37 +746,13 @@ body {
   transform: scaleY(1.25);
 }
 
-.cours__conteneur .carte__titre h3 {
-  margin-block-start: 0;
-  margin-block-end: 0;
-}
-
-.cours__conteneur .carte__etiquettes {
-  display: flex;
-  gap: 15px;
-}
-
-.cours__conteneur .carte__etiquettes__sigle, .cours__conteneur .carte__etiquettes__duree {
-  font-weight: bold;
-  text-decoration: none;
-  font-size: 1.5em;
-  display: inline;
-  background-color: #ffe100;
-  color: #006b7e;
-  padding: 10px;
-  border-radius: 5px;
-}
-
-.cours__conteneur .carte__etiquettes__sigle p, .cours__conteneur .carte__etiquettes__sigle a, .cours__conteneur .carte__etiquettes__sigle h1, .cours__conteneur .carte__etiquettes__sigle h2, .cours__conteneur .carte__etiquettes__sigle h3, .cours__conteneur .carte__etiquettes__sigle h4, .cours__conteneur .carte__etiquettes__sigle h5, .cours__conteneur .carte__etiquettes__sigle h6, .cours__conteneur .carte__etiquettes__duree p, .cours__conteneur .carte__etiquettes__duree a, .cours__conteneur .carte__etiquettes__duree h1, .cours__conteneur .carte__etiquettes__duree h2, .cours__conteneur .carte__etiquettes__duree h3, .cours__conteneur .carte__etiquettes__duree h4, .cours__conteneur .carte__etiquettes__duree h5, .cours__conteneur .carte__etiquettes__duree h6 {
-  color: #006b7e;
+.cours__conteneur .carte__titre > * {
   margin-block-start: 0;
   margin-block-end: 0;
 }
 
 .cours__conteneur .carte__miniature {
   background-color: #ffe100;
-  height: 10rem;
-  border-radius: 5px;
 }
 
 .cours__conteneur .carte__miniature img {
@@ -757,7 +779,7 @@ body {
   border: none;
   text-transform: uppercase;
   font-weight: bold;
-  font-size: 1.25em;
+  font-size: 1em;
   display: block;
   width: 100%;
   gap: 20px;
@@ -1601,6 +1623,7 @@ form.recherche__input {
   outline: none;
   width: 100%;
   padding: 1em;
+  background-color: black;
 }
 
 form.recherche__bouton {
@@ -1830,6 +1853,7 @@ form.recherche__bouton {
 
 .evenement__champs {
   display: flex;
+  flex-wrap: wrap;
   gap: 20px;
 }
 
@@ -1837,47 +1861,36 @@ form.recherche__bouton {
   flex: 1;
 }
 
-.evenement__champs__image__contenu {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.evenement__champs__image__contenu__image {
-  border-radius: 10px;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.evenement__champs__texte {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-}
-
-.evenement__champs__texte__contenu {
+.evenement__champs__carte {
   background-color: #006b7e;
   color: #ffb8d1;
   border-color: #ffe100;
-  padding: clamp(1em, 2.5vw, 2em);
+  font-size: 1.25em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  gap: .5em;
+  padding: clamp(1rem, 1vw, 2rem);
   border-radius: 10px;
+  max-width: 80vw;
+  /* Largeur adaptative */
+  width: clamp(30%, 80vw, 90%);
 }
 
-.evenement__champs__texte__contenu h1,
-.evenement__champs__texte__contenu h2,
-.evenement__champs__texte__contenu h3 {
+.evenement__champs__carte h1,
+.evenement__champs__carte h2,
+.evenement__champs__carte h3 {
   color: #ffe100;
 }
 
-.evenement__champs__texte__contenu h4,
-.evenement__champs__texte__contenu h5,
-.evenement__champs__texte__contenu h6,
-.evenement__champs__texte__contenu p {
+.evenement__champs__carte h4,
+.evenement__champs__carte h5,
+.evenement__champs__carte h6,
+.evenement__champs__carte p {
   color: #ffb8d1;
 }
 
-.evenement__champs__texte__contenu a {
+.evenement__champs__carte a {
   display: inline-block;
   text-decoration: none;
   padding: 10px;
@@ -1885,50 +1898,127 @@ form.recherche__bouton {
   box-sizing: border-box;
 }
 
-.evenement__champs__texte__contenu a:visited {
+.evenement__champs__carte a:visited {
   color: #ffe100;
   opacity: .8;
 }
 
-.evenement__champs__texte__contenu a:visited svg {
+.evenement__champs__carte a:visited svg {
   color: #ffe100;
 }
 
-.evenement__champs__texte__contenu a:hover, .evenement__champs__texte__contenu a:focus, .evenement__champs__texte__contenu a:active {
+.evenement__champs__carte a:hover, .evenement__champs__carte a:focus, .evenement__champs__carte a:active {
   color: #ffe103;
 }
 
-.evenement__champs__texte__contenu a:hover svg, .evenement__champs__texte__contenu a:focus svg, .evenement__champs__texte__contenu a:active svg {
+.evenement__champs__carte a:hover svg, .evenement__champs__carte a:focus svg, .evenement__champs__carte a:active svg {
   color: #ffe103;
 }
 
-.evenement__champs__texte__contenu a svg {
+.evenement__champs__carte a svg {
   color: #ffe100;
 }
 
-.evenement__champs__texte__contenu svg {
+.evenement__champs__carte svg {
   color: #ffe100;
 }
 
-.evenement__champs__texte__contenu ::selection {
+.evenement__champs__carte ::selection {
   color: #006b7e;
   background-color: #ffb8d1;
 }
 
-.evenement__champs__texte__contenu__titre,
-.evenement__champs__texte__contenu h2 {
-  font-size: clamp(1em, 2.5vw, 2em);
+@media screen and (min-width: 600px) {
+  .evenement__champs__carte {
+    width: clamp(30%, 40vw, 37.5%);
+  }
 }
 
-.evenement__champs__texte__contenu__info,
-.evenement__champs__texte__contenu p {
-  font-size: clamp(0.75em, 2.5vw, 1.25em);
+@media screen and (min-width: 1000px) {
+  .evenement__champs__carte {
+    width: 30%;
+  }
 }
 
-.evenement__champs__texte__contenu__image {
+.evenement__champs__carte__titre, .evenement__champs__carte__sous-titre, .evenement__champs__carte__desc, .evenement__champs__carte__desc__contenu {
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin: 0;
+}
+
+.evenement__champs__carte__etiquettes {
+  display: flex;
+  gap: 1em;
+}
+
+.evenement__champs__carte__titre {
   width: 100%;
-  max-height: 100px;
+  font-size: clamp(1em, 2vw, 3em);
+}
+
+@media screen and (min-width: 600px) {
+  .evenement__champs__carte__titre {
+    font-size: clamp(1.5em, 3vw, 3.5em);
+  }
+}
+
+.evenement__champs__carte__titre, .evenement__champs__carte__titre:hover {
+  transition: transform 0.1s ease-in-out;
+}
+
+.evenement__champs__carte__titre:hover {
+  transform: scaleY(1.25);
+}
+
+.evenement__champs__carte__titre > * {
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+
+.evenement__champs__carte__miniature {
+  background-color: #ffe100;
+}
+
+.evenement__champs__carte__miniature img {
+  filter: grayscale(100%);
+  opacity: .5;
+}
+
+.evenement__champs__carte__miniature img {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
+}
+
+.evenement__champs__carte__desc__bouton {
+  cursor: pointer;
+  background-color: #ffe100;
+  border: 2px solid #006b7e;
+  border-radius: 10px;
+  padding: 1em;
+  border: none;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 1em;
+  display: block;
+  width: 100%;
+  gap: 20px;
+}
+
+.evenement__champs__carte__desc__bouton svg, .evenement__champs__carte__desc__bouton p, .evenement__champs__carte__desc__bouton h1, .evenement__champs__carte__desc__bouton h2, .evenement__champs__carte__desc__bouton h3, .evenement__champs__carte__desc__bouton h4, .evenement__champs__carte__desc__bouton h5, .evenement__champs__carte__desc__bouton h6 {
+  color: #006b7e;
+}
+
+.evenement__champs__carte__desc__bouton:hover {
+  background-color: #ffb8d1;
+}
+
+.evenement__champs__carte__desc__bouton:hover svg, .evenement__champs__carte__desc__bouton:hover p, .evenement__champs__carte__desc__bouton:hover h1, .evenement__champs__carte__desc__bouton:hover h2, .evenement__champs__carte__desc__bouton:hover h3, .evenement__champs__carte__desc__bouton:hover h4, .evenement__champs__carte__desc__bouton:hover h5, .evenement__champs__carte__desc__bouton:hover h6 {
+  transform: scaleY(1.5);
+}
+
+.evenement__champs__carte__desc__bouton:hover svg, .evenement__champs__carte__desc__bouton:hover svg:hover, .evenement__champs__carte__desc__bouton:hover p, .evenement__champs__carte__desc__bouton:hover p:hover, .evenement__champs__carte__desc__bouton:hover h1, .evenement__champs__carte__desc__bouton:hover h1:hover, .evenement__champs__carte__desc__bouton:hover h2, .evenement__champs__carte__desc__bouton:hover h2:hover, .evenement__champs__carte__desc__bouton:hover h3, .evenement__champs__carte__desc__bouton:hover h3:hover, .evenement__champs__carte__desc__bouton:hover h4, .evenement__champs__carte__desc__bouton:hover h4:hover, .evenement__champs__carte__desc__bouton:hover h5, .evenement__champs__carte__desc__bouton:hover h5:hover, .evenement__champs__carte__desc__bouton:hover h6, .evenement__champs__carte__desc__bouton:hover h6:hover {
+  transition: transform 0.25s ease-in-out;
 }
 
 .boite-modale {

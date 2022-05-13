@@ -18,44 +18,38 @@
                 </h2>
             </section>
             <section class="evenement__champs">
-                <section class="evenement__champs__image">
-                    <div class="evenement__champs__image__contenu">
-                        <img class="evenement__champs__image__contenu__image" src="<?php the_field('miniature'); ?>" alt="">
-                    </div>
-                </section>
-
-                <section class="evenement__champs__texte">
-                    <div class="evenement__champs__texte__contenu">
-                        <h2 class="evenement__champs__texte__contenu__titre">Où</h2>
-                        <p class="evenement__champs__texte__contenu__texte">
-                            <?php the_field('endroit'); ?>
-                        </p>
-                    </div>
-                    <div class="evenement__champs__texte__contenu">
-                        <h2 class="evenement__champs__texte__contenu__titre">Qui</h2>
-                        <p class="evenement__champs__texte__contenu__texte">
-                            <?php the_field('organisateur'); ?>
-                        </p>
-                    </div>
-                    <div class="evenement__champs__texte__contenu">
-                        <h2 class="evenement__champs__texte__contenu__titre">Quoi</h2>
-                        <p class="evenement__champs__texte__contenu__texte">
-                            <?php the_field('resume'); ?>
-                        </p>
-                    </div>
-                    <div class="evenement__champs__texte__contenu">
-                        <h2 class="evenement__champs__texte__titre">Quand</h2>
-
-                        <h3 class="evenement__champs__texte__sous-titre">Date</h3>
-                        <p class="evenement__champs__texte__contenu__texte">
-                            <?php the_field('date'); ?>
-                        </p>
-                        <h3 class="evenement__champs__texte__sous-titre">Heure</h3>
-                        <p class="evenement__champs__texte__contenu__texte">
-                            <?php the_field('heure'); ?>
-                        </p>
-                    </div>
-                </section>
+                <div class="evenement__champs__carte">
+                    <img class="evenement__champs__carte__miniature" src="<?php the_field('miniature'); ?>" alt="">
+                </div>
+                <div class="evenement__champs__carte">
+                    <h2 class="evenement__champs__carte__titre">Où</h2>
+                    <p class="evenement__champs__carte__desc">
+                        <?php the_field('endroit'); ?>
+                    </p>
+                </div>
+                <div class="evenement__champs__carte">
+                    <h2 class="evenement__champs__carte__titre">Qui</h2>
+                    <p class="evenement__champs__carte__desc">
+                        <?php the_field('organisateur'); ?>
+                    </p>
+                </div>
+                <div class="evenement__champs__carte">
+                    <h2 class="evenement__champs__carte__titre">Quoi</h2>
+                    <p class="evenement__champs__carte__desc">
+                        <?php the_field('resume'); ?>
+                    </p>
+                </div>
+                <div class="evenement__champs__carte">
+                    <h2 class="evenement__champs__carte__titre">Quand</h2>
+                    <h3 class="evenement__champs__carte__sous-titre">Date</h3>
+                    <p class="evenement__champs__carte__desc">
+                        <?php the_field('date'); ?>
+                    </p>
+                    <h3 class="evenement__champs__carte__sous-titre">Heure</h3>
+                    <p class="evenement__champs__carte__desc">
+                        <?php the_field('heure'); ?>
+                    </p>
+                </div>
             </section>
         <?php endwhile ?>
         <?php endif ?>    

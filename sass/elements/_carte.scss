@@ -1,33 +1,43 @@
 @mixin carte(
     $theme,
+    $largeur,
     $taille-texte, 
-    $flex-direction, 
-    $utiliserBoiteModale,
-    $etiquettes...
+    $flex-direction,
+    $utiliserBoiteModale, 
+    $etiquettes
 ) {
     @include genererTheme($theme);
     
     font-size: $taille-texte;
     display: flex;
     flex-direction: #{$flex-direction};
-    justify-content: space-between;
-    gap: 20px;
+    justify-content: space-around;
+    gap: .5em;
     padding: clamp(1rem, 1vw, 2rem);
     border-radius: 10px;
     max-width: 80vw;
 
     /* Largeur adaptative */
     // Mobile
-    width: 100%;
+    width: clamp($largeur, 80vw, $largeur * 3);
 
     // Tablettes
     @media screen and (min-width: $largeur__media-tablette) {
-        width: 45%;
+        width: clamp($largeur, 40vw, $largeur * 1.25);
     }
 
     // Desktop
     @media screen and (min-width: $largeur__media-desktop) {
-        width: 30%; 
+        width: $largeur;
+    }
+
+    &__titre,
+    &__sous-titre,
+    &__desc,
+    &__desc__contenu {
+        margin-block-start: 0;
+        margin-block-end: 0;
+        margin: 0;
     }
 
     &__etiquettes {
@@ -63,7 +73,6 @@
 
     &__miniature {
         @include filtre(map-get($theme, "icone"));
-        height: 10em;
 
         img {
             width: 100%;
@@ -73,6 +82,7 @@
     }
 
     &__desc {
+
         @if ($utiliserBoiteModale) {
             &__contenu {
                 display: none;
