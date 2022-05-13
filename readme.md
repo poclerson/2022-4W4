@@ -1,6 +1,6 @@
 # Project Title
 
-Mon thème Wordpress
+Mon thème Wordpress, TP2
 
 ## Description
 
