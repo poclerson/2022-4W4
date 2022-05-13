@@ -18,33 +18,22 @@ $bordure__faux-espacement: 2rem solid map-get($header__couleurs, 'fond');
             width: 100%;
 
             display: flex;
-            flex-direction: column;
             align-items: center;
-
-            &:hover {
-                .site__header__navigation__menu__nav {
-                    display: block;
-                }
-            }
-
+            
             &__nav {
                 width: 110vw;
-                top: 100%;
-                left: -2rem;
-                position: absolute;
-                display: none;
-                border-top: $bordure__faux-espacement;
+                opacity: 0;
+                padding: 1em;
+                border-radius: 10px;
 
                 @include genererTheme($navigation__couleurs);
 
                 @media screen and (min-width: $largeur__media-tablette) {
-                    left: unset;
-                    right: $largeur__icone-ouverture;
-                    top: 0;
-                    bottom: 0;
-                    border-top: unset;
-                    border-right: $bordure__faux-espacement;
                     width: 20vw;
+                }
+
+                &--ouverte {
+                    opacity: 1;
                 }
 
                 .menu {
@@ -74,6 +63,13 @@ $bordure__faux-espacement: 2rem solid map-get($header__couleurs, 'fond');
                         }
                     }
                 }
+            }
+
+            &__espaceur {
+                display: block;
+                width: 100px;
+                height: 1px;
+                content: "";
             }
 
             &__ouverture {
