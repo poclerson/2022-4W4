@@ -1918,10 +1918,6 @@ nav.menu-principal-container ul.menu li.menu-item a {
   font-size: .5em;
 }
 
-.site__header__navigation__menu__nav .menu .menu-item-description::before {
-  content: "                     ";
-}
-
 .site__header__navigation__menu__ouverture {
   cursor: pointer;
   background-color: #006b7e;
