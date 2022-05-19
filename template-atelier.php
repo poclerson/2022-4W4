@@ -15,7 +15,7 @@
                 <h2 class="atelier__sous-titre__contenu">
                     <?php the_title() ?>
                 </h2>
-                <p class="atelier__sous-titre__desc"><?php the_field('local') ?></p>
+                <p class="atelier__sous-titre__desc"><?php the_field('description') ?></p>
             </section>
             <section class="atelier__champs">
                 <div class="atelier__champs__carte">
@@ -30,22 +30,22 @@
                     <h2 class="atelier__champs__carte__titre">Dates et jours</h2>
                     <p class="atelier__champs__carte__desc">
                         Du
-                        <?php the_field('date_de_debut') ?>
+                        <strong><?php the_field('date_de_debut') ?></strong>
                         au
-                        <?php the_field('date_de_fin') ?>
+                        <strong><?php the_field('date_de_fin') ?></strong>
                         les
-                        <?php the_field('jours') ?>
+                        <strong><?php the_field('jours') ?></strong>
                     </p>
                 </div>
                 <div class="atelier__champs__carte">
                     <h2 class="atelier__champs__carte__titre">Heures</h2>
                     <p class="atelier__champs__carte__desc">
                         De
-                        <?php the_field('heure_de_debut') ?>
+                        <strong><?php the_field('heure_de_debut') ?></strong>
                         à
-                        <?php the_field('heure_de_fin') ?>
+                        <strong><?php the_field('heure_de_fin') ?></strong>
                         pendant
-                        <?php the_field('duree') ?>
+                        <strong><?php the_field('duree') ?></strong>
                     </p>
                 </div>
             </section>

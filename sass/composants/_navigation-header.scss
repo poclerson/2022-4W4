@@ -69,6 +69,7 @@ $bordure__faux-espacement: 2rem solid map-get($header__couleurs, 'fond');
                         &-description {
                             font-family: $font__texte;
                             font-size: .5em;
+                            
                         }
                     }
                 }

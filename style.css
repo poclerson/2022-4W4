@@ -1918,6 +1918,10 @@ nav.menu-principal-container ul.menu li.menu-item a {
   font-size: .5em;
 }
 
+.site__header__navigation__menu__nav .menu .menu-item-description::before {
+  content: "                     ";
+}
+
 .site__header__navigation__menu__ouverture {
   cursor: pointer;
   background-color: #006b7e;
@@ -2481,5 +2485,191 @@ nav.menu-principal-container ul.menu li.menu-item a {
 
 .boite-carousel__navigation__bouton p {
   margin: 0;
+}
+
+.atelier {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+
+.atelier__sous-titre {
+  font-size: clamp(2em, 2.5vw, 3em);
+}
+
+.atelier__champs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.atelier__champs section {
+  flex: 1;
+}
+
+.atelier__champs__carte {
+  background-color: #006b7e;
+  color: #ffb8d1;
+  border-color: #ffe100;
+  font-size: 1.25em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  gap: .5em;
+  padding: clamp(1rem, 1vw, 2rem);
+  border-radius: 10px;
+  max-width: 80vw;
+  /* Largeur adaptative */
+  width: clamp(30%, 80vw, 90%);
+}
+
+.atelier__champs__carte h1,
+.atelier__champs__carte h2,
+.atelier__champs__carte h3 {
+  color: #ffe100;
+}
+
+.atelier__champs__carte h4,
+.atelier__champs__carte h5,
+.atelier__champs__carte h6,
+.atelier__champs__carte p {
+  color: #ffb8d1;
+}
+
+.atelier__champs__carte a {
+  display: inline-block;
+  text-decoration: none;
+  padding: 10px;
+  color: #ffe100;
+  box-sizing: border-box;
+}
+
+.atelier__champs__carte a:visited {
+  color: #ffe100;
+  opacity: .8;
+}
+
+.atelier__champs__carte a:visited svg {
+  color: #ffe100;
+}
+
+.atelier__champs__carte a:hover, .atelier__champs__carte a:focus, .atelier__champs__carte a:active {
+  color: #ffe103;
+}
+
+.atelier__champs__carte a:hover svg, .atelier__champs__carte a:focus svg, .atelier__champs__carte a:active svg {
+  color: #ffe103;
+}
+
+.atelier__champs__carte a svg {
+  color: #ffe100;
+}
+
+.atelier__champs__carte svg {
+  color: #ffe100;
+}
+
+.atelier__champs__carte ::selection {
+  color: #006b7e;
+  background-color: #ffb8d1;
+}
+
+@media screen and (min-width: 600px) {
+  .atelier__champs__carte {
+    width: clamp(30%, 40vw, 37.5%);
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .atelier__champs__carte {
+    width: 30%;
+  }
+}
+
+.atelier__champs__carte__titre, .atelier__champs__carte__sous-titre, .atelier__champs__carte__desc, .atelier__champs__carte__desc__contenu {
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin: 0;
+}
+
+.atelier__champs__carte__etiquettes {
+  display: flex;
+  gap: 1em;
+}
+
+.atelier__champs__carte__titre {
+  width: 100%;
+  font-size: clamp(1em, 2vw, 3em);
+}
+
+@media screen and (min-width: 600px) {
+  .atelier__champs__carte__titre {
+    font-size: clamp(1.5em, 3vw, 3.5em);
+  }
+}
+
+.atelier__champs__carte__titre, .atelier__champs__carte__titre:hover {
+  transition: transform 0.1s ease-in-out;
+}
+
+.atelier__champs__carte__titre:hover {
+  transform: scaleY(1.25);
+}
+
+.atelier__champs__carte__titre > * {
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+
+.atelier__champs__carte__miniature {
+  background-color: #ffe100;
+}
+
+.atelier__champs__carte__miniature img {
+  filter: grayscale(100%);
+  opacity: .5;
+}
+
+.atelier__champs__carte__miniature img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.atelier__champs__carte__desc__bouton {
+  cursor: pointer;
+  background-color: #ffe100;
+  border: 2px solid #006b7e;
+  border-radius: 10px;
+  padding: 1em;
+  border: none;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 1em;
+  display: block;
+  width: 100%;
+  gap: 20px;
+}
+
+.atelier__champs__carte__desc__bouton svg {
+  min-width: 30px;
+  min-height: 30px;
+}
+
+.atelier__champs__carte__desc__bouton svg, .atelier__champs__carte__desc__bouton p, .atelier__champs__carte__desc__bouton h1, .atelier__champs__carte__desc__bouton h2, .atelier__champs__carte__desc__bouton h3, .atelier__champs__carte__desc__bouton h4, .atelier__champs__carte__desc__bouton h5, .atelier__champs__carte__desc__bouton h6 {
+  color: #006b7e;
+}
+
+.atelier__champs__carte__desc__bouton:hover {
+  background-color: #ffb8d1;
+}
+
+.atelier__champs__carte__desc__bouton:hover svg, .atelier__champs__carte__desc__bouton:hover p, .atelier__champs__carte__desc__bouton:hover h1, .atelier__champs__carte__desc__bouton:hover h2, .atelier__champs__carte__desc__bouton:hover h3, .atelier__champs__carte__desc__bouton:hover h4, .atelier__champs__carte__desc__bouton:hover h5, .atelier__champs__carte__desc__bouton:hover h6 {
+  transform: scaleY(1.5);
+}
+
+.atelier__champs__carte__desc__bouton:hover svg, .atelier__champs__carte__desc__bouton:hover svg:hover, .atelier__champs__carte__desc__bouton:hover p, .atelier__champs__carte__desc__bouton:hover p:hover, .atelier__champs__carte__desc__bouton:hover h1, .atelier__champs__carte__desc__bouton:hover h1:hover, .atelier__champs__carte__desc__bouton:hover h2, .atelier__champs__carte__desc__bouton:hover h2:hover, .atelier__champs__carte__desc__bouton:hover h3, .atelier__champs__carte__desc__bouton:hover h3:hover, .atelier__champs__carte__desc__bouton:hover h4, .atelier__champs__carte__desc__bouton:hover h4:hover, .atelier__champs__carte__desc__bouton:hover h5, .atelier__champs__carte__desc__bouton:hover h5:hover, .atelier__champs__carte__desc__bouton:hover h6, .atelier__champs__carte__desc__bouton:hover h6:hover {
+  transition: transform 0.25s ease-in-out;
 }
 /*# sourceMappingURL=style.css.map */
