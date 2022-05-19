@@ -1817,6 +1817,7 @@ nav.menu-principal-container ul.menu li.menu-item a {
   left: 0;
   top: 100%;
   border-top: 2rem solid #006b7e;
+  z-index: 100;
   display: none;
   background-color: #ffb8d1;
   color: #ffe100;
@@ -1906,6 +1907,15 @@ nav.menu-principal-container ul.menu li.menu-item a {
   text-align: center;
   font-family: "Bungee";
   font-size: clamp(1.25em, 2.5vw, 3em);
+}
+
+.site__header__navigation__menu__nav .menu .menu-item a hr {
+  display: none;
+}
+
+.site__header__navigation__menu__nav .menu .menu-item-description {
+  font-family: "Lexend Deca";
+  font-size: .5em;
 }
 
 .site__header__navigation__menu__ouverture {
