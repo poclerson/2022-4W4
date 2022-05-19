@@ -66,7 +66,9 @@
             'footer-liens'      => __('Footer liens externes', 'cidw-4w4'),
             'categorie-cours'   => __('Categorie cours', 'cidw-4w4'),
             'departement'       => __('Département TIM', 'cidw-4w4'),
-            'evenements'        => __('Les évènements à venir', 'cidw-4w4')));
+            'evenements'        => __('Les évènements à venir', 'cidw-4w4'),
+            'ateliers'          => __('Ateliers disponibles', 'cidw-4w4')
+        ));
     }
 
     add_action('after_setup_theme', 'cidw_4w4_enregistrer_menu');
@@ -98,13 +100,15 @@
 
     add_action('after_setup_theme', 'cidw_4w4_add_theme_support');
 
-    function prefix_nav_description( $item_output, $item,  $args ) {
-        if ( !empty( $item->description ) ) {
-            $item_output = str_replace( $args->link_after . '</a>',
-            $args->link_after .'<hr><span class="menu-item-description">' . $item->description . '</span>' .  '</a>',
-                  $item_output );
-        }
+    function prefix_nav_description( $item_output, $item) {
+    if ( !empty( $item->description ) ) {
+        $item_output = str_replace( '</a>',
+        '<hr><span class="menu-item-description">' . $item->description . '</span><div class="menu-item-icone"></div></a>',
+              $item_output );
     }
+    return $item_output;
+}
+add_filter( 'walker_nav_menu_start_el', 'prefix_nav_description', 10, 2 );
 
 
     /* Enregistrement des sidebars */
